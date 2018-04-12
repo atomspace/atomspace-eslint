@@ -1,0 +1,33 @@
+{
+	"plugins": ["import"],
+	"settings": {},
+	"rules": {
+		"import/no-unresolved": ["error", {"commonjs": true, "amd": true}],
+		"import/named": "error",
+		"import/namespace": "error",
+		"import/default": "off",
+		"import/no-dynamic-require": "off",
+		"import/no-webpack-loader-syntax": "error",
+		"import/no-self-import": "error",
+		"import/export": "error",
+		"import/no-deprecated": "error",
+		"import/no-extraneous-dependencies": "warn",
+		"import/first": "error",
+		"import/no-duplicates": "error",
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "never",
+				"jsx": "never"
+			}
+		],
+		"import/order": ["error", {
+			"groups": ["builtin", "external", ["internal", "parent", "sibling", "index"]],
+			"newlines-between": "always"
+		}],
+		"import/newline-after-import": "error",
+		"import/prefer-default-export": "off",
+		"import/no-unassigned-import": "off"
+	}
+}

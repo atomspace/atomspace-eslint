@@ -1,0 +1,40 @@
+{
+  "name": "@atomspace/eslint",
+  "version": "1.0.0",
+  "description": "Neutrino preset for adding Airbnb's base JS ESLint config, following the Airbnb styleguide",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomspaceodua/atomspace-eslint.git"
+  },
+  "keywords": [
+    "neutrino",
+    "neutrino-preset",
+    "atomspace",
+    "eslint"
+  ],
+  "author": "Atom Space",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/atomspaceodua/atomspace-eslint/issues"
+  },
+  "homepage": "https://github.com/atomspaceodua/atomspace-eslint#readme",
+  "dependencies": {
+    "@neutrinojs/eslint": "~8.2.2",
+    "eslint": "~4.19.1",
+    "eslint-plugin-import": "~2.11.0"
+  },
+  "devDependencies": {
+    "neutrino": "~8.2.2"
+  },
+  "peerDependencies": {
+    "neutrino": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.0.0"
+  }
+}
