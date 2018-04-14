@@ -17,7 +17,7 @@
 
 - Node.js v6 LTS, v8, v9
 - Npm v3.0+
-- Neutrino v8, Neutrino build preset
+- Neutrino v8
 
 ## Installation
 
@@ -37,7 +37,7 @@ project.
 
 ## Quickstart
 
-After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build preset. For example, if you are building your project using `@neutrinojs/web`:
+After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build preset. Other presets are not required to `@atomspace/eslint` to work. But in this example you will build your project using `@neutrinojs/web` (you should install it first by `npm i --save-dev @neutrinojs/web`):
 
 **packaje.json**
 
@@ -45,7 +45,8 @@ After adding the Atom Space preset to your Neutrino-built project, edit your pro
 {
   "scripts": {
     "start": "neutrino start",
-    "build": "neutrino build"
+    "build": "neutrino build",
+    "lint": "neutrino lint"
   }
 }
 ```
@@ -151,6 +152,27 @@ the console.
 ❯ neutrino lint --fix
 ```
 
+If you want to call them in your project it will be better to register npm scripts like this:
+
+**package.json**
+```json
+{
+  "scripts": {
+    "lint": "neutrino lint"
+  }
+}
+```
+
+and use 
+
+```bash
+❯ npm run lint
+```
+
+```bash
+❯ npm run lint -- --fix
+```
+
 ## Integration with development tools
 
 `@neutrinojs/eslint`, from which this preset inherits, also provides a method for getting the ESLint
@@ -196,6 +218,8 @@ in the [ESLint user guide](http://eslint.org/docs/user-guide/configuring#ignorin
 To enable ESLint in **Visual Studio Code** you need to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 
 
 These are suggested workspace settings related to `@neutrinojs/eslint` rules:
+
+**.vscode/settings.json**
 
 ```json
 {
