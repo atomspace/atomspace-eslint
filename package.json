@@ -4,7 +4,7 @@
 	"description": "Neutrino preset for adding ESLint config, following the Atom Space styleguide",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"pretest": "neutrino lint --use ."
 	},
 	"repository": {
 		"type": "git",
@@ -25,7 +25,8 @@
 	"dependencies": {
 		"@neutrinojs/eslint": "~8.2.2",
 		"eslint": "~4.19.1",
-		"eslint-plugin-import": "~2.11.0"
+		"eslint-plugin-import": "~2.11.0",
+		"eslint-plugin-promise": "~3.7.0"
 	},
 	"devDependencies": {
 		"neutrino": "~8.2.2"
