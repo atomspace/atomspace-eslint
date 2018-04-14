@@ -214,3 +214,7 @@ These are suggested workspace settings related to `@neutrinojs/eslint` rules:
 When project has been initially installed you need to restart an editor. After this ESLint will start to highlight and auto-fix errors in your code.
 
 `@neutrinojs/eslint` can work in your editor even if there is no build infrastructure. You can install it to any kind of JavaScript projects following the [ESLint CLI](#eslint-cli) guide above.
+
+[npm-image]: https://img.shields.io/npm/v/@atomspace/eslint.svg
+[npm-downloads]: https://img.shields.io/npm/dt/@atomspace/eslint.svg
+[npm-url]: https://npmjs.org/package/@atomspace/eslint
