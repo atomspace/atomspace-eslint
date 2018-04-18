@@ -5,13 +5,15 @@ let importConfig = require('./import.config.json');
 let promiseConfig = require('./promise.config.json');
 let jsDocConfig = require('./jsdoc.config.json');
 let amdConfig = require('./amd.config.json');
+let commentConfig = require('./eslint-comment.config.json');
 
 let config = [
 	{ eslint: coreConfig },
 	{ eslint: importConfig },
 	{ eslint: promiseConfig },
 	{ eslint: jsDocConfig },
-	{ eslint: amdConfig }
+	{ eslint: amdConfig },
+	{ eslint: commentConfig }
 ].reduce(eslint.merge);
 
 module.exports = function (neutrino, settings = {}) {
