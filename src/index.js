@@ -1,10 +1,10 @@
-var eslint = require('@neutrinojs/eslint');
+let eslint = require('@neutrinojs/eslint');
 
-var coreConfig = require('./eslint.config.json');
-var importConfig = require('./import.config.json');
-var promiseConfig = require('./promise.config.json');
+let coreConfig = require('./eslint.config.json');
+let importConfig = require('./import.config.json');
+let promiseConfig = require('./promise.config.json');
 
-var config = eslint.merge(
+let config = eslint.merge(
 	eslint.merge(
 		{ eslint: coreConfig },
 		{ eslint: importConfig }

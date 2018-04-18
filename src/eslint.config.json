@@ -1,5 +1,5 @@
 {
-	"globals": [],
+	"globals": ["console"],
 	"envs": ["es6", "commonjs"],
 	"baseConfig": {
 		"extends": ["eslint:recommended"]
@@ -16,20 +16,32 @@
 		"semi": ["error", "always"],
 		"no-unused-vars": ["error"],
 		"no-console": ["warn", { "allow": ["error"] }],
+		"no-var": "error",
+		"no-use-before-define": "error",
+		"no-throw-literal": "error",
+		"no-proto": "error",
+		"no-redeclare": "error",
+		"no-nested-ternary": "error",
+		"no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 0, "maxEOF": 0}],
+		"no-mixed-spaces-and-tabs": ["error", false],
+		"no-multi-spaces": "error",
+		"no-eval": "error",
+		"no-trailing-spaces": "error",
+		"no-with": "error",
+		"no-cond-assign": ["error", "except-parens"],
+		"no-else-return": "error",
+		"no-param-reassign": ["error", { "props": false }],
+		"no-unused-expressions": ["error", {
+			"allowShortCircuit": true,
+			"allowTernary": true,
+			"allowTaggedTemplates": true
+		}],
 		"eqeqeq": ["error", "always"],
 		"getter-return": ["error", { "allowImplicit": true }],
 		"id-length": ["error", {
 			"min": 2,
 			"properties": "never",
 			"exceptions": ["i", "x", "y", "z"]
-		}],
-		"no-eval": "error",
-		"no-trailing-spaces": "error",
-		"no-with": "error",
-		"no-unused-expressions": ["error", {
-			"allowShortCircuit": true,
-			"allowTernary": true,
-			"allowTaggedTemplates": true
 		}],
 		"strict": ["warn", "safe"],
 		"curly": ["error", "multi-line"],
@@ -45,11 +57,8 @@
 			"ignoreRegExpLiterals": false
 		}],
 		"quote-props": ["warn", "consistent-as-needed"],
-		"no-cond-assign": ["error", "except-parens"],
 		"space-infix-ops": 0,
 		"default-case": 0,
-		"no-else-return": "error",
-		"no-param-reassign": ["error", { "props": false }],
 		"eol-last": ["error", "never"],
 		"new-cap": "off",
 		"babel/new-cap": ["error", { "newIsCap": true }],
