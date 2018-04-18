@@ -1,0 +1,18 @@
+{
+	"plugins": ["jsdoc"],
+	"rules": {
+		"jsdoc/check-param-names": "error",
+		"jsdoc/check-tag-names": "error",
+		"jsdoc/check-types": "error",
+		"jsdoc/newline-after-description": ["error", "never"],
+		"jsdoc/require-description-complete-sentence": "off",
+		"jsdoc/require-example": "off",
+		"jsdoc/require-hyphen-before-param-description": "off",
+		"jsdoc/require-param": "error",
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-param-name": "error",
+		"jsdoc/require-param-type": "off",
+		"jsdoc/require-returns-description": "off",
+		"jsdoc/require-returns-type": "error"
+	}
+}
