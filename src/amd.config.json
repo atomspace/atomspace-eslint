@@ -1,0 +1,26 @@
+{
+	"plugins": ["requirejs"],
+	"rules": {
+		"requirejs/no-invalid-define": "error",
+		"requirejs/no-multiple-define": "error",
+		"requirejs/no-invalid-require": "error",
+		"requirejs/no-assign-exports": "error",
+		"requirejs/no-js-extension": "error",
+		"requirejs/no-object-define": "off",
+		"requirejs/no-function-define": "off",
+		"requirejs/no-amd-define": "off",
+		"requirejs/no-named-define": "error",
+		"requirejs/no-commonjs-wrapper": "off",
+		"requirejs/no-commonjs-return": "off",
+		"requirejs/no-commonjs-exports": "off",
+		"requirejs/no-commonjs-module-exports": "off",
+		"requirejs/no-dynamic-require": "off",
+		"requirejs/no-conditional-require": "off",
+		"requirejs/no-assign-require": "error",
+		"requirejs/no-require-tourl": "warn",
+		"requirejs/enforce-define": "off",
+		"requirejs/one-dependency-per-line": "off",
+		"requirejs/amd-function-arity": ["error", { "allowExtraDependencies": true }],
+		"requirejs/sort-amd-paths": "off"
+	}
+}

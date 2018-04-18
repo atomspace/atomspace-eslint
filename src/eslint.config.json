@@ -1,6 +1,6 @@
 {
 	"globals": ["console"],
-	"envs": ["es6", "commonjs"],
+	"envs": ["es6", "commonjs", "amd"],
 	"baseConfig": {
 		"extends": ["eslint:recommended"]
 	},
@@ -41,7 +41,7 @@
 		"id-length": ["error", {
 			"min": 2,
 			"properties": "never",
-			"exceptions": ["i", "x", "y", "z"]
+			"exceptions": ["i", "x", "y", "z", "$"]
 		}],
 		"strict": ["warn", "safe"],
 		"curly": ["error", "multi-line"],
