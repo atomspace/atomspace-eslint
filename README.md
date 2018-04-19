@@ -10,8 +10,11 @@
 - Zero upfront configuration necessary to start linting your project
 - Modern Babel knowledge supporting ES modules, JSX (when used with React preset), Web and Node.js apps
 - Highly visible during development, fails compilation when building for production
-- Module system linting
 - Promises linting
+- Module systems linting (ES, CommonJS, AMD)
+- Regex shorthands to improve readability
+- ESLint comments linting
+- JSDoc syntax linting
 - Easily extensible to customize your project as needed
 
 ## Requirements
