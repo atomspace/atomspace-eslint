@@ -6,6 +6,7 @@ let promiseConfig = require('./promise.config.json');
 let jsDocConfig = require('./jsdoc.config.json');
 let amdConfig = require('./amd.config.json');
 let commentConfig = require('./eslint-comment.config.json');
+let regExpConfig = require('./regexp.config.json');
 
 let config = [
 	{ eslint: coreConfig },
@@ -13,7 +14,8 @@ let config = [
 	{ eslint: promiseConfig },
 	{ eslint: jsDocConfig },
 	{ eslint: amdConfig },
-	{ eslint: commentConfig }
+	{ eslint: commentConfig },
+	{ eslint: regExpConfig }
 ].reduce(eslint.merge);
 
 module.exports = function (neutrino, settings = {}) {
