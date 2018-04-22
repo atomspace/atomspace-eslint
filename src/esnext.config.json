@@ -1,0 +1,15 @@
+{
+	"envs": ["es6"],
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"rules": {
+		"no-var": "error",
+		"prefer-template": "error",
+		"object-shorthand": "error",
+		"no-dupe-class-members": "error",
+		"dot-notation": ["error", { "allowKeywords": true }],
+		"no-param-reassign": ["error", { "props": false }]
+	}
+}

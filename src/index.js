@@ -7,17 +7,31 @@ let jsDocConfig = require('./jsdoc.config.json');
 let amdConfig = require('./amd.config.json');
 let commentConfig = require('./eslint-comment.config.json');
 let regExpConfig = require('./regexp.config.json');
-
-let config = [
-	{ eslint: coreConfig },
-	{ eslint: importConfig },
-	{ eslint: promiseConfig },
-	{ eslint: jsDocConfig },
-	{ eslint: amdConfig },
-	{ eslint: commentConfig },
-	{ eslint: regExpConfig }
-].reduce(eslint.merge);
+let esnextConfig = require('./esnext.config.json');
+let es5Config = require('./es5.config.json');
 
 module.exports = function (neutrino, settings = {}) {
-	neutrino.use(eslint, eslint.merge(config, settings));
+	let config = [
+		{ eslint: coreConfig },
+		{ eslint: importConfig },
+		{ eslint: promiseConfig },
+		{ eslint: jsDocConfig },
+		{ eslint: amdConfig },
+		{ eslint: commentConfig },
+		{ eslint: regExpConfig },
+		{ eslint: settings.esnext ? esnextConfig : es5Config },
+		settings
+	].reduce(eslint.merge);
+
+	neutrino.use(eslint);
+	neutrino.config.module.rule('lint')
+		.use('eslint')
+			.tap(function reset (options) {
+				options.envs = [];
+				options.parserOptions = {};
+				return options;
+			})
+			.tap(function configure (options) {
+				return eslint.merge({ eslint: options }, config).eslint;
+			});
 };
