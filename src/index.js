@@ -9,6 +9,7 @@ let commentConfig = require('./eslint-comment.config.json');
 let regExpConfig = require('./regexp.config.json');
 let esnextConfig = require('./esnext.config.json');
 let es5Config = require('./es5.config.json');
+let babelConfig = require('./babel.config');
 
 module.exports = function (neutrino, settings = {}) {
 	let config = [
@@ -20,6 +21,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: commentConfig },
 		{ eslint: regExpConfig },
 		{ eslint: settings.esnext ? esnextConfig : es5Config },
+		{ eslint: babelConfig(coreConfig) },
 		settings
 	].reduce(eslint.merge);
 
@@ -28,6 +30,7 @@ module.exports = function (neutrino, settings = {}) {
 		.use('eslint')
 			.tap(function reset (options) {
 				options.envs = [];
+				options.globals = [];
 				options.parserOptions = {};
 				return options;
 			})
