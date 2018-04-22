@@ -12,6 +12,7 @@ let es5Config = require('./es5.config.json');
 let babelConfig = require('./babel.config');
 
 module.exports = function (neutrino, settings = {}) {
+	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
 	let config = [
 		{ eslint: coreConfig },
 		{ eslint: importConfig },
@@ -21,7 +22,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: commentConfig },
 		{ eslint: regExpConfig },
 		{ eslint: settings.esnext ? esnextConfig : es5Config },
-		{ eslint: babelConfig(coreConfig) },
+		{ eslint: settings.esnext ? babelConfig(coreConfig) : {} },
 		settings
 	].reduce(eslint.merge);
 
