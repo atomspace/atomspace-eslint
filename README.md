@@ -105,14 +105,15 @@ ERROR in ./src/index.js
 error Command failed with exit code 1.
 ```
 
-## Middleware options
+## Preset options
 
-This preset uses the same middleware options as [@neutrinojs/eslint](https://neutrino.js.org/packages/eslint).
+### Configuration
+
+This preset inherits options from [@neutrinojs/eslint](https://neutrino.js.org/packages/eslint).
 If you wish to customize what is included, excluded, or any ESLint options, you can provide an options object with the
-middleware and this will be merged with our internal defaults for this preset. Use an array pair instead of a string
-to supply these options.
+preset and this will be merged with defaults. Use an array pair instead of a string to supply these options. Define `eslint` property to override eslint configuration.
 
-_Example: Turn off semicolons from being required as defined by the Atom Space rules._
+_Example: Include browser and Node environments and turn off semicolons from being required as defined by the Atom Space rules._
 
 ```js
 module.exports = {
@@ -128,6 +129,25 @@ module.exports = {
   ]
 };
 ```
+
+### EcmaScript
+
+This preset enables rules compatible with the latest EcmaScript version by default. This is suitable for the latest browsers or if you use transpilation during a build step. However in some cases old good ES5 may be required. You may disable modern features by overriding `esnext` property:
+
+```js
+module.exports = {
+  use: [
+    ['@atomspace/eslint', { esnext: false }]
+  ]
+};
+```
+
+This will disable:
+
+- ES modules
+- new ES global namespaces
+- new syntax like destructuring, arrow functions, default params, classes, etc.
+- implied strict mode (you will have to define strict directive in every file now)
 
 ## Customizing
 
