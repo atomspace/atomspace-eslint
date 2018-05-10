@@ -14,7 +14,7 @@
 	"rules": {
 		"indent": ["error", "tab", {"MemberExpression": "off", "SwitchCase": 1}],
 		"linebreak-style": ["error", "unix"],
-		"brace-style": ["stroustrup", { "allowSingleLine": true }],
+		"brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
 		"quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
 		"jsx-quotes": ["error", "prefer-double"],
 		"semi": ["error", "always"],
@@ -70,6 +70,7 @@
 		"no-useless-return": "off",
 		"no-useless-call": "error",
 		"no-negated-condition": "error",
+		"no-extend-native": "error",
 		"one-var-declaration-per-line": "error",
 		"class-methods-use-this": "error",
 		"comma-dangle": ["error", "never"],
