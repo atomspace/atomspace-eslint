@@ -14,6 +14,7 @@
 	"rules": {
 		"indent": ["error", "tab", {"MemberExpression": "off", "SwitchCase": 1}],
 		"linebreak-style": ["error", "unix"],
+		"brace-style": ["stroustrup", { "allowSingleLine": true }],
 		"quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
 		"jsx-quotes": ["error", "prefer-double"],
 		"semi": ["error", "always"],
