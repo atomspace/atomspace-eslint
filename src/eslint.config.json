@@ -94,7 +94,7 @@
 			"exceptions": ["i", "x", "y", "z", "$", "_"]
 		}],
 		"id-blacklist": ["warn", "entity", "cb"],
-		"id-match": ["error", "^\\w+(?![А-яЁё])$", { "properties": true,  "onlyDeclarations": false }],
+		"id-match": ["error", "^[\\w$]+(?![А-яЁё])$", { "properties": true,  "onlyDeclarations": false }],
 		"strict": ["warn", "safe"],
 		"curly": ["error", "multi-line", "consistent"],
 		"unicode-bom": ["error", "never"],

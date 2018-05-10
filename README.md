@@ -43,7 +43,7 @@ project.
 
 After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build preset. Other presets are not required to `@atomspace/eslint` to work. But in this example you will build your project using `@neutrinojs/web` (you should install it first by `npm i --save-dev @neutrinojs/web`):
 
-**packaje.json**
+**package.json**
 
 ```json
 {
@@ -179,6 +179,7 @@ the console.
 If you want to call them in your project it will be better to register npm scripts like this:
 
 **package.json**
+
 ```json
 {
   "scripts": {

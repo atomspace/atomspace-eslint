@@ -1,3 +1,5 @@
 module.exports = {
-	use: ['.']
+	use: [
+		['.', {esnext: true}]
+	]
 }
