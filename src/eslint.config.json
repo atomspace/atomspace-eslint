@@ -82,7 +82,15 @@
 			"beforeBlockComment": true,
 			"afterBlockComment": false,
 			"beforeLineComment": true,
-			"afterLineComment": false
+			"afterLineComment": false,
+			"allowBlockStart": true,
+			"allowBlockEnd": true,
+			"allowClassStart": true,
+			"allowClassEnd": true,
+			"allowObjectStart": true,
+			"allowObjectEnd": true,
+			"allowArrayStart": true,
+			"allowArrayEnd": true
 		}],
 		"spaced-comment": ["error", "always", { "exceptions": ["-", "*"]}],
 		"new-parens": "error",
