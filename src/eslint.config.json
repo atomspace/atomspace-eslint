@@ -69,6 +69,7 @@
 		"no-useless-rename": "error",
 		"no-useless-return": "off",
 		"no-useless-call": "error",
+		"no-negated-condition": "error",
 		"one-var-declaration-per-line": "error",
 		"class-methods-use-this": "error",
 		"comma-dangle": ["error", "never"],
