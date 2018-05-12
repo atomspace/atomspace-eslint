@@ -12,7 +12,7 @@
 - Highly visible during development, fails compilation when building for production
 - Promises linting
 - Module systems linting (ES, CommonJS, AMD)
-- Regex shorthands to improve readability
+- Regex shorthand to improve readability
 - ESLint comments linting
 - JSDoc syntax linting
 - Easily extensible to customize your project as needed
@@ -43,7 +43,7 @@ project.
 
 After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build preset. Other presets are not required to `@atomspace/eslint` to work. But in this example you will build your project using `@neutrinojs/web` (you should install it first by `npm i --save-dev @neutrinojs/web`):
 
-**package.json**
+#### package.json
 
 ```json
 {
@@ -55,7 +55,7 @@ After adding the Atom Space preset to your Neutrino-built project, edit your pro
 }
 ```
 
-**.neutrinorc.js**
+#### .neutrinorc.js
 
 ```js
 module.exports = {
@@ -120,7 +120,7 @@ module.exports = {
   use: [
     ['@atomspace/eslint', {
       eslint: {
-        envs: ['browser', 'node']
+        envs: ['browser', 'node'],
         rules: {
           semi: 'off'
         }
@@ -147,7 +147,7 @@ This will disable:
 - ES modules
 - new ES global namespaces
 - new syntax like destructuring, arrow functions, default params, classes, etc.
-- implied strict mode (you will have to define strict directive in every file now)
+- implied strict mode (you will have to define strict directive in every file)
 
 ## Customizing
 
@@ -178,7 +178,7 @@ the console.
 
 If you want to call them in your project it will be better to register npm scripts like this:
 
-**package.json**
+#### package.json
 
 ```json
 {
@@ -188,7 +188,7 @@ If you want to call them in your project it will be better to register npm scrip
 }
 ```
 
-and use 
+and use
 
 ```bash
 ❯ npm run lint
@@ -213,7 +213,7 @@ consumption by the ESLint CLI. Use the Neutrino API's `call` method to invoke th
 
 _Example: Create a .eslintrc.js file in the root of the project, using `.neutrinorc.js` middleware._
 
-**.eslintrc.js**
+#### .eslintrc.js
 
 ```js
 const { Neutrino } = require('neutrino');
@@ -227,9 +227,9 @@ Projects may face a problem when their editor or IDE lints all files and highlig
 from source, i.e. Neutrino's `include` and `exclude` options. Unfortunately ESLint does not provide the possibility to configure ignored paths from Neutrino configuration and exclude them
 from linting. Projects authors should define this manually in their project root directory in a `.eslintignore` file:
 
-**.eslintignore**
+#### .eslintignore
 
-```
+```txt
 /build
 /*.*
 ```
@@ -240,11 +240,11 @@ in the [ESLint user guide](http://eslint.org/docs/user-guide/configuring#ignorin
 
 ## VSCode tips
 
-To enable ESLint in **Visual Studio Code** you need to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) 
+To enable ESLint in **Visual Studio Code** you need to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 These are suggested workspace settings related to `@neutrinojs/eslint` rules:
 
-**.vscode/settings.json**
+#### .vscode/settings.json
 
 ```json
 {
