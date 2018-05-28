@@ -4,6 +4,7 @@
 
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][npm-downloads]][npm-url]
+[![Build Status][build-status]][travis-url]
 
 ## Features
 
@@ -267,3 +268,5 @@ When project has been initially installed you need to restart an editor. After t
 [npm-image]: https://img.shields.io/npm/v/@atomspace/eslint.svg
 [npm-downloads]: https://img.shields.io/npm/dt/@atomspace/eslint.svg
 [npm-url]: https://npmjs.org/package/@atomspace/eslint
+[build-status]: https://travis-ci.org/atomspaceodua/atomspace-eslint.svg?branch=master
+[travis-url]: https://travis-ci.org/atomspaceodua/atomspace-eslint

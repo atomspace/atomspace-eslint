@@ -5,7 +5,7 @@
 	"main": "src/index.js",
 	"scripts": {
 		"pretest": "neutrino lint",
-		"publish-public": "npm publish --access public"
+		"lint": "neutrino lint --fix"
 	},
 	"repository": {
 		"type": "git",
@@ -43,6 +43,9 @@
 	"engines": {
 		"node": ">=6.9.0",
 		"npm": ">=3.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"files": [
 		"src",
