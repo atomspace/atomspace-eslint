@@ -94,7 +94,8 @@
 			"allowObjectStart": true,
 			"allowObjectEnd": true,
 			"allowArrayStart": true,
-			"allowArrayEnd": true
+			"allowArrayEnd": true,
+			"ignorePattern": "^import\\b|require\\s*?\\([\\s\\S]+?\\)"
 		}],
 		"spaced-comment": ["error", "always", { "exceptions": ["-", "*"]}],
 		"new-parens": "error",
