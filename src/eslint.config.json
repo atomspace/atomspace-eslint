@@ -171,6 +171,7 @@
 		"space-unary-ops": ["error", {"words": true, "nonwords": false}],
 		"switch-colon-spacing": "error",
 		"object-curly-newline": ["error", { "consistent": true, "multiline": true, "minProperties": 5 }],
-		"object-property-newline": "off"
+		"object-property-newline": "off",
+		"no-process-exit": "warn"
 	}
 }
