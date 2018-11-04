@@ -12,6 +12,7 @@ let es5Config = require('./es5.config.json');
 let babelConfig = require('./babel.config');
 let jestConfig = require('./jest.config');
 let fileNamesConfig = require('./file-names.config');
+let constConfig = require('./const.config');
 
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
@@ -27,6 +28,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: settings.esnext ? babelConfig(coreConfig) : {} },
 		{ eslint: jestConfig },
 		{ eslint: fileNamesConfig },
+		{ eslint: constConfig },
 		settings
 	].reduce(eslint.merge);
 

@@ -1,5 +1,4 @@
 {
-	"envs": ["jest/globals"],
 	"plugins": ["filenames"],
 	"rules": {
 		"filenames/match-regex": ["error", "^[a-z\\-\\.]+$", true],
