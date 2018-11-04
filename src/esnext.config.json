@@ -2,7 +2,10 @@
 	"envs": ["es6"],
 	"parserOptions": {
 		"ecmaVersion": 2018,
-		"sourceType": "module"
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		}
 	},
 	"rules": {
 		"no-var": "error",
