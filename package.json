@@ -24,14 +24,14 @@
   },
   "homepage": "https://github.com/atomspaceodua/atomspace-eslint#readme",
   "dependencies": {
-    "@neutrinojs/eslint": "~8.2.2",
-    "eslint": "~4.19.1",
-    "eslint-plugin-import": "~2.11.0",
-    "eslint-plugin-promise": "~3.7.0",
-    "eslint-plugin-jsdoc": "~3.6.3",
-    "eslint-plugin-requirejs": "~3.1.1",
-    "eslint-plugin-eslint-comments": "~2.0.2",
-    "eslint-plugin-optimize-regex": "~1.1.5",
+    "@neutrinojs/eslint": "~8.3.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-import": "~2.14.0",
+    "eslint-plugin-promise": "~4.0.1",
+    "eslint-plugin-jsdoc": "~3.9.1",
+    "eslint-plugin-requirejs": "~3.2.0",
+    "eslint-plugin-eslint-comments": "~3.0.1",
+    "eslint-plugin-optimize-regex": "~1.1.6",
     "eslint-plugin-es5": "~1.3.1"
   },
   "devDependencies": {
