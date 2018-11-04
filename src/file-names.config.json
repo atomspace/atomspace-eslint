@@ -1,0 +1,9 @@
+{
+	"envs": ["jest/globals"],
+	"plugins": ["filenames"],
+	"rules": {
+		"filenames/match-regex": ["error", "^[a-z\\-\\.]+$", true],
+		"filenames/match-exported": ["error", ["kebab", "pascal"], "\\.[a-z\\.\\-]+$", false],
+		"filenames/no-index": "off"
+	}
+}
