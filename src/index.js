@@ -10,6 +10,7 @@ let regExpConfig = require('./regexp.config.json');
 let esnextConfig = require('./esnext.config.json');
 let es5Config = require('./es5.config.json');
 let babelConfig = require('./babel.config');
+let jestConfig = require('./jest.config');
 
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
@@ -23,6 +24,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: regExpConfig },
 		{ eslint: settings.esnext ? esnextConfig : es5Config },
 		{ eslint: settings.esnext ? babelConfig(coreConfig) : {} },
+		{ eslint: jestConfig },
 		settings
 	].reduce(eslint.merge);
 
