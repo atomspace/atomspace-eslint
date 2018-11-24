@@ -95,7 +95,7 @@
 			"allowObjectEnd": true,
 			"allowArrayStart": true,
 			"allowArrayEnd": true,
-			"ignorePattern": "^import\\b|require\\s*?\\([\\s\\S]+?\\)"
+			"ignorePattern": "^\\s*?import\\s|require\\s*?\\([\\s\\S]+?\\)|^\\s*?(let|const|var)\\s"
 		}],
 		"spaced-comment": ["error", "always", { "exceptions": ["-", "*"]}],
 		"new-parens": "error",
