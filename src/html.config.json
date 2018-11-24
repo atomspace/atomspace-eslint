@@ -1,0 +1,24 @@
+{
+	"plugins": ["html"],
+	"overrides": [
+		{
+			"files": [ "*.html", "*.htm", "*.php" ],
+			"parserOptions": {
+				"sourceType": "script",
+				"ecmaFeatures": {
+					"impliedStrict": true
+				}
+			},
+			"rules": {
+				"eol-last": ["error", "always"],
+				"no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 1, "maxEOF": 1}]
+			}
+		}
+	],
+	"settings": {
+		"html/html-extensions": [".html", ".htm", ".php"],
+		"html/xml-extensions": [".xhtml", ".xml"],
+		"html/indent": "+tab",
+		"html/report-bad-indent": "error"
+	}
+}

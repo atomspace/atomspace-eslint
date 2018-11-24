@@ -13,9 +13,12 @@ let babelConfig = require('./babel.config');
 let jestConfig = require('./jest.config');
 let fileNamesConfig = require('./file-names.config');
 let constConfig = require('./const.config');
+let htmlConfig = require('./html.config');
 
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
+	let lintExtensions = settings.test || /\.(html?|jsx?)$/;
+	// let neutrinoExtensions = neutrino.options.extensions;
 	let config = [
 		{ eslint: coreConfig },
 		{ eslint: importConfig },
@@ -28,11 +31,18 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: settings.esnext ? babelConfig(coreConfig) : {} },
 		{ eslint: jestConfig },
 		{ eslint: fileNamesConfig },
-		{ eslint: constConfig },
+		{ eslint: settings.esnext ? constConfig : {} },
+		{ eslint: htmlConfig },
 		settings
 	].reduce(eslint.merge);
 
-	neutrino.use(eslint);
+	// function isNotInExtensions (extension) {
+	// 	return neutrinoExtensions.indexOf(extension) < 0;
+	// }
+
+	// neutrino.options.extensions = neutrinoExtensions.concat(['html', 'htm'].filter(isNotInExtensions));
+
+	neutrino.use(eslint, { test: lintExtensions });
 	neutrino.config.module.rule('lint')
 		.use('eslint')
 			.tap(function reset (options) {

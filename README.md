@@ -109,7 +109,7 @@ error Command failed with exit code 1.
 
 ### Configuration
 
-This preset inherits options from [@neutrinojs/eslint](https://neutrino.js.org/packages/eslint).
+This preset inherits options from [@neutrinojs/eslint](https://neutrino.js.org/packages/eslint#usage).
 If you wish to customize what is included, excluded, or any ESLint options, you can provide an options object with the
 preset and this will be merged with defaults. Use an array pair instead of a string to supply these options. Define `eslint` property to override eslint configuration.
 
@@ -258,7 +258,24 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
   "javascript.format.enable": true,
   "javascript.validate.enable": false,
   "files.eol": "\n",
-  "files.insertFinalNewline": false
+  "files.insertFinalNewline": false,
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".html"]
+  },
+  "eslint.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    }
+  ]
 }
 ```
 
