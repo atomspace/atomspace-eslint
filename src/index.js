@@ -14,6 +14,7 @@ let jestConfig = require('./jest.config');
 let fileNamesConfig = require('./file-names.config');
 let constConfig = require('./const.config');
 let htmlConfig = require('./html.config');
+let markdownConfig = require('./markdown.config');
 
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
@@ -33,6 +34,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: fileNamesConfig },
 		{ eslint: settings.esnext ? constConfig : {} },
 		{ eslint: htmlConfig },
+		{ eslint: markdownConfig },
 		settings
 	].reduce(eslint.merge);
 
@@ -40,7 +42,7 @@ module.exports = function (neutrino, settings = {}) {
 	// 	return neutrinoExtensions.indexOf(extension) < 0;
 	// }
 
-	// neutrino.options.extensions = neutrinoExtensions.concat(['html', 'htm'].filter(isNotInExtensions));
+	// neutrino.options.extensions = neutrinoExtensions.concat(['html', 'htm', 'md'].filter(isNotInExtensions));
 
 	neutrino.use(eslint, { test: lintExtensions });
 	neutrino.config.module.rule('lint')

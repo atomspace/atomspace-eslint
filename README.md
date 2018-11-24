@@ -48,10 +48,11 @@ After adding the Atom Space preset to your Neutrino-built project, edit your pro
 
 ```js
 module.exports = {
-  use: [
-    '@atomspace/eslint'
-    // put your build preset here (optional)
-  ]
+   use: [
+      '@atomspace/eslint'
+
+      // put your build preset here (optional)
+   ]
 };
 ```
 
@@ -59,11 +60,11 @@ module.exports = {
 
 ```json
 {
-  "scripts": {
-    "start": "neutrino start",
-    "build": "neutrino build",
-    "lint": "neutrino lint"
-  }
+   "scripts": {
+      "start": "neutrino start",
+      "build": "neutrino build",
+      "lint": "neutrino lint"
+   }
 }
 ```
 
@@ -117,16 +118,16 @@ _Example: Include browser and Node environments and turn off semicolons from bei
 
 ```js
 module.exports = {
-  use: [
-    ['@atomspace/eslint', {
-      eslint: {
-        envs: ['browser', 'node'],
-        rules: {
-          semi: 'off'
-        }
-      }
-    }]
-  ]
+   use: [
+      ['@atomspace/eslint', {
+         eslint: {
+            envs: ['browser', 'node'],
+            rules: {
+               semi: 'off'
+            }
+         }
+      }]
+   ]
 };
 ```
 
@@ -136,9 +137,9 @@ This preset enables rules compatible with the latest EcmaScript version by defau
 
 ```js
 module.exports = {
-  use: [
-    ['@atomspace/eslint', { esnext: false }]
-  ]
+   use: [
+      ['@atomspace/eslint', { esnext: false }]
+   ]
 };
 ```
 
@@ -182,10 +183,10 @@ If you want to call them in your project it will be better to register npm scrip
 
 ```json
 {
-  "scripts": {
-    "pretest": "neutrino lint",
-    "lint": "neutrino lint --fix"
-  }
+   "scripts": {
+      "pretest": "neutrino lint",
+      "lint": "neutrino lint --fix"
+   }
 }
 ```
 
@@ -217,9 +218,9 @@ _Example: Create a .eslintrc.js file in the root of the project, using `.neutrin
 #### .eslintrc.js
 
 ```js
-const { Neutrino } = require('neutrino');
+const neutrino = require('neutrino').Neutrino;
 
-module.exports = Neutrino({ cwd: __dirname })
+module.exports = neutrino({ cwd: __dirname })
   .use('.neutrinorc.js')
   .call('eslintrc');
 ```
@@ -249,33 +250,41 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
 
 ```json
 {
-  "editor.insertSpaces": false,
-  "editor.detectIndentation": false,
-  "jshint.enable": false,
-  "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
-  "editor.formatOnSave": false,
-  "javascript.format.enable": true,
-  "javascript.validate.enable": false,
-  "files.eol": "\n",
-  "files.insertFinalNewline": false,
-  "eslint.options": {
-    "extensions": [".js", ".jsx", ".html"]
-  },
-  "eslint.validate": [
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "html",
-      "autoFix": true
-    }
-  ]
+   "editor.insertSpaces": false,
+   "editor.detectIndentation": false,
+   "jshint.enable": false,
+   "eslint.enable": true,
+   "eslint.autoFixOnSave": true,
+   "editor.formatOnSave": false,
+   "javascript.format.enable": true,
+   "javascript.validate.enable": false,
+   "files.eol": "\n",
+   "files.insertFinalNewline": false,
+   "[markdown]": {
+      "editor.tabSize": 3,
+      "editor.insertSpaces": true
+   },
+   "eslint.options": {
+      "extensions": [".js", ".jsx", ".html", ".md"]
+   },
+   "eslint.validate": [
+      {
+         "language": "javascript",
+         "autoFix": true
+      },
+      {
+         "language": "javascriptreact",
+         "autoFix": true
+      },
+      {
+         "language": "html",
+         "autoFix": true
+      },
+      {
+         "language": "markdown",
+         "autoFix": true
+      }
+   ]
 }
 ```
 
