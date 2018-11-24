@@ -42,7 +42,18 @@ project.
 
 ## Quickstart
 
-After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build preset. Other presets are not required to `@atomspace/eslint` to work. But in this example you will build your project using `@neutrinojs/web` (you should install it first by `npm i --save-dev @neutrinojs/web`):
+After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build presets
+
+#### .neutrinorc.js
+
+```js
+module.exports = {
+  use: [
+    '@atomspace/eslint'
+    // put your build preset here (optional)
+  ]
+};
+```
 
 #### package.json
 
@@ -56,20 +67,8 @@ After adding the Atom Space preset to your Neutrino-built project, edit your pro
 }
 ```
 
-#### .neutrinorc.js
-
-```js
-module.exports = {
-  use: [
-    '@atomspace/eslint',
-    '@neutrinojs/web'
-  ]
-};
-```
-
-Start the app, then check your console for any linting errors. If everything is successful, you should see no errors in
-the console. ESLint errors visible during development are reported, but will still continue to build and serve your
-project. ESLint errors during build will not build the project, and will cause the command to fail.
+If you have a Neutrino **build** preset in `.neutrinorc.js`, start the app. Then check your console for any linting errors. If everything is successful, you should see no errors in the console. ESLint errors visible during development are reported, but will still continue to build and serve your
+project. ESLint errors during production build will not build the project, and will cause the command to fail.
 
 ```bash
 ❯ npm start
@@ -79,7 +78,7 @@ project. ESLint errors during build will not build the project, and will cause t
 
 ERROR in ./src/index.js
 
-/web/src/index.js
+/src/index.js
   7:1   warning  Unexpected console statement                no-console
   7:14  error    A space is required after '{'               babel/object-curly-spacing
   7:20  error    Missing space before value for key 'hello'  key-spacing
@@ -95,7 +94,7 @@ ERROR in ./src/index.js
 ```bash
 ❯ npm run build
 
-/web/src/index.js
+/src/index.js
   6:1   warning  Unexpected console statement            no-console
   6:14  error    A space is required after '{'           babel/object-curly-spacing
   6:16  error    Missing space before value for key 'a'  key-spacing
@@ -148,7 +147,7 @@ This will disable:
 - ES modules
 - new ES global namespaces
 - new syntax like destructuring, arrow functions, default params, classes, etc.
-- implied strict mode (you will have to define strict directive in every file)
+- implied strict mode (you will have to define `use strict` directive in every file)
 
 ## Customizing
 
@@ -184,7 +183,8 @@ If you want to call them in your project it will be better to register npm scrip
 ```json
 {
   "scripts": {
-    "lint": "neutrino lint"
+    "pretest": "neutrino lint",
+    "lint": "neutrino lint --fix"
   }
 }
 ```
@@ -192,11 +192,11 @@ If you want to call them in your project it will be better to register npm scrip
 and use
 
 ```bash
-❯ npm run lint
+❯ npm test
 ```
 
 ```bash
-❯ npm run lint -- --fix
+❯ npm run lint
 ```
 
 ## Integration with development tools
@@ -243,7 +243,7 @@ in the [ESLint user guide](http://eslint.org/docs/user-guide/configuring#ignorin
 
 To enable ESLint in **Visual Studio Code** you need to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-These are suggested workspace settings related to `@neutrinojs/eslint` rules:
+These are suggested workspace settings related to `@atomspace/eslint` rules:
 
 #### .vscode/settings.json
 
@@ -256,6 +256,7 @@ These are suggested workspace settings related to `@neutrinojs/eslint` rules:
   "eslint.autoFixOnSave": true,
   "editor.formatOnSave": false,
   "javascript.format.enable": true,
+  "javascript.validate.enable": false,
   "files.eol": "\n",
   "files.insertFinalNewline": false
 }
@@ -263,7 +264,7 @@ These are suggested workspace settings related to `@neutrinojs/eslint` rules:
 
 When project has been initially installed you need to restart an editor. After this ESLint will start to highlight and auto-fix errors in your code.
 
-`@neutrinojs/eslint` can work in your editor even if there is no build infrastructure. You can install it to any kind of JavaScript projects following the [ESLint CLI](#eslint-cli) guide above.
+`@atomspace/eslint` can work in your editor even if there is no build infrastructure (`npm start` / `npm run build`). You can install it to any kind of JavaScript projects following the [ESLint CLI](#eslint-cli) guide above.
 
 [npm-image]: https://img.shields.io/npm/v/@atomspace/eslint.svg
 [npm-downloads]: https://img.shields.io/npm/dt/@atomspace/eslint.svg
