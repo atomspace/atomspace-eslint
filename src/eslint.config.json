@@ -137,7 +137,7 @@
 		"wrap-iife": ["error", "outside"],
 		"space-infix-ops": "error",
 		"default-case": "off",
-		"eol-last": ["error", "never"],
+		"eol-last": "off",
 		"new-cap": ["error", { "newIsCap": true }],
 		"object-curly-spacing": ["error", "always"],
 		"for-direction": "error",

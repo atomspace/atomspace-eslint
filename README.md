@@ -42,7 +42,7 @@ project.
 
 ## Quickstart
 
-After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build presets
+After adding the Atom Space preset to your Neutrino-built project, edit your project's `packaje.json` and `.neutrinorc.js` to add the preset for linting **before** your build presets. Make it the first in the list of presets
 
 #### .neutrinorc.js
 
@@ -51,7 +51,7 @@ module.exports = {
    use: [
       '@atomspace/eslint'
 
-      // put your build preset here (optional)
+      // put your rest of presets here
    ]
 };
 ```

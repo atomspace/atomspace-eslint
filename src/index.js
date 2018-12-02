@@ -16,10 +16,22 @@ let constConfig = require('./const.config');
 let htmlConfig = require('./html.config');
 let markdownConfig = require('./markdown.config');
 
+function merge (to, from) {
+	let toEslint = to.eslint;
+	let fromEslint = from.eslint;
+	let toOverrides = toEslint.overrides || [];
+	let fromOverrides = fromEslint.overrides || [];
+	let overrides = toOverrides.concat(fromOverrides);
+	let config = eslint.merge(to, from);
+
+	config.eslint.overrides = overrides;
+	return config;
+}
+
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
-	let lintExtensions = settings.test || /\.(html?|jsx?)$/;
-	// let neutrinoExtensions = neutrino.options.extensions;
+	let lintExtensions = settings.test || /\.(html?|jsx?)$/; // TODO: add 'md' in the future
+	let neutrinoExtensions = neutrino.options.extensions;
 	let config = [
 		{ eslint: coreConfig },
 		{ eslint: importConfig },
@@ -36,14 +48,15 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: htmlConfig },
 		{ eslint: markdownConfig },
 		settings
-	].reduce(eslint.merge);
+	].reduce(merge);
 
-	// function isNotInExtensions (extension) {
-	// 	return neutrinoExtensions.indexOf(extension) < 0;
-	// }
+	function isNotInExtensions (extension) {
+		return neutrinoExtensions.indexOf(extension) < 0;
+	}
 
-	// neutrino.options.extensions = neutrinoExtensions.concat(['html', 'htm', 'md'].filter(isNotInExtensions));
-
+	neutrino.options.extensions = neutrinoExtensions
+		.concat(['html', 'htm'/*, 'md'*/]
+		.filter(isNotInExtensions));
 	neutrino.use(eslint, { test: lintExtensions });
 	neutrino.config.module.rule('lint')
 		.use('eslint')

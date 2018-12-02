@@ -10,8 +10,7 @@
 				}
 			},
 			"rules": {
-				"eol-last": ["error", "always"],
-				"no-multiple-empty-lines": ["error", {"max": 2, "maxBOF": 1, "maxEOF": 1}]
+				"eol-last": ["error", "always"]
 			}
 		}
 	],
