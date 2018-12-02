@@ -17,8 +17,8 @@ let htmlConfig = require('./html.config');
 let markdownConfig = require('./markdown.config');
 
 function merge (to, from) {
-	let toEslint = to.eslint;
-	let fromEslint = from.eslint;
+	let toEslint = to.eslint || {};
+	let fromEslint = from.eslint || {};
 	let toOverrides = toEslint.overrides || [];
 	let fromOverrides = fromEslint.overrides || [];
 	let overrides = toOverrides.concat(fromOverrides);
@@ -55,7 +55,7 @@ module.exports = function (neutrino, settings = {}) {
 	}
 
 	neutrino.options.extensions = neutrinoExtensions
-		.concat(['html', 'htm'/*, 'md'*/]
+		.concat(['html', 'htm'/* , 'md'*/]
 		.filter(isNotInExtensions));
 	neutrino.use(eslint, { test: lintExtensions });
 	neutrino.config.module.rule('lint')
