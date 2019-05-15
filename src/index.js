@@ -10,11 +10,13 @@ let regExpConfig = require('./regexp.config.json');
 let esnextConfig = require('./esnext.config.json');
 let es5Config = require('./es5.config.json');
 let babelConfig = require('./babel.config');
-let jestConfig = require('./jest.config');
-let fileNamesConfig = require('./file-names.config');
-let constConfig = require('./const.config');
-let htmlConfig = require('./html.config');
-let markdownConfig = require('./markdown.config');
+let jestConfig = require('./jest.config.json');
+let fileNamesConfig = require('./file-names.config.json');
+let constConfig = require('./const.config.json');
+let htmlConfig = require('./html.config.json');
+let markdownConfig = require('./markdown.config.json');
+let reactConfig = require('./react.config.json');
+
 
 function merge (to, from) {
 	let toEslint = to.eslint || {};
@@ -47,6 +49,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: settings.esnext ? constConfig : {} },
 		{ eslint: htmlConfig },
 		{ eslint: markdownConfig },
+		{ eslint: reactConfig },
 		settings
 	].reduce(merge);
 
