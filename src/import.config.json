@@ -1,6 +1,12 @@
 {
 	"plugins": ["import"],
-	"settings": {},
+	"settings": {
+		"import/resolver": {
+			"node": {
+			  "extensions": [".js", ".jsx"]
+			}
+		 }
+	},
 	"rules": {
 		"import/no-unresolved": ["error", {"commonjs": true, "amd": true}],
 		"import/named": "error",
