@@ -21,12 +21,12 @@ let reactConfig = require('./react.config.json');
 function merge (to, from) {
 	let toEslint = to.eslint || {};
 	let fromEslint = from.eslint || {};
-	let toOverrides = toEslint.overrides || [];
-	let fromOverrides = fromEslint.overrides || [];
+	let toOverrides = toEslint.baseConfig && toEslint.baseConfig.overrides || [];
+	let fromOverrides = fromEslint.baseConfig && fromEslint.baseConfig.overrides || [];
 	let overrides = toOverrides.concat(fromOverrides);
 	let config = eslint.merge(to, from);
 
-	config.eslint.overrides = overrides;
+	config.eslint.baseConfig.overrides = overrides;
 	return config;
 }
 

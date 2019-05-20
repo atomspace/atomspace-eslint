@@ -1,19 +1,21 @@
 {
 	"plugins": ["html"],
-	"overrides": [
-		{
-			"files": [ "**/*.html", "**/*.htm", "**/*.php" ],
-			"parserOptions": {
-				"sourceType": "script",
-				"ecmaFeatures": {
-					"impliedStrict": true
+	"baseConfig": {
+		"overrides": [
+			{
+				"files": [ "**/*.html", "**/*.htm", "**/*.php" ],
+				"parserOptions": {
+					"sourceType": "script",
+					"ecmaFeatures": {
+						"impliedStrict": true
+					}
+				},
+				"rules": {
+					"eol-last": ["error", "always"]
 				}
-			},
-			"rules": {
-				"eol-last": ["error", "always"]
 			}
-		}
-	],
+		]
+	},
 	"settings": {
 		"html/html-extensions": [".html", ".htm", ".php"],
 		"html/xml-extensions": [".xhtml", ".xml"],
