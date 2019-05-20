@@ -1,29 +1,25 @@
 {
-	"plugins": [
-		"react"
-	],
+	"plugins": ["react"],
 	"baseConfig": {
-		"extends": [
-			"plugin:react/recommended"
-		]
+		"extends": ["plugin:react/recommended"],
+		"settings": {
+			"react": {
+				"createClass": "createReactClass",
+				"pragma": "React",
+				"version": "detect"
+			},
+			"linkComponents": [
+				{
+					"name": "Link",
+					"linkAttribute": "to"
+				}
+			]
+		}
 	},
 	"globals": ["React"],
-	"settings": {
-		"react": {
-			"createClass": "createReactClass",
-			"pragma": "React",
-			"version": "detect"
-		},
-		"linkComponents": [
-			{
-				"name": "Link",
-				"linkAttribute": "to"
-			}
-		]
-	},
 	"rules": {
 		"react/boolean-prop-naming": "off",
-		"react/button-has-type": "error",
+		"react/button-has-type": "off",
 		"react/default-props-match-prop-types": "error",
 		"react/destructuring-assignment": "off",
 		"react/display-name": "off",

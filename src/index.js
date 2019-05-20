@@ -70,6 +70,11 @@ module.exports = function (neutrino, settings = {}) {
 				return options;
 			})
 			.tap(function configure (options) {
-				return eslint.merge({ eslint: options }, config).eslint;
+				let eslintConfig = eslint.merge({ eslint: options }, config).eslint;
+
+				// eslintConfig.extends  = eslintConfig.baseConfig.extends;
+				eslintConfig.settings = eslintConfig.baseConfig.settings;
+				eslintConfig.overrides = eslintConfig.baseConfig.overrides;
+				return eslintConfig;
 			});
 };

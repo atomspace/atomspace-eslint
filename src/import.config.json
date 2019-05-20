@@ -1,14 +1,25 @@
 {
 	"plugins": ["import"],
-	"settings": {
-		"import/resolver": {
-			"node": {
-			  "extensions": [".js", ".jsx"]
-			}
-		 }
+	"baseConfig": {
+		"settings": {
+			"import/resolver": {
+				"node": {
+					"extensions": [".js", ".jsx", ".tsx", ".json"]
+				}
+			},
+			"import/extensions": [
+				".js",
+				".jsx"
+			],
+			"import/core-modules": ["electron"],
+			"import/ignore": [
+				"node_modules",
+				"\\.(coffee|scss|css|less|hbs|svg|json)$"
+			]
+		}
 	},
 	"rules": {
-		"import/no-unresolved": ["error", {"commonjs": true, "amd": true}],
+		"import/no-unresolved": ["error", {"commonjs": true, "amd": true, "caseSensitive": true}],
 		"import/named": "error",
 		"import/namespace": "error",
 		"import/default": "off",
@@ -25,7 +36,8 @@
 			"ignorePackages",
 			{
 				"js": "never",
-				"jsx": "never"
+				"jsx": "never",
+				"tsx": "never"
 			}
 		],
 		"import/order": ["error", {
