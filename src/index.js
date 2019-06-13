@@ -16,13 +16,13 @@ let constConfig = require('./const.config.json');
 let htmlConfig = require('./html.config.json');
 let markdownConfig = require('./markdown.config.json');
 let reactConfig = require('./react.config.json');
-
+let jsxA11yConfig = require('./jsx-a11y.config.json');
 
 function merge (to, from) {
 	let toEslint = to.eslint || {};
 	let fromEslint = from.eslint || {};
-	let toOverrides = toEslint.baseConfig && toEslint.baseConfig.overrides || [];
-	let fromOverrides = fromEslint.baseConfig && fromEslint.baseConfig.overrides || [];
+	let toOverrides = (toEslint.baseConfig && toEslint.baseConfig.overrides) || [];
+	let fromOverrides = (fromEslint.baseConfig && fromEslint.baseConfig.overrides) || [];
 	let overrides = toOverrides.concat(fromOverrides);
 	let config = eslint.merge(to, from);
 
@@ -50,6 +50,7 @@ module.exports = function (neutrino, settings = {}) {
 		{ eslint: htmlConfig },
 		{ eslint: markdownConfig },
 		{ eslint: reactConfig },
+		{ eslint: jsxA11yConfig },
 		settings
 	].reduce(merge);
 
@@ -75,6 +76,7 @@ module.exports = function (neutrino, settings = {}) {
 				// eslintConfig.extends  = eslintConfig.baseConfig.extends;
 				eslintConfig.settings = eslintConfig.baseConfig.settings;
 				eslintConfig.overrides = eslintConfig.baseConfig.overrides;
+				console.log(eslintConfig.extensions);
 				return eslintConfig;
 			});
 };
