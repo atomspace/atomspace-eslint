@@ -121,11 +121,11 @@
 			"ignoreTemplateLiterals": false,
 			"ignoreRegExpLiterals": false
 		}],
-		"max-lines": ["error", {"max": 300, "skipComments": true, "skipBlankLines": true}],
+		"max-lines": ["warn", {"max": 300, "skipComments": true, "skipBlankLines": true}],
 		"max-nested-callbacks": ["error", 5],
 		"max-depth": ["error", 5],
 		"complexity": ["error", 20],
-		"max-params": ["error", 20],
+		"max-params": ["warn", 4],
 		"max-statements": ["error", 50],
 		"max-statements-per-line":["error", { "max": 4 }],
 		"quote-props": ["warn", "consistent-as-needed"],
@@ -172,6 +172,8 @@
 		"switch-colon-spacing": "error",
 		"object-curly-newline": ["error", { "consistent": true, "multiline": true, "minProperties": 5 }],
 		"object-property-newline": "off",
-		"no-process-exit": "warn"
+		"no-process-exit": "warn",
+		"no-mixed-operators": ["warn", { "allowSamePrecedence": true }],
+		"valid-typeof": ["error", { "requireStringLiterals": true }]
 	}
 }

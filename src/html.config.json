@@ -14,12 +14,12 @@
 					"eol-last": ["error", "always"]
 				}
 			}
-		]
-	},
-	"settings": {
-		"html/html-extensions": [".html", ".htm", ".php"],
-		"html/xml-extensions": [".xhtml", ".xml"],
-		"html/indent": "+tab",
-		"html/report-bad-indent": "error"
+		],
+		"settings": {
+			"html/html-extensions": [".html", ".htm", ".php"],
+			"html/xml-extensions": [".xhtml", ".xml"],
+			"html/indent": "+tab",
+			"html/report-bad-indent": "error"
+		}
 	}
 }
