@@ -2,7 +2,7 @@
 	"plugins": ["markdown"],
 	"overrides": [
 		{
-			"files": ["**/*.md"],
+			"files": ["**/*.md", "**/*.mdx"],
 			"parserOptions": {
 				"sourceType": "module"
 			},

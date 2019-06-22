@@ -44,7 +44,7 @@ function eslintrc (neutrino) {
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
 	settings.eslint = settings.eslint || {};
-	let lintExtensions = settings.test || /\.(html?|jsx?)$/; // TODO: add 'md' in the future
+	let lintExtensions = settings.test || /\.(html?|jsx?|mdx?)$/;
 	let neutrinoExtensions = neutrino.options.extensions;
 	let baseConfig = [
 		coreConfig,
@@ -70,7 +70,7 @@ module.exports = function (neutrino, settings = {}) {
 	}
 
 	neutrino.options.extensions = neutrinoExtensions
-		.concat(['html', 'htm'/* , 'md'*/]
+		.concat(['html', 'htm', 'md']
 		.filter(isNotInExtensions));
 	neutrino.use(eslint, { test: lintExtensions });
 	neutrino.config.module.rule('lint')
