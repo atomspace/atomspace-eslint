@@ -1,25 +1,23 @@
 {
 	"plugins": ["html"],
-	"baseConfig": {
-		"overrides": [
-			{
-				"files": [ "**/*.html", "**/*.htm", "**/*.php" ],
-				"parserOptions": {
-					"sourceType": "script",
-					"ecmaFeatures": {
-						"impliedStrict": true
-					}
-				},
-				"rules": {
-					"eol-last": ["error", "always"]
+	"overrides": [
+		{
+			"files": [ "**/*.html", "**/*.htm", "**/*.php" ],
+			"parserOptions": {
+				"sourceType": "script",
+				"ecmaFeatures": {
+					"impliedStrict": true
 				}
+			},
+			"rules": {
+				"eol-last": ["error", "always"]
 			}
-		],
-		"settings": {
-			"html/html-extensions": [".html", ".htm", ".php"],
-			"html/xml-extensions": [".xhtml", ".xml"],
-			"html/indent": "+tab",
-			"html/report-bad-indent": "error"
 		}
+	],
+	"settings": {
+		"html/html-extensions": [".html", ".htm", ".php"],
+		"html/xml-extensions": [".xhtml", ".xml"],
+		"html/indent": "+tab",
+		"html/report-bad-indent": "error"
 	}
 }

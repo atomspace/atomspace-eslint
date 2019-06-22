@@ -1,9 +1,13 @@
 {
-	"globals": ["console", "process"],
-	"envs": ["commonjs", "amd"],
-	"baseConfig": {
-		"extends": ["eslint:recommended"]
+	"globals": {
+		"console": true,
+		"process": true
 	},
+	"env":{
+		"commonjs": true, 
+		"amd": true
+	},
+	"extends": ["eslint:recommended"],
 	"parserOptions": {
 		"ecmaVersion": 5,
 		"sourceType": "script",

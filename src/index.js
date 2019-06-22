@@ -1,4 +1,5 @@
 let eslint = require('@neutrinojs/eslint');
+const { merge } = require('eslint/lib/config/config-ops');
 
 let coreConfig = require('./eslint.config.json');
 let importConfig = require('./import.config.json');
@@ -17,39 +18,51 @@ let htmlConfig = require('./html.config.json');
 let markdownConfig = require('./markdown.config.json');
 let reactConfig = require('./react.config.json');
 
-function merge (to, from) {
-	let toEslint = to.eslint || {};
-	let fromEslint = from.eslint || {};
-	let toOverrides = (toEslint.baseConfig && toEslint.baseConfig.overrides) || [];
-	let fromOverrides = (fromEslint.baseConfig && fromEslint.baseConfig.overrides) || [];
-	let overrides = toOverrides.concat(fromOverrides);
-	let config = eslint.merge(to, from);
+function eslintrc (neutrino) {
+	const options = neutrino.config.module
+		.rule('lint')
+		.use('eslint')
+		.get('options');
 
-	config.eslint.baseConfig.overrides = overrides;
-	return config;
+	function arrayToObject (array) {
+		return array.reduce((obj, item) => Object.assign(obj, { [item]: true }), {});
+	}
+
+	return merge(
+		options.baseConfig,
+		{
+			...(options.parser && { parser: options.parser }),
+			...(options.parserOptions && { parserOptions: options.parserOptions }),
+			...(options.plugins && { plugins: options.plugins }),
+			...(options.rules && { rules: options.rules }),
+			...(options.envs && { env: arrayToObject(options.envs) }),
+			...(options.globals && { globals: arrayToObject(options.globals) })
+		}
+	);
 }
 
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
+	settings.eslint = settings.eslint || {};
 	let lintExtensions = settings.test || /\.(html?|jsx?)$/; // TODO: add 'md' in the future
 	let neutrinoExtensions = neutrino.options.extensions;
-	let config = [
-		{ eslint: coreConfig },
-		{ eslint: importConfig },
-		{ eslint: promiseConfig },
-		{ eslint: jsDocConfig },
-		{ eslint: amdConfig },
-		{ eslint: commentConfig },
-		{ eslint: regExpConfig },
-		{ eslint: settings.esnext ? esnextConfig : es5Config },
-		{ eslint: settings.esnext ? babelConfig(coreConfig) : {} },
-		{ eslint: jestConfig },
-		{ eslint: fileNamesConfig },
-		{ eslint: settings.esnext ? constConfig : {} },
-		{ eslint: htmlConfig },
-		{ eslint: markdownConfig },
-		{ eslint: reactConfig },
-		settings
+	let baseConfig = [
+		coreConfig,
+		importConfig,
+		promiseConfig,
+		jsDocConfig,
+		amdConfig,
+		commentConfig,
+		regExpConfig,
+		settings.esnext ? esnextConfig : es5Config,
+		settings.esnext ? babelConfig(coreConfig) : {},
+		jestConfig,
+		fileNamesConfig,
+		settings.esnext ? constConfig : {},
+		htmlConfig,
+		markdownConfig,
+		reactConfig,
+		settings.eslint
 	].reduce(merge);
 
 	function isNotInExtensions (extension) {
@@ -69,11 +82,10 @@ module.exports = function (neutrino, settings = {}) {
 				return options;
 			})
 			.tap(function configure (options) {
-				let eslintConfig = eslint.merge({ eslint: options }, config).eslint;
-
-				// eslintConfig.extends  = eslintConfig.baseConfig.extends;
-				eslintConfig.settings = eslintConfig.baseConfig.settings;
-				eslintConfig.overrides = eslintConfig.baseConfig.overrides;
-				return eslintConfig;
+				return {
+					...options,
+					baseConfig
+				};
 			});
+	neutrino.register('eslintrc', () => eslintrc(neutrino));
 };

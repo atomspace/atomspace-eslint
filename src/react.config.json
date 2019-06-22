@@ -1,40 +1,38 @@
 {
 	"plugins": ["react"],
-	"baseConfig": {
-		"extends": ["plugin:react/recommended"],
-		"settings": {
-			"react": {
-				"createClass": "createReactClass",
-				"pragma": "React",
-				"version": "detect"
-			},
-			"linkComponents": [
-				{
-					"name": "Link",
-					"linkAttribute": "to"
-				}
-			]
+	"globals": { "React": true },
+	"extends": ["plugin:react/recommended"],
+	"settings": {
+		"react": {
+			"createClass": "createReactClass",
+			"pragma": "React",
+			"version": "detect"
 		},
-		"overrides": [
+		"linkComponents": [
 			{
-				"files": [ "**/*.jsx" ],
-				"rules": {
-					"class-methods-use-this": ["error", {
-						"exceptMethods": [
-							"render",
-							"getInitialState",
-							"getDefaultProps",
-							"getChildContext",
-							"shouldComponentUpdate",
-							"componentDidCatch",
-							"getSnapshotBeforeUpdate"
-						]
-					}]
-				}
+				"name": "Link",
+				"linkAttribute": "to"
 			}
 		]
 	},
-	"globals": ["React"],
+	"overrides": [
+		{
+			"files": [ "**/*.jsx" ],
+			"rules": {
+				"class-methods-use-this": ["warn", {
+					"exceptMethods": [
+						"render",
+						"getInitialState",
+						"getDefaultProps",
+						"getChildContext",
+						"shouldComponentUpdate",
+						"componentDidCatch",
+						"getSnapshotBeforeUpdate"
+					]
+				}]
+			}
+		}
+	],
 	"rules": {
 		"react/boolean-prop-naming": "off",
 		"react/button-has-type": "off",
