@@ -44,7 +44,7 @@ function eslintrc (neutrino) {
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
 	settings.eslint = settings.eslint || {};
-	let lintExtensions = settings.test || /\.(html?|jsx?|mdx?)$/;
+	let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
 	let neutrinoExtensions = neutrino.options.extensions;
 	let baseConfig = [
 		coreConfig,
