@@ -14,7 +14,25 @@
 					"linkAttribute": "to"
 				}
 			]
-		}
+		},
+		"overrides": [
+			{
+				"files": [ "**/*.jsx" ],
+				"rules": {
+					"class-methods-use-this": ["error", {
+						"exceptMethods": [
+							"render",
+							"getInitialState",
+							"getDefaultProps",
+							"getChildContext",
+							"shouldComponentUpdate",
+							"componentDidCatch",
+							"getSnapshotBeforeUpdate"
+						]
+					}]
+				}
+			}
+		]
 	},
 	"globals": ["React"],
 	"rules": {
@@ -53,7 +71,7 @@
 		"react/no-unused-state": "error",
 		"react/no-will-update-set-state": "error",
 		"react/prefer-es6-class": ["error", "always"],
-		"react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
+		"react/prefer-stateless-function": ["warn", { "ignorePureComponents": true }],
 		"react/prop-types": "error",
 		"react/react-in-jsx-scope": "off",
 		"react/require-default-props": "error",
