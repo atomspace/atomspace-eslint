@@ -76,7 +76,46 @@
 		"react/require-optimization": "off",
 		"react/require-render-return": "error",
 		"react/self-closing-comp": "warn",
-		"react/sort-comp": "error",
+		"react/sort-comp": ["warn", {
+			"order": [
+				"name",
+				"types",
+				"static-methods",
+				"instance-variables",
+				"lifecycle",
+				"everything-else",
+				"rendering"
+			],
+			"groups": {
+				"name": ["displayName"],
+				"types": [
+					"propTypes",
+					"defaultProps",
+					"contextTypes",
+					"childContextTypes"
+				],
+				"lifecycle": [
+					"constructor",
+					"getChildContext",
+					"componentWillMount",
+					"UNSAFE_componentWillMount",
+					"componentDidMount",
+					"componentWillReceiveProps",
+					"UNSAFE_componentWillReceiveProps",
+					"shouldComponentUpdate",
+					"componentWillUpdate",
+					"UNSAFE_componentWillUpdate",
+					"getSnapshotBeforeUpdate",
+					"componentDidUpdate",
+					"componentDidCatch",
+					"componentWillUnmount"
+				],
+				"rendering": [
+					"/^render.+$/",
+					"render"
+				]
+			}
+		}],
 		"react/sort-prop-types": "off",
 		"react/state-in-constructor": "off",
 		"react/static-property-placement": "off",
@@ -96,7 +135,7 @@
 		"react/jsx-indent-props": "off",
 		"react/jsx-key": "error",
 		"react/jsx-max-depth": ["error", { "max": 10 }],
-		"react/jsx-max-props-per-line": ["error", { "maximum": 3, "when": "always"} ],
+		"react/jsx-max-props-per-line": ["warn", { "maximum": 1, "when": "multiline"} ],
 		"react/jsx-no-bind": ["error", {"allowArrowFunctions": true}],
 		"react/jsx-no-comment-textnodes": "error",
 		"react/jsx-no-duplicate-props": "error",
