@@ -1,9 +1,7 @@
 {
-	"envs": ["jest"],
+	"env": { "jest": true },
 	"plugins": ["jest"],
-	"baseConfig": {
-		"extends": ["plugin:jest/recommended"]
-	},
+	"extends": ["plugin:jest/recommended"],
 	"rules": {
 		"jest/no-disabled-tests": "warn",
 		"jest/no-focused-tests": "error",

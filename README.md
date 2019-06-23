@@ -114,14 +114,20 @@ This preset inherits options from [@neutrinojs/eslint](https://neutrino.js.org/p
 If you wish to customize what is included, excluded, or any ESLint options, you can provide an options object with the
 preset and this will be merged with defaults. Use an array pair instead of a string to supply these options. Define `eslint` property to override eslint configuration.
 
-_Example: Include browser and Node environments and turn off semicolons from being required as defined by the Atom Space rules._
+_Example: Include a plugin, browser and Node environments and turn off semicolons from being required as defined by the Atom Space rules._
 
 ```js
 module.exports = {
    use: [
       ['@atomspace/eslint', {
          eslint: {
-            envs: ['browser', 'node'],
+            plugins: [
+               'fp'
+            ],
+            env: {
+               browser: true,
+               node: true
+            },
             rules: {
                semi: 'off'
             }

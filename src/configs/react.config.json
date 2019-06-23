@@ -1,30 +1,46 @@
 {
 	"plugins": ["react"],
-	"baseConfig": {
-		"extends": ["plugin:react/recommended"],
-		"settings": {
-			"react": {
-				"createClass": "createReactClass",
-				"pragma": "React",
-				"version": "detect"
-			},
-			"linkComponents": [
-				{
-					"name": "Link",
-					"linkAttribute": "to"
-				}
-			]
-		}
+	"globals": { "React": true },
+	"extends": ["plugin:react/recommended"],
+	"settings": {
+		"react": {
+			"createClass": "createReactClass",
+			"pragma": "React",
+			"version": "detect"
+		},
+		"linkComponents": [
+			{
+				"name": "Link",
+				"linkAttribute": "to"
+			}
+		]
 	},
-	"globals": ["React"],
+	"overrides": [
+		{
+			"files": [ "**/*.jsx" ],
+			"rules": {
+				"class-methods-use-this": ["warn", {
+					"exceptMethods": [
+						"render",
+						"getInitialState",
+						"getDefaultProps",
+						"getChildContext",
+						"shouldComponentUpdate",
+						"componentDidCatch",
+						"getSnapshotBeforeUpdate"
+					]
+				}]
+			}
+		}
+	],
 	"rules": {
 		"react/boolean-prop-naming": "off",
 		"react/button-has-type": "off",
 		"react/default-props-match-prop-types": "error",
 		"react/destructuring-assignment": "off",
 		"react/display-name": "off",
-		"react/forbid-component-props": ["error", { "forbid": ["style"] }],
-		"react/forbid-dom-props": "off",
+		"react/forbid-component-props": ["error", { "forbid": [] }],
+		"react/forbid-dom-props": ["error", { "forbid": ["align", "background", "bgcolor"] }],
 		"react/forbid-elements": "off",
 		"react/forbid-prop-types": "off",
 		"react/forbid-foreign-prop-types": "off",
@@ -53,7 +69,7 @@
 		"react/no-unused-state": "error",
 		"react/no-will-update-set-state": "error",
 		"react/prefer-es6-class": ["error", "always"],
-		"react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
+		"react/prefer-stateless-function": ["warn", { "ignorePureComponents": true }],
 		"react/prop-types": "error",
 		"react/react-in-jsx-scope": "off",
 		"react/require-default-props": "error",
@@ -73,7 +89,7 @@
 		"react/jsx-closing-tag-location": "error",
 		"react/jsx-curly-spacing": ["error", { "when": "never" }],
 		"react/jsx-equals-spacing": ["error", "never"],
-		"react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx", ".md"] }],
+		"react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx", ".md", ".mdx"] }],
 		"react/jsx-first-prop-new-line": ["error", "multiline"],
 		"react/jsx-handler-names": "off",
 		"react/jsx-indent": "off",

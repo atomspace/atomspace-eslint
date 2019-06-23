@@ -1,0 +1,21 @@
+{
+	"plugins": ["markdown"],
+	"overrides": [
+		{
+			"files": ["**/*.md"],
+			"parserOptions": {
+				"sourceType": "module"
+			},
+			"rules": {
+				"indent": ["error", "3", {"MemberExpression": "off", "SwitchCase": 1}],
+				"no-undef": "off",
+				"no-unused-vars": "off",
+				"no-console": "off",
+				"filenames/match-regex": "off",
+				"filenames/match-exported": "off",
+				"import/no-unresolved": "off",
+				"react/react-in-jsx-scope": "off"
+			}
+		}
+	]
+}
