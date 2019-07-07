@@ -7,7 +7,7 @@
 				"sourceType": "module"
 			},
 			"rules": {
-				"indent": ["error", "3", {"MemberExpression": "off", "SwitchCase": 1}],
+				"indent": ["warn", "3", {"MemberExpression": "off", "SwitchCase": 1}],
 				"no-undef": "off",
 				"no-unused-vars": "off",
 				"no-console": "off",

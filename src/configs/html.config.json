@@ -10,7 +10,7 @@
 				}
 			},
 			"rules": {
-				"eol-last": ["error", "always"],
+				"eol-last": ["warn", "always"],
 				"import/no-nodejs-modules": "error"
 			}
 		}
@@ -19,6 +19,6 @@
 		"html/html-extensions": [".html", ".htm", ".php"],
 		"html/xml-extensions": [".xhtml", ".xml"],
 		"html/indent": "+tab",
-		"html/report-bad-indent": "error"
+		"html/report-bad-indent": "warn"
 	}
 }

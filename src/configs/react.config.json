@@ -134,7 +134,7 @@
 		"react/jsx-indent": "off",
 		"react/jsx-indent-props": "off",
 		"react/jsx-key": "error",
-		"react/jsx-max-depth": ["error", { "max": 10 }],
+		"react/jsx-max-depth": ["warn", { "max": 10 }],
 		"react/jsx-max-props-per-line": ["warn", { "maximum": 1, "when": "multiline"} ],
 		"react/jsx-no-bind": ["error", {"allowArrowFunctions": true}],
 		"react/jsx-no-comment-textnodes": "error",
@@ -146,11 +146,11 @@
 		"react/jsx-curly-brace-presence": ["error", "never"],
 		"react/jsx-fragments": "off",
 		"react/jsx-pascal-case": "error",
-		"react/jsx-props-no-multi-spaces": "error",
+		"react/jsx-props-no-multi-spaces": "warn",
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-sort-default-props": "off",
 		"react/jsx-sort-props": "off",
-		"react/jsx-tag-spacing": ["error", {
+		"react/jsx-tag-spacing": ["warn", {
 			"closingSlash": "never",
 			"beforeSelfClosing": "always",
 			"afterOpening": "never",
@@ -158,7 +158,7 @@
 		}],
 		"react/jsx-uses-react": "error",
 		"react/jsx-uses-vars": "error",
-		"react/jsx-wrap-multilines": ["error", {
+		"react/jsx-wrap-multilines": ["warn", {
 			"declaration": "parens-new-line",
 			"assignment": "parens-new-line",
 			"return": "parens-new-line",
