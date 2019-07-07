@@ -1,5 +1,5 @@
 let eslint = require('@neutrinojs/eslint');
-const { merge } = require('eslint/lib/config/config-ops');
+let { merge } = require('eslint/lib/config/config-ops');
 
 let coreConfig = require('./configs/eslint.config.json');
 let importConfig = require('./configs/import.config.json');
@@ -20,26 +20,30 @@ let reactConfig = require('./configs/react.config.json');
 let jsxA11yConfig = require('./configs/jsx-a11y.config.json');
 let restrictedGlobals = require('./configs/restricted-globals.config');
 
+function assign (to = {}, from = {}) {
+	return Object.assign(to, from);
+}
+
 function eslintrc (neutrino) {
-	const options = neutrino.config.module
-		.rule('lint')
-		.use('eslint')
-		.get('options');
+	let options = neutrino.config.module.rule('lint').use('eslint').get('options');
+	let {
+		baseConfig, parser, parserOptions, plugins, rules, envs, globals
+	} = options;
 
 	function arrayToObject (array) {
 		return array.reduce((obj, item) => Object.assign(obj, { [item]: true }), {});
 	}
 
 	return merge(
-		options.baseConfig,
-		{
-			...(options.parser && { parser: options.parser }),
-			...(options.parserOptions && { parserOptions: options.parserOptions }),
-			...(options.plugins && { plugins: options.plugins }),
-			...(options.rules && { rules: options.rules }),
-			...(options.envs && { env: arrayToObject(options.envs) }),
-			...(options.globals && { globals: arrayToObject(options.globals) })
-		}
+		baseConfig,
+		[
+			parser && { parser },
+			parserOptions && { parserOptions },
+			plugins && { plugins },
+			rules && { rules },
+			envs && { env: arrayToObject(envs) },
+			globals && { globals: arrayToObject(globals) }
+		].reduce(assign, {})
 	);
 }
 
@@ -86,10 +90,7 @@ module.exports = function (neutrino, settings = {}) {
 				return options;
 			})
 			.tap(function configure (options) {
-				return {
-					...options,
-					baseConfig
-				};
+				return assign(options, { baseConfig });
 			});
 	neutrino.register('eslintrc', () => eslintrc(neutrino));
 };
