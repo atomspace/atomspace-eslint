@@ -18,6 +18,7 @@ let htmlConfig = require('./configs/html.config.json');
 let markdownConfig = require('./configs/markdown.config.json');
 let reactConfig = require('./configs/react.config.json');
 let jsxA11yConfig = require('./configs/jsx-a11y.config.json');
+let restrictedGlobals = require('./configs/restricted-globals.config');
 
 function eslintrc (neutrino) {
 	const options = neutrino.config.module
@@ -64,6 +65,7 @@ module.exports = function (neutrino, settings = {}) {
 		markdownConfig,
 		reactConfig,
 		jsxA11yConfig,
+		restrictedGlobals,
 		settings.eslint
 	].reduce(merge);
 
