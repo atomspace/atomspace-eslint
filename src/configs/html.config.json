@@ -10,7 +10,8 @@
 				}
 			},
 			"rules": {
-				"eol-last": ["error", "always"]
+				"eol-last": ["error", "always"],
+				"import/no-nodejs-modules": "error"
 			}
 		}
 	],
