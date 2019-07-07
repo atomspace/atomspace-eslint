@@ -3,7 +3,7 @@
 	"extends": ["plugin:jsx-a11y/recommended"],
 	"rules": {
 		"jsx-a11y/accessible-emoji": "error",
-		"jsx-a11y/alt-text": ["error", { "img": ["Image"] }],
+		"jsx-a11y/alt-text": ["error", { "img": [] }],
 		"jsx-a11y/anchor-has-content": ["error", { "components": ["Link"] }],
 		"jsx-a11y/anchor-is-valid": ["error", {
 			"components": ["Link"],
