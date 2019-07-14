@@ -6,9 +6,13 @@
 		"react": {
 			"createClass": "createReactClass",
 			"pragma": "React",
-			"version": "detect"
+			"version": "16"
 		},
 		"linkComponents": [
+			{
+				"name": "NavLink",
+				"linkAttribute": "to"
+			},
 			{
 				"name": "Link",
 				"linkAttribute": "to"

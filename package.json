@@ -44,8 +44,7 @@
     "eslint-restricted-globals": "0.2.0"
   },
   "devDependencies": {
-    "neutrino": "~8.3.0",
-    "react": "^16.8.6"
+    "neutrino": "~8.3.0"
   },
   "peerDependencies": {
     "neutrino": "^8.0.0"
