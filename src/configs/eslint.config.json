@@ -56,7 +56,7 @@
 		"no-shadow-restricted-names": "error",
 		"no-unneeded-ternary": "error",
 		"no-caller": "error",
-		"no-catch-shadow": "warn",
+		"no-catch-shadow": "off",
 		"no-confusing-arrow": ["error", {"allowParens": true}],
 		"no-invalid-this": "error",
 		"no-label-var": "error",
@@ -185,6 +185,7 @@
 			"ignoreArrayIndexes": true,
 			"enforceConst": true,
 			"detectObjects": false
-		}]
+		}],
+		"no-empty": ["error", { "allowEmptyCatch": true }]
 	}
 }
