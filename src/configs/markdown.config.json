@@ -15,7 +15,8 @@
 				"filenames/match-exported": "off",
 				"import/no-unresolved": "off",
 				"react/react-in-jsx-scope": "off",
-				"import/no-extraneous-dependencies": "off"
+				"import/no-extraneous-dependencies": "off",
+				"import/no-anonymous-default-export": "off"
 			}
 		}
 	]

@@ -78,5 +78,13 @@
 		"import/prefer-default-export": "off",
 		"import/no-unassigned-import": "off",
 		"import/dynamic-import-chunkname": "off"
-	}
+	},
+	"overrides": [
+		{
+			"files": [ "**/index.*" ],
+			"rules": {
+				"import/no-anonymous-default-export": "off"
+			}
+		}
+	]
 }
