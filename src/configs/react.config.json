@@ -6,7 +6,7 @@
 		"react": {
 			"createClass": "createReactClass",
 			"pragma": "React",
-			"version": "16"
+			"version": "16.8"
 		},
 		"linkComponents": [
 			{
