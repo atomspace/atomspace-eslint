@@ -192,6 +192,9 @@
 		}],
 		"no-empty": ["error", { "allowEmptyCatch": true }],
 		"no-debugger": "warn",
-		"padded-blocks": ["warn", "never"]
+		"padded-blocks": ["warn", "never"],
+		"no-path-concat": "error",
+		"no-buffer-constructor": "error",
+		"handle-callback-err": ["error", "^(err|error|^.+Error)$"]
 	}
 }
