@@ -156,7 +156,7 @@
 		"operator-assignment": "error",
 		"operator-linebreak": ["warn", "before", { "overrides": { "?": "after", ":": "after" } }],
 		"padding-line-between-statements": ["warn",
-			{ "blankLine": "always", "prev": ["directive"], "next": "*" },
+			{ "blankLine": "always", "prev": "directive", "next": "*" },
 			{ "blankLine": "any", "prev": "directive", "next": "directive" },
 			{ "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
 			{ "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
@@ -191,6 +191,7 @@
 			"detectObjects": false
 		}],
 		"no-empty": ["error", { "allowEmptyCatch": true }],
-		"no-debugger": "warn"
+		"no-debugger": "warn",
+		"padded-blocks": ["warn", "never"]
 	}
 }
