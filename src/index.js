@@ -18,7 +18,8 @@ let htmlConfig = require('./configs/html.config.json');
 let markdownConfig = require('./configs/markdown.config.json');
 let reactConfig = require('./configs/react.config.json');
 let jsxA11yConfig = require('./configs/jsx-a11y.config.json');
-let restrictedGlobals = require('./configs/restricted-globals.config');
+let restrictedGlobalsConfig = require('./configs/restricted-globals.config');
+let extendNativeConfig = require('./configs/extend-native.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -69,7 +70,8 @@ module.exports = function (neutrino, settings = {}) {
 		markdownConfig,
 		reactConfig,
 		jsxA11yConfig,
-		restrictedGlobals,
+		restrictedGlobalsConfig,
+		extendNativeConfig,
 		settings.eslint
 	].reduce(merge);
 
