@@ -16,7 +16,11 @@
 		}
 	},
 	"rules": {
-		"indent": ["warn", "tab", {"MemberExpression": "off", "SwitchCase": 1}],
+		"indent": ["warn", "tab", {
+			"MemberExpression": "off", 
+			"SwitchCase": 1, 
+			"ignoredNodes": ["JSXElement", "JSXElement > *", "JSXAttribute", "JSXIdentifier", "JSXNamespacedName", "JSXMemberExpression", "JSXSpreadAttribute", "JSXExpressionContainer", "JSXOpeningElement", "JSXClosingElement", "JSXText", "JSXEmptyExpression", "JSXSpreadChild"]
+		}],
 		"linebreak-style": ["warn", "unix"],
 		"brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
 		"quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],

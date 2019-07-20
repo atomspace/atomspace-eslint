@@ -7,7 +7,12 @@
 				"sourceType": "module"
 			},
 			"rules": {
-				"indent": ["warn", "3", {"MemberExpression": "off", "SwitchCase": 1}],
+				"indent": ["warn", 3, {"MemberExpression": "off", "SwitchCase": 1}],
+				"react/jsx-indent": ["warn", 3, {
+					"checkAttributes": false,
+					"indentLogicalExpressions": true
+				}],
+				"react/jsx-indent-props": ["warn", 3],
 				"no-undef": "off",
 				"no-unused-vars": "off",
 				"no-console": "off",
