@@ -17,6 +17,7 @@ let constConfig = require('./configs/const.config.json');
 let htmlConfig = require('./configs/html.config.json');
 let markdownConfig = require('./configs/markdown.config.json');
 let reactConfig = require('./configs/react.config.json');
+let reactHooksConfig = require('./configs/react-hooks.config');
 let jsxA11yConfig = require('./configs/jsx-a11y.config.json');
 let restrictedGlobalsConfig = require('./configs/restricted-globals.config');
 let extendNativeConfig = require('./configs/extend-native.config');
@@ -69,6 +70,7 @@ module.exports = function (neutrino, settings = {}) {
 		htmlConfig,
 		markdownConfig,
 		reactConfig,
+		reactHooksConfig,
 		jsxA11yConfig,
 		restrictedGlobalsConfig,
 		extendNativeConfig,
