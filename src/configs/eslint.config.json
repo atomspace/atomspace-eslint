@@ -196,6 +196,7 @@
 		"no-path-concat": "error",
 		"no-buffer-constructor": "error",
 		"handle-callback-err": ["error", "^(err|error|^.+Error)$"],
-		"array-callback-return": "error"
+		"array-callback-return": "error",
+		"radix": ["error", "always"]
 	}
 }
