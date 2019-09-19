@@ -173,6 +173,10 @@
 			"condition": "ignore",
 			"logical": "ignore",
 			"prop": "ignore"
+		 }],
+		 "react/jsx-curly-newline": ["warn", {
+			"multiline": "consistent", 
+			"singleline": "forbid"
 		 }]
 	}
 }

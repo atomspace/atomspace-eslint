@@ -38,12 +38,12 @@
     "eslint-plugin-markdown": "1.0.0",
     "eslint-plugin-optimize-regex": "~1.1.6",
     "eslint-plugin-promise": "~4.0.1",
-    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react": "7.14.3",
     "eslint-plugin-requirejs": "~3.2.0",
-    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-restricted-globals": "0.2.0",
     "eslint-plugin-no-use-extend-native": "0.4.1",
-    "eslint-plugin-react-hooks": "1.6.1"
+    "eslint-plugin-react-hooks": "2.0.1"
   },
   "devDependencies": {
     "neutrino": "~8.3.0"
