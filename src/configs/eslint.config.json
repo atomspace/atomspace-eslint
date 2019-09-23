@@ -128,7 +128,7 @@
 			"ignoreTrailingComments": true,
 			"ignoreUrls": true, 
 			"ignoreStrings": true,
-			"ignoreTemplateLiterals": false,
+			"ignoreTemplateLiterals": true,
 			"ignoreRegExpLiterals": false
 		}],
 		"max-lines": ["warn", {"max": 300, "skipComments": true, "skipBlankLines": true}],
