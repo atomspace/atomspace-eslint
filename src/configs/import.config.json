@@ -19,7 +19,7 @@
 	"rules": {
 		"import/no-unresolved": ["error", {"commonjs": true, "amd": true, "caseSensitive": true}],
 		"import/named": "error",
-		"import/namespace": "error",
+		"import/namespace": ["error", { "allowComputed": true }],
 		"import/default": "off",
 		"import/no-named-as-default": "error",
 		"import/no-named-as-default-member": "off",
