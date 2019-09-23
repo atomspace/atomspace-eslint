@@ -1,7 +1,9 @@
 {
 	"globals": {
 		"console": true,
-		"process": true
+		"process": true,
+		"setImmediate": true,
+		"clearImmediate": true
 	},
 	"env":{
 		"commonjs": true, 
@@ -197,6 +199,7 @@
 		"no-buffer-constructor": "error",
 		"handle-callback-err": ["error", "^(err|error|^.+Error)$"],
 		"array-callback-return": "error",
-		"radix": ["error", "always"]
+		"radix": ["error", "always"],
+		"no-implicit-globals": "off"
 	}
 }
