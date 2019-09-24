@@ -17,7 +17,6 @@
 		"no-param-reassign": ["error", { "props": false }],
 		"prefer-numeric-literals": "error",
 		"prefer-rest-params": "error",
-		"prefer-spread": "error",
-		"func-names": ["error", "as-needed"]
+		"prefer-spread": "error"
 	}
 }
