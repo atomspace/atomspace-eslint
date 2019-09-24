@@ -21,6 +21,7 @@ let reactHooksConfig = require('./configs/react-hooks.config');
 let jsxA11yConfig = require('./configs/jsx-a11y.config.json');
 let restrictedGlobalsConfig = require('./configs/restricted-globals.config');
 let extendNativeConfig = require('./configs/extend-native.config');
+let arrowsConfig = require('./configs/arrows.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -74,6 +75,7 @@ module.exports = function (neutrino, settings = {}) {
 		jsxA11yConfig,
 		restrictedGlobalsConfig,
 		extendNativeConfig,
+		arrowsConfig,
 		settings.eslint
 	].reduce(merge);
 
