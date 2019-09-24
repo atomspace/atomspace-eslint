@@ -1,4 +1,5 @@
 {
+	"root": true,
 	"globals": {
 		"console": true,
 		"process": true,
@@ -88,10 +89,10 @@
 		"comma-style": ["error", "last"],
 		"arrow-parens": ["warn", "as-needed"],
 		"arrow-spacing": "warn",
+		"arrow-body-style": ["warn", "as-needed"],
 		"computed-property-spacing": "error",
 		"dot-location": ["error", "property"],
 		"dot-notation": ["error", { "allowKeywords": false }],
-		"generator-star-spacing": "warn",
 		"lines-around-comment": ["warn", {
 			"beforeBlockComment": true,
 			"afterBlockComment": false,
@@ -142,8 +143,9 @@
 		"semi-style": ["error", "last"],
 		"semi-spacing": ["warn", {"before": false, "after": true}],
 		"template-curly-spacing": ["warn", "never"],
-		"template-tag-spacing": "error",
-		"yield-star-spacing": "error",
+		"template-tag-spacing": ["warn", "never"],
+		"yield-star-spacing": ["warn", "after"],
+		"generator-star-spacing": ["warn", "after"],
 		"wrap-iife": ["error", "outside"],
 		"space-infix-ops": "error",
 		"default-case": "off",
@@ -171,6 +173,7 @@
 		],
 		"function-paren-newline": ["warn", "consistent"],
 		"prefer-promise-reject-errors": "error",
+		"rest-spread-spacing": ["warn", "never"],
 		"space-before-blocks": "warn",
 		"space-before-function-paren": ["warn", {
 			"anonymous": "always",
@@ -200,6 +203,10 @@
 		"handle-callback-err": ["error", "^(err|error|^.+Error)$"],
 		"array-callback-return": "error",
 		"radix": ["error", "always"],
-		"no-implicit-globals": "off"
+		"no-implicit-globals": "off",
+		"no-restricted-properties": ["error", {
+			"property": "__defineGetter__",
+			"message": "Please use Object.defineProperty instead."
+	  }]
 	}
 }

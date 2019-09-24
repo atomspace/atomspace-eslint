@@ -10,9 +10,13 @@
 	"rules": {
 		"no-var": "error",
 		"prefer-template": "error",
+		"prefer-const": "off",
 		"object-shorthand": "error",
 		"no-dupe-class-members": "error",
 		"dot-notation": ["error", { "allowKeywords": true }],
-		"no-param-reassign": ["error", { "props": false }]
+		"no-param-reassign": ["error", { "props": false }],
+		"prefer-numeric-literals": "error",
+		"prefer-rest-params": "error",
+		"prefer-spread": "error"
 	}
 }
