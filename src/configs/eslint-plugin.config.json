@@ -1,0 +1,26 @@
+{
+	"plugins": ["eslint-plugin"],
+	"rules": {
+		"eslint-plugin/consistent-output": "warn",
+		"eslint-plugin/fixer-return": "error",
+		"eslint-plugin/meta-property-ordering": ["warn",
+			["type", "docs", "fixable", "schema", "messages", "deprecated", "replacedBy"]
+		],
+		"eslint-plugin/no-deprecated-context-methods": "warn",
+		"eslint-plugin/no-identical-tests": "error",
+		"eslint-plugin/no-missing-placeholders": "error",
+		"eslint-plugin/no-unused-placeholders": "error",
+		"eslint-plugin/no-useless-token-range": "error",
+		"eslint-plugin/prefer-output-null": "warn",
+		"eslint-plugin/prefer-placeholders": "warn",
+		"eslint-plugin/prefer-replace-text": "warn",
+		"eslint-plugin/report-message-format": ["warn", "^[A-Z].*\\.$"],
+		"eslint-plugin/require-meta-docs-url": "off",
+		"eslint-plugin/require-meta-fixable": "error",
+		"eslint-plugin/require-meta-type": "warn",
+		"eslint-plugin/test-case-property-ordering": ["warn",
+			["code", "output", "options", "parserOptions", "errors"]
+		],
+		"eslint-plugin/test-case-shorthand-strings": ["warn", "consistent-as-needed"]
+	}
+}
