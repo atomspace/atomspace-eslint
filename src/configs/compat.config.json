@@ -1,0 +1,10 @@
+{
+	"plugins": ["builtin-compat"],
+	"rules": {
+		"builtin-compat/no-incompatible-builtins": "error"
+	},
+	"settings": {
+		"builtin-compat-ignore": [],
+		"browsers": []
+	 }
+}

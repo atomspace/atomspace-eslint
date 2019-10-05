@@ -23,6 +23,7 @@ let restrictedGlobalsConfig = require('./configs/restricted-globals.config');
 let extendNativeConfig = require('./configs/extend-native.config');
 let arrowsConfig = require('./configs/arrows.config');
 let eslintPluginConfig = require('./configs/eslint-plugin.config');
+let compatPluginConfig = require('./configs/compat.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -35,7 +36,7 @@ function eslintrc (neutrino) {
 	} = options;
 
 	function arrayToObject (array) {
-		return array.reduce((obj, item) => Object.assign(obj, { [item]: true }), {});
+		return array.reduce((obj, item) => assign(obj, { [item]: true }), {});
 	}
 
 	return merge(
@@ -54,6 +55,7 @@ function eslintrc (neutrino) {
 module.exports = function (neutrino, settings = {}) {
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
 	settings.eslint = settings.eslint || {};
+	settings.browsers = settings.browsers || [];
 	let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
 	let neutrinoExtensions = neutrino.options.extensions;
 	let baseConfig = [
@@ -78,6 +80,12 @@ module.exports = function (neutrino, settings = {}) {
 		extendNativeConfig,
 		arrowsConfig,
 		eslintPluginConfig,
+		settings.browsers.length ? compatPluginConfig : {},
+		{
+			settings: {
+				browsers: settings.browsers
+			}
+		},
 		settings.eslint
 	].reduce(merge);
 

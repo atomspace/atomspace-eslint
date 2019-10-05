@@ -156,6 +156,20 @@ This will disable:
 - new syntax like destructuring, arrow functions, default params, classes, etc.
 - implied strict mode (you will have to define `use strict` directive in every file)
 
+### Compatibility
+
+In case you want to check a compatibility with certain browsers you may pass `browsers` option to settings. But it is recommended to use it only in case **if there is no Babel transpilation** for such browsers.
+
+Configure supported browsers in `.neutrinorc.js` (see [browserslist](https://github.com/browserslist/browserslist)):
+
+```js
+module.exports = {
+   use: [
+      ['@atomspace/eslint', { browsers: ['ie >= 8'] }]
+   ]
+};
+```
+
 ## Customizing
 
 To override the build configuration, start with the documentation on [customization](https://neutrino.js.org/customization).
