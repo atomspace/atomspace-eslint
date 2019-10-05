@@ -25,6 +25,7 @@ let arrowsConfig = require('./configs/arrows.config');
 let eslintPluginConfig = require('./configs/eslint-plugin.config');
 let compatConfig = require('./configs/compat.config');
 let throwConfig = require('./configs/throw.config');
+let secretsConfig = require('./configs/secrets.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -83,6 +84,7 @@ module.exports = function (neutrino, settings = {}) {
 		eslintPluginConfig,
 		settings.browsers.length ? compatConfig : {},
 		throwConfig,
+		secretsConfig,
 		{
 			settings: {
 				browsers: settings.browsers

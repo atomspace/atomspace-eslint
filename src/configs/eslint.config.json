@@ -123,7 +123,7 @@
 		"curly": ["error", "multi-line", "consistent"],
 		"unicode-bom": ["error", "never"],
 		"vars-on-top": "error",
-		"max-len": ["error", {
+		"max-len": ["warn", {
 			"code": 120,
 			"ignoreComments": true,
 			"ignoreTrailingComments": true,
@@ -137,8 +137,8 @@
 		"max-depth": ["error", 5],
 		"complexity": ["error", 20],
 		"max-params": ["warn", 4],
-		"max-statements": ["error", 50],
-		"max-statements-per-line":["error", { "max": 4 }],
+		"max-statements": ["warn", 50],
+		"max-statements-per-line":["warn", { "max": 4 }],
 		"quote-props": ["warn", "consistent-as-needed"],
 		"semi-style": ["error", "last"],
 		"semi-spacing": ["warn", {"before": false, "after": true}],
