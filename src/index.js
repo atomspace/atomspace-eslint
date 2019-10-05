@@ -23,7 +23,8 @@ let restrictedGlobalsConfig = require('./configs/restricted-globals.config');
 let extendNativeConfig = require('./configs/extend-native.config');
 let arrowsConfig = require('./configs/arrows.config');
 let eslintPluginConfig = require('./configs/eslint-plugin.config');
-let compatPluginConfig = require('./configs/compat.config');
+let compatConfig = require('./configs/compat.config');
+let throwConfig = require('./configs/throw.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -80,7 +81,8 @@ module.exports = function (neutrino, settings = {}) {
 		extendNativeConfig,
 		arrowsConfig,
 		eslintPluginConfig,
-		settings.browsers.length ? compatPluginConfig : {},
+		settings.browsers.length ? compatConfig : {},
+		throwConfig,
 		{
 			settings: {
 				browsers: settings.browsers
