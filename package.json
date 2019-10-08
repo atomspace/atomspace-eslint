@@ -48,7 +48,8 @@
     "eslint-plugin-eslint-plugin": "2.1.0",
     "eslint-plugin-builtin-compat": "0.0.2",
     "eslint-plugin-new-with-error": "2.0.0",
-    "eslint-plugin-no-secrets": "0.3.3"
+    "eslint-plugin-no-secrets": "0.3.3",
+    "eslint-plugin-xss": "0.1.9"
   },
   "devDependencies": {
     "neutrino": "~8.3.0"

@@ -1,0 +1,13 @@
+{
+	"plugins": [
+		"no-secrets",
+		"xss"
+	],
+	"rules": {
+		"no-secrets/no-secrets": "error",
+		"xss/no-mixed-html": "off",
+		"xss/no-location-href-assign": ["error", {
+			"escapeFunc": "escape"
+	  }]
+	}
+}
