@@ -26,6 +26,7 @@ let eslintPluginConfig = require('./configs/eslint-plugin.config');
 let compatConfig = require('./configs/compat.config');
 let throwConfig = require('./configs/throw.config');
 let securityConfig = require('./configs/security.config');
+let nodeConfig = require('./configs/node.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -85,6 +86,7 @@ module.exports = function (neutrino, settings = {}) {
 		settings.browsers.length ? compatConfig : {},
 		throwConfig,
 		securityConfig,
+		nodeConfig,
 		{
 			settings: {
 				browsers: settings.browsers
