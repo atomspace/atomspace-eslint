@@ -31,6 +31,10 @@ function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
 }
 
+function mergeConfigs (toConfig, fromConfig) {
+	return merge(toConfig, fromConfig);
+}
+
 function eslintrc (neutrino) {
 	let options = neutrino.config.module.rule('lint').use('eslint').get('options');
 	let {
@@ -41,7 +45,7 @@ function eslintrc (neutrino) {
 		return array.reduce((obj, item) => assign(obj, { [item]: true }), {});
 	}
 
-	return merge(
+	return mergeConfigs(
 		baseConfig,
 		[
 			parser && { parser },
@@ -91,7 +95,7 @@ module.exports = function (neutrino, settings = {}) {
 			}
 		},
 		settings.eslint
-	].reduce(merge);
+	].reduce(mergeConfigs);
 
 	function isNotInExtensions (extension) {
 		return neutrinoExtensions.indexOf(extension) < 0;
