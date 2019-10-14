@@ -26,6 +26,7 @@ let eslintPluginConfig = require('./configs/eslint-plugin.config');
 let compatConfig = require('./configs/compat.config');
 let throwConfig = require('./configs/throw.config');
 let securityConfig = require('./configs/security.config');
+let envsConfig = require('./configs/envs.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -94,6 +95,7 @@ module.exports = function (neutrino, settings = {}) {
 				browsers: settings.browsers
 			}
 		},
+		envsConfig(neutrino.config),
 		settings.eslint
 	].reduce(mergeConfigs);
 
