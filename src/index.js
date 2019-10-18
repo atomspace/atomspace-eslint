@@ -26,10 +26,15 @@ let eslintPluginConfig = require('./configs/eslint-plugin.config');
 let compatConfig = require('./configs/compat.config');
 let throwConfig = require('./configs/throw.config');
 let securityConfig = require('./configs/security.config');
+let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
+}
+
+function mergeConfigs (toConfig, fromConfig) {
+	return merge(toConfig, fromConfig);
 }
 
 function eslintrc (neutrino) {
@@ -42,7 +47,7 @@ function eslintrc (neutrino) {
 		return array.reduce((obj, item) => assign(obj, { [item]: true }), {});
 	}
 
-	return merge(
+	return mergeConfigs(
 		baseConfig,
 		[
 			parser && { parser },
@@ -92,8 +97,9 @@ module.exports = function (neutrino, settings = {}) {
 				browsers: settings.browsers
 			}
 		},
+		envsConfig(neutrino.config),
 		settings.eslint
-	].reduce(merge);
+	].reduce(mergeConfigs);
 
 	function isNotInExtensions (extension) {
 		return neutrinoExtensions.indexOf(extension) < 0;
