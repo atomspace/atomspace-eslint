@@ -40,7 +40,7 @@
 		"no-redeclare": "error",
 		"no-nested-ternary": "error",
 		"no-multiple-empty-lines": ["warn", {"max": 2, "maxBOF": 0, "maxEOF": 0}],
-		"no-mixed-spaces-and-tabs": ["warn", false],
+		"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
 		"no-multi-spaces": "warn",
 		"no-eval": "error",
 		"no-implied-eval": "error",
