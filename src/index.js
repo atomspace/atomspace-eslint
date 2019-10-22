@@ -61,11 +61,15 @@ function eslintrc (neutrino) {
 }
 
 module.exports = function (neutrino, settings = {}) {
+	let { engines } = neutrino.options.packageJson;
+	let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
+	let neutrinoExtensions = neutrino.options.extensions;
+
 	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
 	settings.eslint = settings.eslint || {};
 	settings.browsers = settings.browsers || [];
-	let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
-	let neutrinoExtensions = neutrino.options.extensions;
+	settings.node = settings.node || (engines && engines.node);
+
 	let baseConfig = [
 		coreConfig,
 		importConfig,
@@ -92,12 +96,20 @@ module.exports = function (neutrino, settings = {}) {
 		throwConfig,
 		securityConfig,
 		nodeConfig,
+		envsConfig(neutrino.config),
+		settings.node ? {
+			rules: {
+				'node/no-unsupported-features/es-builtins': ['error', { version: settings.node }], // compile
+				'node/no-unsupported-features/es-syntax': ['error', { version: settings.node, ignores: ['modules'] }], // compile
+				'node/no-unsupported-features/node-builtins': ['error', { version: settings.node }], // runtime
+				'node/no-deprecated-api': ['error', { version: settings.node }] // runtime
+			}
+		} : {},
 		{
 			settings: {
 				browsers: settings.browsers
 			}
 		},
-		envsConfig(neutrino.config),
 		settings.eslint
 	].reduce(mergeConfigs);
 
