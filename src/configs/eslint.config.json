@@ -207,6 +207,10 @@
 		"no-restricted-properties": ["error", {
 			"property": "__defineGetter__",
 			"message": "Please use Object.defineProperty instead."
+	  }],
+	  "use-isnan": ["error", {
+			"enforceForSwitchCase": true,
+			"enforceForIndexOf": true
 	  }]
 	}
 }
