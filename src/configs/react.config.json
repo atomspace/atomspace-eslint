@@ -84,6 +84,7 @@
 			"order": [
 				"name",
 				"types",
+				"static-variables",
 				"static-methods",
 				"instance-variables",
 				"lifecycle",
