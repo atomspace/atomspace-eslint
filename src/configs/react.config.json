@@ -1,6 +1,5 @@
 {
 	"plugins": ["react"],
-	"globals": { "React": true },
 	"extends": ["plugin:react/recommended"],
 	"settings": {
 		"react": {
