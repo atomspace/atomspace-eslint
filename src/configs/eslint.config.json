@@ -28,8 +28,8 @@
 		"brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
 		"quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
 		"jsx-quotes": ["error", "prefer-double"],
-		"semi": ["error", "always"],
-		"no-unused-vars": "error",
+		"semi": ["warn", "always"],
+		"no-unused-vars": "warn",
 		"no-console": ["warn", { "allow": ["error"] }],
 		"no-alert": "warn",
 		"no-void": "error",
@@ -78,7 +78,7 @@
 		"no-useless-constructor": "error",
 		"no-useless-escape": "error",
 		"no-useless-rename": "error",
-		"no-useless-return": "off",
+		"no-useless-return": "error",
 		"no-useless-call": "error",
 		"no-negated-condition": "error",
 		"no-extend-native": "error",
@@ -183,7 +183,7 @@
 		"space-in-parens": "warn",
 		"space-unary-ops": ["error", {"words": true, "nonwords": false}],
 		"switch-colon-spacing": "warn",
-		"object-curly-newline": ["error", { "consistent": true, "multiline": true, "minProperties": 5 }],
+		"object-curly-newline": ["warn", { "consistent": true, "multiline": true, "minProperties": 5 }],
 		"object-property-newline": "off",
 		"no-process-exit": "warn",
 		"no-mixed-operators": ["warn", { "allowSamePrecedence": true }],
@@ -207,6 +207,10 @@
 		"no-restricted-properties": ["error", {
 			"property": "__defineGetter__",
 			"message": "Please use Object.defineProperty instead."
+	  }],
+	  "use-isnan": ["error", {
+			"enforceForSwitchCase": true,
+			"enforceForIndexOf": true
 	  }]
 	}
 }
