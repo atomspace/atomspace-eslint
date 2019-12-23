@@ -153,10 +153,12 @@ This will disable:
 
 - ES modules
 - new ES global namespaces
-- new syntax like destructuring, arrow functions, default params, classes, etc.
+- new syntax like destructuring, arrow functions, default function arguments, classes, etc.
 - implied strict mode (you will have to define `use strict` directive in every file)
 
 ### Compatibility
+
+#### Browser
 
 In case you want to check a compatibility with certain browsers you may pass `browsers` option to settings. But it is recommended to use it only in case **if there is no Babel transpilation** for such browsers.
 
@@ -170,13 +172,31 @@ module.exports = {
 };
 ```
 
-## Customizing
+#### Node
+
+If you want to check a compatibility with a minimal NodeJS version pass `node` option to settings. This will check the code for EcmaScript compatibility. It is recommended to use it only **if there is no Babel transpilation**.
+
+```js
+module.exports = {
+   use: [
+      ['@atomspace/eslint', { node: '10' }]
+   ]
+};
+```
+
+Also you can enable linting of NodeJS features and deprecated API providing `engines` in your **package.json**. This will highlight usage of deprecated properties, methods and global variables.
+
+```json
+"engines": {
+    "node": ">= 8.3.0"
+}
+```
+
+### Customization
 
 To override the build configuration, start with the documentation on [customization](https://neutrino.js.org/customization).
 `@atomspace/eslint` creates some conventions to make overriding the configuration easier once you are ready to
 make changes.
-
-### Rules
 
 The following is a list of rules and their identifiers which can be overridden:
 
