@@ -174,12 +174,12 @@ module.exports = {
 
 #### Node
 
-If you want to check a compatibility with a minimal NodeJS version pass `node` option to settings. This will check the code for EcmaScript compatibility. It is recommended to use it only **if there is no Babel transpilation**.
+If you want to check a compatibility with a NodeJS version pass `node` option to settings. This will check the code for EcmaScript compatibility. It is recommended to use it only **if there is no Babel transpilation**.
 
 ```js
 module.exports = {
    use: [
-      ['@atomspace/eslint', { node: '10' }]
+      ['@atomspace/eslint', { node: '>=8.0.0' }]
    ]
 };
 ```
@@ -188,7 +188,7 @@ Also you can enable linting of NodeJS features and deprecated API providing `eng
 
 ```json
 "engines": {
-    "node": ">= 8.3.0"
+    "node": ">=8.3.0"
 }
 ```
 
@@ -294,8 +294,10 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
    "editor.detectIndentation": false,
    "jshint.enable": false,
    "eslint.enable": true,
-   "eslint.autoFixOnSave": true,
    "editor.formatOnSave": false,
+   "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+   },
    "javascript.format.enable": true,
    "javascript.validate.enable": false,
    "files.eol": "\n",
@@ -307,24 +309,7 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
    "eslint.options": {
       "extensions": [".js", ".jsx", ".html", ".md"]
    },
-   "eslint.validate": [
-      {
-         "language": "javascript",
-         "autoFix": true
-      },
-      {
-         "language": "javascriptreact",
-         "autoFix": true
-      },
-      {
-         "language": "html",
-         "autoFix": true
-      },
-      {
-         "language": "markdown",
-         "autoFix": true
-      }
-   ]
+   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown"]
 }
 ```
 
