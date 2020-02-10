@@ -1,8 +1,8 @@
 {
 	"root": true,
 	"globals": {
-		"console": true,
-		"process": true,
+		"console": "readonly",
+		"process": "readonly",
 		"setImmediate": true,
 		"clearImmediate": true
 	},
