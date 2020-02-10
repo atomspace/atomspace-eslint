@@ -28,6 +28,7 @@ let throwConfig = require('./configs/throw.config');
 let securityConfig = require('./configs/security.config');
 let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
+let libsConfig = require('./configs/libs.config');
 
 function assign (to = {}, from = {}) {
 	return Object.assign(to, from);
@@ -96,6 +97,7 @@ module.exports = function (neutrino, settings = {}) {
 		throwConfig,
 		securityConfig,
 		nodeConfig,
+		libsConfig,
 		envsConfig(neutrino.config),
 		engines.node ? {
 			rules: {
