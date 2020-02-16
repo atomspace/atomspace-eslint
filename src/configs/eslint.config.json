@@ -18,12 +18,14 @@
 			"impliedStrict": false
 		}
 	},
+	"ignorePatterns": ["**/node_modules/**"],
 	"rules": {
 		"indent": ["warn", "tab", {
 			"MemberExpression": "off", 
 			"SwitchCase": 1, 
-			"ignoredNodes": ["JSXElement", "JSXElement > *", "JSXAttribute", "JSXIdentifier", "JSXNamespacedName", "JSXMemberExpression", "JSXSpreadAttribute", "JSXExpressionContainer", "JSXOpeningElement", "JSXClosingElement", "JSXText", "JSXEmptyExpression", "JSXSpreadChild"]
+			"ignoredNodes": ["JSXElement", "JSXElement > *", "JSXAttribute", "JSXIdentifier", "JSXNamespacedName", "JSXMemberExpression", "JSXSpreadAttribute", "JSXExpressionContainer", "JSXOpeningElement", "JSXClosingElement", "JSXText", "JSXEmptyExpression", "JSXSpreadChild", "JSXFragment"]
 		}],
+		"no-tabs": ["warn", {"allowIndentationTabs": true}],
 		"linebreak-style": ["warn", "unix"],
 		"brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
 		"quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
@@ -65,7 +67,7 @@
 		"no-caller": "error",
 		"no-catch-shadow": "off",
 		"no-confusing-arrow": ["error", {"allowParens": true}],
-		"no-invalid-this": "error",
+		"no-invalid-this": ["error", { "capIsConstructor": true }],
 		"no-label-var": "error",
 		"no-labels": "error",
 		"no-unused-labels": "error",
@@ -109,7 +111,7 @@
 			"ignorePattern": "^\\s*?import\\s|require\\s*?\\([\\s\\S]+?\\)|^\\s*?(let|const|var)\\s"
 		}],
 		"spaced-comment": ["warn", "always", { "exceptions": ["-", "*"]}],
-		"new-parens": "error",
+		"new-parens": ["error", "always"],
 		"eqeqeq": ["error", "always"],
 		"getter-return": ["error", { "allowImplicit": true }],
 		"id-length": ["error", {
@@ -118,7 +120,7 @@
 			"exceptions": ["i", "x", "y", "z", "$", "_"]
 		}],
 		"id-blacklist": ["warn", "entity", "cb"],
-		"id-match": ["error", "^[\\w$]+(?![А-яЁё])$", { "properties": true,  "onlyDeclarations": false }],
+		"id-match": ["error", "^[\\w$]+(?![А-яЁё])$", { "properties": true,  "onlyDeclarations": false, "ignoreDestructuring": false }],
 		"strict": ["warn", "safe"],
 		"curly": ["error", "multi-line", "consistent"],
 		"unicode-bom": ["error", "never"],
@@ -133,6 +135,7 @@
 			"ignoreRegExpLiterals": false
 		}],
 		"max-lines": ["warn", {"max": 300, "skipComments": true, "skipBlankLines": true}],
+		"max-lines-per-function": ["warn", {"max": 150, "skipComments": true, "skipBlankLines": true, "IIFEs": true}],
 		"max-nested-callbacks": ["error", 5],
 		"max-depth": ["error", 5],
 		"complexity": ["error", 20],
@@ -207,7 +210,32 @@
 		"no-restricted-properties": ["error", {
 			"property": "__defineGetter__",
 			"message": "Please use Object.defineProperty instead."
-	  }],
-	  "use-isnan": "error"
+		}],
+		"use-isnan": ["error", {"enforceForSwitchCase": true, "enforceForIndexOf": true}],
+		"array-element-newline": ["warn", "consistent"],
+		"no-useless-catch": "error",
+		"no-div-regex": "warn",
+		"function-call-argument-newline": ["warn", "consistent"],
+		"no-import-assign": "error",
+		"prefer-regex-literals": "error",
+		"accessor-pairs": ["error", {"setWithoutGet": true, "getWithoutSet": false, "enforceForClassMembers" : true}],
+		"grouped-accessor-pairs": ["warn", "anyOrder"],
+		"no-setter-return": "error",
+		"no-dupe-else-if": "error",
+		"no-lonely-if": "error",
+		"no-duplicate-case": "error",
+		"no-constructor-return": "error",
+		"no-extra-parens": ["warn", "all", {
+			"conditionalAssign": true,
+			"returnAssign": false,
+			"nestedBinaryExpressions": false,
+			"ignoreJSX": "multi-line",
+			"enforceForArrowConditionals": false,
+			"enforceForSequenceExpressions": true,
+			"enforceForNewInMemberExpressions": false
+		}],
+		"no-return-assign": ["error", "always"],
+		"no-return-await": "error",
+		"no-async-promise-executor": "error"
 	}
 }

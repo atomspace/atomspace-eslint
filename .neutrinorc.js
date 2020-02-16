@@ -1,5 +1,6 @@
+let eslint = require('.');
+
 module.exports = {
-	use: [
-		['.', {esnext: true}]
-	]
-}
+  use: [eslint()]
+};
+

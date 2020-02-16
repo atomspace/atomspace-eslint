@@ -32,12 +32,13 @@
 		"import/no-webpack-loader-syntax": "error",
 		"import/no-self-import": "error",
 		"import/no-restricted-paths": "off",
-		"import/no-duplicates": "error",
+		"import/no-duplicates": ["error", {"considerQueryString": true}],
 		"import/no-deprecated": "warn",
 		"import/no-extraneous-dependencies": ["error", {
 			"devDependencies": false,
 			"optionalDependencies": true,
-			"peerDependencies": true
+			"peerDependencies": true,
+			"bundledDependencies": true
 		}],
 		"import/no-absolute-path": "off",
 		"import/no-internal-modules": "off",
@@ -53,13 +54,16 @@
 		"import/no-default-export": "off",
 		"import/no-named-export": "off",
 		"import/no-cycle": "off",
-		"import/no-useless-path-segments": "warn",
+		"import/no-useless-path-segments": ["warn", {
+			"noUselessIndex": true,
+			"commonjs": true
+		}],
 		"import/no-relative-parent-imports": "off",
 		"import/no-unused-modules": "off",
 		"import/group-exports": "off",
 		"import/exports-last": "off",
 		"import/export": "error",
-		"import/first": ["warn", { "absolute-first": true }],
+		"import/first": "warn",
 		"import/max-dependencies": "off",
 		"import/unambiguous": "off",
 		"import/extensions": ["warn",
@@ -72,6 +76,14 @@
 		],
 		"import/order": ["warn", {
 			"groups": ["builtin", "external", ["internal", "parent", "sibling", "index"], "unknown"],
+			"pathGroups": [
+				{
+					"pattern": "**/*.+(css|sass|less|scss|pcss|styl)",
+					"group": "unknown",
+					"position": "after"
+				}
+			],
+			"pathGroupsExcludedImportTypes": ["builtin", "external"],
 			"newlines-between": "always"
 		}],
 		"import/newline-after-import": "warn",

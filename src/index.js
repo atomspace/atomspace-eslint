@@ -1,24 +1,24 @@
-let eslint = require('@neutrinojs/eslint');
-let { merge } = require('eslint/lib/config/config-ops');
+let path = require('path');
 
-let coreConfig = require('./configs/eslint.config.json');
-let importConfig = require('./configs/import.config.json');
-let promiseConfig = require('./configs/promise.config.json');
-let jsDocConfig = require('./configs/jsdoc.config.json');
-let amdConfig = require('./configs/amd.config.json');
-let commentConfig = require('./configs/eslint-comment.config.json');
-let regExpConfig = require('./configs/regexp.config.json');
-let esnextConfig = require('./configs/esnext.config.json');
-let es5Config = require('./configs/es5.config.json');
+let eslint = require('@neutrinojs/eslint');
+
+let coreConfig = require('./configs/eslint.config');
+let importConfig = require('./configs/import.config');
+let promiseConfig = require('./configs/promise.config');
+let jsDocConfig = require('./configs/jsdoc.config');
+let amdConfig = require('./configs/amd.config');
+let commentConfig = require('./configs/eslint-comment.config');
+let regExpConfig = require('./configs/regexp.config');
+let esnextConfig = require('./configs/esnext.config');
+let es5Config = require('./configs/es5.config');
 let babelConfig = require('./configs/babel.config');
-let jestConfig = require('./configs/jest.config.json');
-let fileNamesConfig = require('./configs/file-names.config.json');
-let constConfig = require('./configs/const.config.json');
-let htmlConfig = require('./configs/html.config.json');
-let markdownConfig = require('./configs/markdown.config.json');
-let reactConfig = require('./configs/react.config.json');
-let reactHooksConfig = require('./configs/react-hooks.config');
-let jsxA11yConfig = require('./configs/jsx-a11y.config.json');
+let jestConfig = require('./configs/jest.config');
+let fileNamesConfig = require('./configs/file-names.config');
+let constConfig = require('./configs/const.config');
+let htmlConfig = require('./configs/html.config');
+let markdownConfig = require('./configs/markdown.config');
+let reactConfig = require('./configs/react.config');
+let jsxA11yConfig = require('./configs/jsx-a11y.config');
 let restrictedGlobalsConfig = require('./configs/restricted-globals.config');
 let extendNativeConfig = require('./configs/extend-native.config');
 let arrowsConfig = require('./configs/arrows.config');
@@ -29,114 +29,79 @@ let securityConfig = require('./configs/security.config');
 let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
 let libsConfig = require('./configs/libs.config');
+let mergeConfigs = require('./merge-configs');
 
-function assign (to = {}, from = {}) {
-	return Object.assign(to, from);
-}
+module.exports = function (settings = {}) {
+	return function (neutrino) {
+		let { engines = {} } = neutrino.options.packageJson;
+		let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
+		let neutrinoExtensions = neutrino.options.extensions;
+		let outputPath = path.relative(neutrino.options.root, neutrino.options.output);
+		let outputPattern = `/${outputPath.replace('\\', '/')}/**`;
 
-function mergeConfigs (toConfig, fromConfig) {
-	return merge(toConfig, fromConfig);
-}
+		settings.esnext = settings.esnext === undefined ? true : settings.esnext; // `true` by default
+		settings.eslint = settings.eslint || {};
+		settings.browsers = settings.browsers || [];
+		settings.node = settings.node || undefined;
 
-function eslintrc (neutrino) {
-	let options = neutrino.config.module.rule('lint').use('eslint').get('options');
-	let {
-		baseConfig, parser, parserOptions, plugins, rules, envs, globals
-	} = options;
+		let baseConfig = [
+			coreConfig,
+			settings.esnext ? esnextConfig : es5Config,
+			settings.esnext ? babelConfig(coreConfig) : {},
+			settings.esnext ? constConfig : {},
+			importConfig,
+			promiseConfig,
+			jsDocConfig,
+			amdConfig,
+			commentConfig,
+			regExpConfig,
+			jestConfig,
+			fileNamesConfig,
+			htmlConfig,
+			markdownConfig,
+			reactConfig,
+			jsxA11yConfig,
+			restrictedGlobalsConfig,
+			extendNativeConfig,
+			arrowsConfig,
+			eslintPluginConfig,
+			settings.browsers.length ? compatConfig : {},
+			throwConfig,
+			securityConfig,
+			nodeConfig,
+			libsConfig,
+			envsConfig(neutrino.config),
+			engines.node ? {
+				rules: {
+					'node/no-unsupported-features/node-builtins': ['error', { version: engines.node }],
+					'node/no-deprecated-api': ['error', { version: engines.node }]
+				}
+			} : {},
+			settings.node ? {
+				rules: {
+					'node/no-unsupported-features/es-builtins': ['error', { version: settings.node }],
+					'node/no-unsupported-features/es-syntax': ['error', { version: settings.node, ignores: ['modules'] }]
+				}
+			} : {},
+			{
+				settings: {
+					browsers: settings.browsers
+				},
+				ignorePatterns: [outputPattern]
+			},
+			settings.eslint
+		].reduce(mergeConfigs);
 
-	function arrayToObject (array) {
-		return array.reduce((obj, item) => assign(obj, { [item]: true }), {});
-	}
+		function isNotInExtensions (extension) {
+			return neutrinoExtensions.indexOf(extension) < 0;
+		}
 
-	return mergeConfigs(
-		baseConfig,
-		[
-			parser && { parser },
-			parserOptions && { parserOptions },
-			plugins && { plugins },
-			rules && { rules },
-			envs && { env: arrayToObject(envs) },
-			globals && { globals: arrayToObject(globals) }
-		].reduce(assign, {})
-	);
-}
-
-module.exports = function (neutrino, settings = {}) {
-	let { engines = {} } = neutrino.options.packageJson;
-	let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
-	let neutrinoExtensions = neutrino.options.extensions;
-
-	settings.esnext = (settings.esnext === undefined) ? true : settings.esnext; // `true` by default
-	settings.eslint = settings.eslint || {};
-	settings.browsers = settings.browsers || [];
-	settings.node = settings.node || undefined;
-
-	let baseConfig = [
-		coreConfig,
-		importConfig,
-		promiseConfig,
-		jsDocConfig,
-		amdConfig,
-		commentConfig,
-		regExpConfig,
-		settings.esnext ? esnextConfig : es5Config,
-		settings.esnext ? babelConfig(coreConfig) : {},
-		jestConfig,
-		fileNamesConfig,
-		settings.esnext ? constConfig : {},
-		htmlConfig,
-		markdownConfig,
-		reactConfig,
-		reactHooksConfig,
-		jsxA11yConfig,
-		restrictedGlobalsConfig,
-		extendNativeConfig,
-		arrowsConfig,
-		eslintPluginConfig,
-		settings.browsers.length ? compatConfig : {},
-		throwConfig,
-		securityConfig,
-		nodeConfig,
-		libsConfig,
-		envsConfig(neutrino.config),
-		engines.node ? {
-			rules: {
-				'node/no-unsupported-features/node-builtins': ['error', { version: engines.node }],
-				'node/no-deprecated-api': ['error', { version: engines.node }]
-			}
-		} : {},
-		settings.node ? {
-			rules: {
-				'node/no-unsupported-features/es-builtins': ['error', { version: settings.node }],
-				'node/no-unsupported-features/es-syntax': ['error', { version: settings.node, ignores: ['modules'] }]
-			}
-		} : {},
-		{
-			settings: {
-				browsers: settings.browsers
-			}
-		},
-		settings.eslint
-	].reduce(mergeConfigs);
-
-	function isNotInExtensions (extension) {
-		return neutrinoExtensions.indexOf(extension) < 0;
-	}
-
-	neutrino.options.extensions = neutrinoExtensions
-		.concat(['html', 'htm', 'md']
-		.filter(isNotInExtensions));
-	neutrino.use(eslint, { test: lintExtensions });
-	neutrino.config.module.rule('lint')
-		.use('eslint')
-			.tap(function reset (options) {
-				options.envs = [];
-				options.globals = [];
-				options.parserOptions = {};
-				return options;
-			})
-			.tap(function configure (options) {
-				return assign(options, { baseConfig });
-			});
-	neutrino.register('eslintrc', () => eslintrc(neutrino));
+		neutrino.options.extensions = neutrinoExtensions
+			.concat(['html', 'htm', 'md']
+			.filter(isNotInExtensions));
+		neutrino.use(eslint({
+			test: lintExtensions,
+			eslint: { baseConfig }
+		}));
+	};
 };

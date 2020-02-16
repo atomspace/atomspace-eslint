@@ -1,11 +1,20 @@
 {
 	"plugins": ["jsdoc"],
+	"extends": ["plugin:jsdoc/recommended"],
 	"rules": {
 		"jsdoc/check-param-names": "error",
 		"jsdoc/check-tag-names": "error",
 		"jsdoc/check-types": "error",
+		"jsdoc/check-examples": "off",
+		"jsdoc/check-alignment": "warn",
+		"jsdoc/check-indentation": "off",
+		"jsdoc/check-syntax": "off",
+		"jsdoc/check-access": "error",
+		"jsdoc/check-values": "off",
+		"jsdoc/check-property-names": "error",
 		"jsdoc/newline-after-description": ["warn", "never"],
-		"jsdoc/require-description-complete-sentence": "off",
+		"jsdoc/require-description": "off",
+		"jsdoc/require-description-complete-sentence": "error",
 		"jsdoc/require-example": "off",
 		"jsdoc/require-hyphen-before-param-description": "off",
 		"jsdoc/require-param": "error",
@@ -13,6 +22,20 @@
 		"jsdoc/require-param-name": "error",
 		"jsdoc/require-param-type": "error",
 		"jsdoc/require-returns-description": "off",
-		"jsdoc/require-returns-type": "error"
+		"jsdoc/require-returns-type": "error",
+		"jsdoc/require-returns": "error",
+		"jsdoc/require-returns-check": "error",
+		"jsdoc/require-property": "error",
+		"jsdoc/require-property-description": "off",
+		"jsdoc/require-property-name": "error",
+		"jsdoc/require-property-type": "error",
+		"jsdoc/no-defaults": "off",
+		"jsdoc/no-bad-blocks": "warn",
+		"jsdoc/no-undefined-types": "error",
+		"jsdoc/valid-types": "error",
+		"jsdoc/empty-tags": "error",
+		"jsdoc/no-types": "off",
+		"jsdoc/require-file-overview": "off",
+		"jsdoc/require-jsdoc": "off"
 	}
 }

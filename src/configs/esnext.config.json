@@ -2,10 +2,7 @@
 	"env": { "es6": true	},
 	"parserOptions": {
 		"ecmaVersion": 2018,
-		"sourceType": "module",
-		"ecmaFeatures": {
-			"experimentalObjectRestSpread": true
-		}
+		"sourceType": "module"
 	},
 	"rules": {
 		"no-var": "error",
@@ -17,6 +14,7 @@
 		"no-param-reassign": ["error", { "props": false }],
 		"prefer-numeric-literals": "error",
 		"prefer-rest-params": "error",
-		"prefer-spread": "error"
+		"prefer-spread": "error",
+		"default-param-last": "error"
 	}
 }

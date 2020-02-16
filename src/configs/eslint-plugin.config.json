@@ -1,7 +1,7 @@
 {
 	"plugins": ["eslint-plugin"],
 	"rules": {
-		"eslint-plugin/consistent-output": "warn",
+		"eslint-plugin/consistent-output": ["warn", "consistent"],
 		"eslint-plugin/fixer-return": "error",
 		"eslint-plugin/meta-property-ordering": ["warn",
 			["type", "docs", "fixable", "schema", "messages", "deprecated", "replacedBy"]
@@ -16,8 +16,10 @@
 		"eslint-plugin/prefer-replace-text": "warn",
 		"eslint-plugin/report-message-format": ["warn", "^[A-Z].*\\.$"],
 		"eslint-plugin/require-meta-docs-url": "off",
+		"eslint-plugin/require-meta-docs-description": "off",
 		"eslint-plugin/require-meta-fixable": "error",
-		"eslint-plugin/require-meta-type": "warn",
+		"eslint-plugin/require-meta-type": "error",
+		"eslint-plugin/require-meta-schema": "error",
 		"eslint-plugin/test-case-property-ordering": ["warn",
 			["code", "output", "options", "parserOptions", "errors"]
 		],

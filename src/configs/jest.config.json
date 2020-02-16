@@ -7,11 +7,12 @@
 		"jest/no-focused-tests": "error",
 		"jest/no-identical-title": "error",
 		"jest/valid-expect": "error",
+		"jest/valid-describe": "error",
+		"jest/valid-title": ["error", { "ignoreTypeOfDescribeName": false }],
 		"jest/lowercase-name": ["error", {
 			"ignore": ["describe"]
 		}],
 		"jest/no-alias-methods": "warn",
-		"jest/valid-describe": "error",
 		"jest/valid-expect-in-promise": "error",
 		"jest/no-jasmine-globals": "error",
 		"jest/no-test-callback": "error",
@@ -20,6 +21,21 @@
 		"jest/prefer-to-be-null": "error",
 		"jest/prefer-to-be-undefined": "error",
 		"jest/prefer-to-contain": "error",
-		"jest/prefer-to-have-length": "error"
+		"jest/prefer-to-have-length": "error",
+		"jest/no-truthy-falsy": "error",
+		"jest/prefer-called-with": "error",
+		"jest/prefer-todo": "error",
+		"jest/no-mocks-import": "off",
+		"jest/no-commented-out-tests": "warn",
+		"jest/no-duplicate-hooks": "error",
+		"jest/no-large-snapshots": "off",
+		"jest/no-if": "error",
+		"jest/no-export": "error",
+		"jest/no-try-expect": "error",
+		"jest/no-standalone-expect": "error",
+		"jest/no-expect-resolves": "off",
+		"jest/require-top-level-describe": "off",
+		"jest/prefer-hooks-on-top": "error",
+		"jest/require-to-throw-message": "off"
 	}
 }

@@ -1,11 +1,14 @@
 {
-	"plugins": ["react"],
+	"plugins": [
+		"react", 
+		"react-hooks"
+	],
 	"extends": ["plugin:react/recommended"],
 	"settings": {
 		"react": {
 			"createClass": "createReactClass",
 			"pragma": "React",
-			"version": "16.8"
+			"version": "16.12"
 		},
 		"linkComponents": [
 			{
@@ -147,7 +150,7 @@
 		"react/jsx-no-comment-textnodes": "error",
 		"react/jsx-no-duplicate-props": "error",
 		"react/jsx-no-literals": "off",
-		"react/jsx-no-target-blank": "off",
+		"react/jsx-no-target-blank": "warn",
 		"react/jsx-no-undef": ["error", { "allowGlobals": true }],
 		"react/jsx-one-expression-per-line": ["warn", {"allow": "single-child"}],
 		"react/jsx-curly-brace-presence": ["error", "never"],
@@ -173,10 +176,14 @@
 			"condition": "ignore",
 			"logical": "ignore",
 			"prop": "ignore"
-		 }],
-		 "react/jsx-curly-newline": ["warn", {
+		}],
+		"react/jsx-curly-newline": ["warn", {
 			"multiline": "consistent", 
 			"singleline": "forbid"
-		 }]
+		}],
+		"react/jsx-no-useless-fragment": "warn",
+
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn"
 	}
 }
