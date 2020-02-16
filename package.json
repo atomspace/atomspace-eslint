@@ -1,12 +1,12 @@
 {
 	"name": "@atomspace/eslint",
-	"version": "3.5.2",
+	"version": "4.0.0",
 	"description": "Neutrino preset for adding ESLint config, following the Atom Space code style",
 	"main": "src/index.js",
 	"scripts": {
 		"eslint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe",
-      "pretest": "npm run eslint",
-      "lint": "npm run eslint -- --fix"
+		"pretest": "npm run eslint",
+		"lint": "npm run eslint -- --fix"
 	},
 	"repository": {
 		"type": "git",
