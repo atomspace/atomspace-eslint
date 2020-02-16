@@ -18,7 +18,7 @@
 			"impliedStrict": false
 		}
 	},
-	"ignorePatterns": ["**/node_modules/**"],
+	"ignorePatterns": ["**/node_modules/**", "/*.js"],
 	"rules": {
 		"indent": ["warn", "tab", {
 			"MemberExpression": "off", 

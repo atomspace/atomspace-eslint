@@ -16,29 +16,26 @@
 - Regex shorthand to improve readability
 - ESLint comments linting
 - JSDoc syntax linting
+- ESLint plugins linting
+- Security rules
+- Various libraries linting
 - Easily extensible to customize your project as needed
 
 ## Requirements
 
-- Node.js v6 LTS, v8, v9
-- Npm v3.0+
-- Neutrino v8
+- Node.js v10
+- Npm v5.4.0+
+- Neutrino v9
+- Webpack 4
+- ESLint 6
 
 ## Installation
 
-`@atomspace/eslint` can be installed via the Yarn or NPM clients. Inside your project, make sure `neutrino` and `@atomspace/eslint` are development dependencies. You will also be using another Neutrino preset for building your application source code.
-
-#### npm
+`@atomspace/eslint` can be installed using NPM. Inside your project, make sure `neutrino`, `eslint` and `@atomspace/eslint` are development dependencies. You will also be using another Neutrino preset for building your application source code.
 
 ```bash
-❯ npm install --save-dev neutrino "@atomspace/eslint"
+npm install --save-dev neutrino eslint "@atomspace/eslint"
 ```
-
-## Project Layout
-
-`@atomspace/eslint` follows the standard [project layout](https://neutrino.js.org/project-layout) specified by Neutrino. This
-means that by default all project source code should live in a directory named `src` in the root of the
-project.
 
 ## Quickstart
 
@@ -47,9 +44,11 @@ After adding the Atom Space preset to your Neutrino-built project, edit your pro
 #### .neutrinorc.js
 
 ```js
+let atomspaceEslint = require('@atomspace/eslint');
+
 module.exports = {
    use: [
-      '@atomspace/eslint'
+      atomspaceEslint()
 
       // put your rest of presets here
    ]
@@ -61,15 +60,28 @@ module.exports = {
 ```json
 {
    "scripts": {
-      "start": "neutrino start",
-      "build": "neutrino build",
-      "lint": "neutrino lint"
+      "build": "webpack --mode production",
+      "start": "webpack --mode development",
+      "lint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe --fix"
    }
 }
 ```
 
-If you have a Neutrino **build** preset in `.neutrinorc.js`, start the app. Then check your console for any linting errors. If everything is successful, you should see no errors in the console. ESLint errors visible during development are reported, but will still continue to build and serve your
-project. ESLint errors during production build will not build the project, and will cause the command to fail.
+`@atomspace/eslint`, provides an `.eslintrc()` output handler for generating the ESLint configuration in a format suitable for use in an `.eslintrc.js` file. This allows the ESLint CLI to be used outside of building the project, and for IDEs and text editors to provide linting hints/fixes.
+
+Create a `.eslintrc.js` file in the root of the project, containing:
+
+#### .eslintrc.js
+
+```js
+let neutrino = require('neutrino');
+
+module.exports = neutrino().eslintrc();
+```
+
+## Building
+
+If you have a Neutrino **build** preset in `.neutrinorc.js`, start the app in **development mode** via `webpack --mode development`. Then check your console for any linting errors. If everything is successful, you should see no errors in the console. ESLint errors visible during development are reported, but will still continue to build and serve your project.
 
 ```bash
 ❯ npm start
@@ -88,9 +100,7 @@ ERROR in ./src/index.js
 ✖ 4 problems (3 errors, 1 warning)
 ```
 
-## Building
-
-`@atomspace/eslint` will cause errors to **fail your build** when creating a bundle via `neutrino build`.
+ESLint errors during **production mode** build will not build the project, and will cause the command to **fail your build** when creating a bundle via `webpack --mode production`.
 
 ```bash
 ❯ npm run build
@@ -110,20 +120,18 @@ error Command failed with exit code 1.
 
 ### Configuration
 
-This preset inherits options from [@neutrinojs/eslint](https://neutrino.js.org/packages/eslint#usage).
-If you wish to customize what is included, excluded, or any ESLint options, you can provide an options object with the
-preset and this will be merged with defaults. Use an array pair instead of a string to supply these options. Define `eslint` property to override eslint configuration.
+If you wish to customize what is included, excluded, or any ESLint options, you can provide an options object with the preset and this will be merged with defaults. Define `eslint` property to override ESLint configuration.
 
 _Example: Include a plugin, browser and Node environments and turn off semicolons from being required as defined by the Atom Space rules._
 
 ```js
+let atomspaceEslint = require('@atomspace/eslint');
+
 module.exports = {
    use: [
-      ['@atomspace/eslint', {
+      atomspaceEslint({
          eslint: {
-            plugins: [
-               'fp'
-            ],
+            plugins: ['fp'],
             env: {
                browser: true,
                node: true
@@ -132,7 +140,7 @@ module.exports = {
                semi: 'off'
             }
          }
-      }]
+      })
    ]
 };
 ```
@@ -144,7 +152,7 @@ This preset enables rules compatible with the latest EcmaScript version by defau
 ```js
 module.exports = {
    use: [
-      ['@atomspace/eslint', { esnext: false }]
+      atomspaceEslint({ esnext: false })
    ]
 };
 ```
@@ -167,7 +175,7 @@ Configure supported browsers in `.neutrinorc.js` (see [browserslist](https://git
 ```js
 module.exports = {
    use: [
-      ['@atomspace/eslint', { browsers: ['ie >= 8'] }]
+      atomspaceEslint({ browsers: ['ie >= 8'] })
    ]
 };
 ```
@@ -179,7 +187,7 @@ If you want to check a compatibility with a NodeJS version pass `node` option to
 ```js
 module.exports = {
    use: [
-      ['@atomspace/eslint', { node: '>=8.0.0' }]
+      atomspaceEslint({ node: '>=8.0.0' })
    ]
 };
 ```
@@ -192,93 +200,35 @@ Also you can enable linting of NodeJS features and deprecated API providing `eng
 }
 ```
 
-### Customization
-
-To override the build configuration, start with the documentation on [customization](https://neutrino.js.org/customization).
-`@atomspace/eslint` creates some conventions to make overriding the configuration easier once you are ready to
-make changes.
-
-The following is a list of rules and their identifiers which can be overridden:
-
-| Name | Description | Environments and Commands |
-| --- | --- | --- |
-| `lint` | Lints JS and JSX files from the `src` directory using ESLint. Contains a single loader named `eslint`. This is inherited from `@neutrinojs/eslint`. | all |
-
 ## ESLint CLI
 
-This middleware registers a command named `lint` which programmatically calls ESLint and prints the results to
-the console.
+You can find more details how to run ESLint in the CLI in the [official documentation](https://eslint.org/docs/user-guide/command-line-interface).
 
-```bash
-❯ neutrino lint
-```
-
-```bash
-❯ neutrino lint --fix
-```
-
-If you want to call them in your project it will be better to register npm scripts like this:
+Usually ESLint is a part of Webpack build configuration and any violation will prevent build and report errors. So it is not necessary to run ESLint separately during CI/CD for instance. But if you don't use Webpack and would like to include linting in your pipeline you can use this configuration of scripts
 
 #### package.json
 
 ```json
 {
    "scripts": {
-      "pretest": "neutrino lint",
-      "lint": "neutrino lint --fix"
+      "eslint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe",
+      "pretest": "npm run eslint",
+      "lint": "npm run eslint -- --fix"
    }
 }
 ```
 
-and use
+Running of tests will lint before and fail if there are violations
 
 ```bash
 ❯ npm test
 ```
 
+Running `lint` command will auto-fix and report left violations
+
 ```bash
 ❯ npm run lint
 ```
-
-## Integration with development tools
-
-`@neutrinojs/eslint`, from which this preset inherits, also provides a method for getting the ESLint
-configuration suitable for use in an eslintrc file. Typically this is used for providing hints or fix solutions to the
-development environment, e.g. IDEs and text editors. Doing this requires
-[creating an instance of the Neutrino API](https://neutrino.js.org/api) and providing the middleware it uses. If you keep all
-this information in a `.neutrinorc.js`, this should be relatively straightforward. By providing all the middleware used
-to Neutrino, you can ensure all the linting options used across all middleware will be merged together for your
-development environment, without the need for copying, duplication, or loss of organization and separation.
-
-This middleware registers another command named `eslintrc` which returns an ESLint configuration object suitable for
-consumption by the ESLint CLI. Use the Neutrino API's `call` method to invoke this command:
-
-_Example: Create a .eslintrc.js file in the root of the project, using `.neutrinorc.js` middleware._
-
-#### .eslintrc.js
-
-```js
-const neutrino = require('neutrino').Neutrino;
-
-module.exports = neutrino({ cwd: __dirname })
-  .use('.neutrinorc.js')
-  .call('eslintrc');
-```
-
-Projects may face a problem when their editor or IDE lints all files and highlights errors that were normally excluded
-from source, i.e. Neutrino's `include` and `exclude` options. Unfortunately ESLint does not provide the possibility to configure ignored paths from Neutrino configuration and exclude them
-from linting. Projects authors should define this manually in their project root directory in a `.eslintignore` file:
-
-#### .eslintignore
-
-```txt
-/build
-/*.*
-```
-
-ESLint will exclude built files and any files in the root directory (e.g. custom Neutrino configuration) but `src` and
-`test` folders will be still checked. `node_modules` are ignored by default in ESLint. More information can be found
-in the [ESLint user guide](http://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories).
 
 ## VSCode tips
 
@@ -313,7 +263,7 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
 }
 ```
 
-When project has been initially installed you need to restart an editor. After this ESLint will start to highlight and auto-fix errors in your code.
+When project has been initially installed you need to restart an editor. After this ESLint will start to highlight and auto-fix errors in your code on file save.
 
 `@atomspace/eslint` can work in your editor even if there is no build infrastructure (`npm start` / `npm run build`). You can install it to any kind of JavaScript projects following the [ESLint CLI](#eslint-cli) guide above.
 
