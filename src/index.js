@@ -47,7 +47,6 @@ module.exports = function (settings = {}) {
 		let baseConfig = [
 			coreConfig,
 			settings.esnext ? esnextConfig : es5Config,
-			settings.esnext ? babelConfig(coreConfig) : {},
 			settings.esnext ? constConfig : {},
 			importConfig,
 			promiseConfig,
@@ -91,6 +90,10 @@ module.exports = function (settings = {}) {
 			},
 			settings.eslint
 		].reduce(mergeConfigs);
+
+		if (settings.esnext) {
+			baseConfig = mergeConfigs(baseConfig, babelConfig(baseConfig));
+		}
 
 		function isNotInExtensions (extension) {
 			return neutrinoExtensions.indexOf(extension) < 0;
