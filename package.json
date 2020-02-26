@@ -5,7 +5,7 @@
 	"main": "src/index.js",
 	"scripts": {
 		"eslint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe",
-		"pretest": "npm run eslint",
+		"pretest": "npm run eslint -- --max-warnings 0",
 		"lint": "npm run eslint -- --fix"
 	},
 	"repository": {

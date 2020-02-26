@@ -7,21 +7,36 @@
 				"sourceType": "module"
 			},
 			"rules": {
-				"indent": ["warn", 3, {"MemberExpression": "off", "SwitchCase": 1}],
-				"react/jsx-indent": ["warn", 3, {
-					"checkAttributes": false,
-					"indentLogicalExpressions": true
+				"indent": ["warn", 3, {
+					"MemberExpression": "off", 
+					"SwitchCase": 1
 				}],
-				"react/jsx-indent-props": ["warn", 3],
 				"no-undef": "off",
 				"no-unused-vars": "off",
 				"no-console": "off",
 				"filenames/match-regex": "off",
 				"filenames/match-exported": "off",
-				"import/no-unresolved": "off",
+				"react/jsx-indent": ["warn", 3, {
+					"checkAttributes": false,
+					"indentLogicalExpressions": true
+				}],
+				"react/jsx-indent-props": ["warn", 3],
 				"react/react-in-jsx-scope": "off",
+				"import/no-unresolved": "off",
 				"import/no-extraneous-dependencies": "off",
-				"import/no-anonymous-default-export": "off"
+				"import/no-anonymous-default-export": "off",
+				"class-methods-use-this": ["warn", {
+					"exceptMethods": [
+						"render",
+						"getInitialState",
+						"getDefaultProps",
+						"getChildContext",
+						"shouldComponentUpdate",
+						"componentDidCatch",
+						"getSnapshotBeforeUpdate"
+					]
+				}],
+				"node/no-unpublished-import": "off"
 			}
 		}
 	]

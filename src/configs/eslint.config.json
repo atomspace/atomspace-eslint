@@ -25,7 +25,6 @@
 			"SwitchCase": 1, 
 			"ignoredNodes": ["JSXElement", "JSXElement > *", "JSXAttribute", "JSXIdentifier", "JSXNamespacedName", "JSXMemberExpression", "JSXSpreadAttribute", "JSXExpressionContainer", "JSXOpeningElement", "JSXClosingElement", "JSXText", "JSXEmptyExpression", "JSXSpreadChild", "JSXFragment"]
 		}],
-		"no-tabs": ["warn", {"allowIndentationTabs": true}],
 		"linebreak-style": ["warn", "unix"],
 		"brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
 		"quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],

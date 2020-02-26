@@ -212,7 +212,7 @@ Usually ESLint is a part of Webpack build configuration and any violation will p
 {
    "scripts": {
       "eslint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe",
-      "pretest": "npm run eslint",
+      "pretest": "npm run eslint -- --max-warnings 0",
       "lint": "npm run eslint -- --fix"
    }
 }
@@ -270,5 +270,5 @@ When project has been initially installed you need to restart an editor. After t
 [npm-image]: https://img.shields.io/npm/v/@atomspace/eslint.svg
 [npm-downloads]: https://img.shields.io/npm/dt/@atomspace/eslint.svg
 [npm-url]: https://npmjs.org/package/@atomspace/eslint
-[build-status]: https://travis-ci.org/atomspace/atomspace-eslint.svg?branch=master
-[travis-url]: https://travis-ci.org/atomspace/atomspace-eslint
+[build-status]: https://travis-ci.com/atomspace/atomspace-eslint.svg?branch=master
+[travis-url]: https://travis-ci.com/atomspace/atomspace-eslint
