@@ -257,7 +257,8 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
       "editor.insertSpaces": true
    },
    "eslint.options": {
-      "extensions": [".js", ".jsx", ".html", ".md"]
+      "extensions": [".js", ".jsx", ".html", ".md"],
+      // "resolvePluginsRelativeTo": "./node_modules/.pnpm" // uncomment when `pnpm` is used instead of `npm`
    },
    "eslint.validate": ["javascript", "javascriptreact", "html", "markdown"]
 }
