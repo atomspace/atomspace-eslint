@@ -258,7 +258,7 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
    },
    "eslint.options": {
       "extensions": [".js", ".jsx", ".html", ".md"],
-      // "resolvePluginsRelativeTo": "./node_modules/.pnpm" // uncomment when `pnpm` is used instead of `npm`
+      "resolvePluginsRelativeTo": "./node_modules/.pnpm"
    },
    "eslint.validate": ["javascript", "javascriptreact", "html", "markdown"]
 }

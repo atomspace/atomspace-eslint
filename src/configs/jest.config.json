@@ -2,6 +2,15 @@
 	"env": { "jest": true },
 	"plugins": ["jest"],
 	"extends": ["plugin:jest/recommended"],
+	"overrides": [
+		{
+			"files": [ "**/*.test.js", "**/*.spec.js" ],
+			"rules": {
+				"max-lines-per-function": "off",
+				"max-lines": "off"
+			}
+		}
+	],
 	"rules": {
 		"jest/no-disabled-tests": "warn",
 		"jest/no-focused-tests": "error",
