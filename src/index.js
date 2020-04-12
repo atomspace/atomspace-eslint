@@ -104,7 +104,10 @@ module.exports = function (settings = {}) {
 			.filter(isNotInExtensions));
 		neutrino.use(eslint({
 			test: lintExtensions,
-			eslint: { baseConfig }
+			eslint: {
+				baseConfig,
+				resolvePluginsRelativeTo: path.resolve(__dirname, '../node_modules/.pnpm')
+			 }
 		}));
 	};
 };
