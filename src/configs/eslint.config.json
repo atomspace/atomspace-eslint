@@ -171,7 +171,9 @@
 			{ "blankLine": "any", "prev": "cjs-export", "next": "cjs-export" },
 			{ "blankLine": "always", "prev": "*", "next": "export" },
 			{ "blankLine": "always", "prev": "export", "next": "*" },
-			{ "blankLine": "any", "prev": "export", "next": "export" }
+			{ "blankLine": "any", "prev": "export", "next": "export" },
+			{ "blankLine": "always", "prev": "function", "next": "*" },
+			{ "blankLine": "any", "prev": "function", "next": "function" }
 		],
 		"function-paren-newline": ["warn", "consistent"],
 		"prefer-promise-reject-errors": "error",

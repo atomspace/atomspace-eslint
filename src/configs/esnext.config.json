@@ -11,7 +11,7 @@
 		"no-var": "error",
 		"prefer-template": "error",
 		"prefer-const": "off",
-		"object-shorthand": "error",
+		"object-shorthand": "warn",
 		"no-dupe-class-members": "error",
 		"dot-notation": ["error", { "allowKeywords": true }],
 		"no-param-reassign": ["error", { "props": false }],

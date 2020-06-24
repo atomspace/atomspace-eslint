@@ -14,7 +14,7 @@
 		"jsdoc/check-property-names": "error",
 		"jsdoc/newline-after-description": ["warn", "never"],
 		"jsdoc/require-description": "off",
-		"jsdoc/require-description-complete-sentence": "error",
+		"jsdoc/require-description-complete-sentence": "warn",
 		"jsdoc/require-example": "off",
 		"jsdoc/require-hyphen-before-param-description": "off",
 		"jsdoc/require-param": "error",

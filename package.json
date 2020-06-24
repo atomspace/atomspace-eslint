@@ -4,8 +4,8 @@
 	"description": "Neutrino preset for adding ESLint config, following the Atom Space code style",
 	"main": "src/index.js",
 	"scripts": {
-		"eslint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe",
-		"pretest": "npm run eslint -- --max-warnings 0",
+		"eslint": "eslint ./src --ext .js,.jsx,.html,.md",
+		"pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
 		"lint": "npm run eslint -- --fix"
 	},
 	"repository": {
