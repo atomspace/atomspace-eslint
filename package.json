@@ -41,7 +41,7 @@
 		"eslint-plugin-jsx-a11y": "6.2.3",
 		"eslint-plugin-lodash": "6.0.0",
 		"eslint-plugin-lodash-fp": "2.2.0-a1",
-		"eslint-plugin-markdown": "1.0.2",
+		"eslint-plugin-markdown": "v2.0.0-alpha.0",
 		"eslint-plugin-new-with-error": "2.0.0",
 		"eslint-plugin-no-secrets": "0.6.5",
 		"eslint-plugin-no-use-extend-native": "0.5.0",

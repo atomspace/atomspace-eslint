@@ -2,7 +2,11 @@
 	"plugins": ["markdown"],
 	"overrides": [
 		{
-			"files": ["**/*.md"],
+			"files": ["**/*.{md,markdown}"],
+			"processor": "markdown/markdown"
+		},
+		{
+			"files": ["**/*.{md,markdown}/*.{js,javascript,jsx,node,vue}"],
 			"parserOptions": {
 				"sourceType": "module"
 			},
@@ -16,28 +20,38 @@
 				"no-console": "off",
 				"filenames/match-regex": "off",
 				"filenames/match-exported": "off",
+				"import/no-unresolved": "off",
+				"import/no-extraneous-dependencies": "off",
+				"import/no-anonymous-default-export": "off",
+				"node/no-unpublished-import": "off"
+			}
+		},
+		{
+			"files": ["**/*.{md,markdown}/*.jsx"],
+			"rules": {
 				"react/jsx-indent": ["warn", 3, {
 					"checkAttributes": false,
 					"indentLogicalExpressions": true
 				}],
 				"react/jsx-indent-props": ["warn", 3],
-				"react/react-in-jsx-scope": "off",
-				"import/no-unresolved": "off",
-				"import/no-extraneous-dependencies": "off",
-				"import/no-anonymous-default-export": "off",
-				"class-methods-use-this": ["warn", {
-					"exceptMethods": [
-						"render",
-						"getInitialState",
-						"getDefaultProps",
-						"getChildContext",
-						"shouldComponentUpdate",
-						"componentDidCatch",
-						"getSnapshotBeforeUpdate"
-					]
-				}],
-				"node/no-unpublished-import": "off"
+				"react/react-in-jsx-scope": "off"
 			}
-		}
+		},
+		{
+			"files": ["**/*.{md,markdown}/*.vue"],
+			"rules": {
+				"vue/html-indent": ["warn", 3, {
+					"attribute": 1,
+					"baseIndent": 1,
+					"closeBracket": 0,
+					"alignAttributesVertically": true
+				 }],
+				"vue/script-indent": ["warn", 3, {
+					"baseIndent": 0,
+					"switchCase": 1					
+				}],
+				"vue/match-component-file-name": "off"
+			}
+	  }
 	]
 }

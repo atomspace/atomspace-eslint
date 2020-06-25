@@ -61,12 +61,12 @@
 		"vue/html-closing-bracket-newline": ["warn", {
 			"singleline": "never",
 			"multiline": "always"
-		 }],
+		}],
 		"vue/html-closing-bracket-spacing": ["warn", {
 			"startTag": "never",
 			"endTag": "never",
 			"selfClosingTag": "always"
-		 }],
+		}],
 		"vue/html-end-tags": "error",
 		"vue/html-indent": ["warn", "tab", {
 			"attribute": 1,
@@ -74,30 +74,32 @@
 			"closeBracket": 0,
 			"alignAttributesVertically": true,
 			"ignores": []
-		 }],
-		"vue/html-quotes": [ "warn", "double", { "avoidEscape": true } ],
+		}],
+		"vue/html-quotes": ["warn", "double", {
+			"avoidEscape": true
+		}],
 		"vue/html-self-closing": ["warn", {
 			"html": {
-			  "void": "always",
-			  "normal": "always",
-			  "component": "always"
+				"void": "always",
+				"normal": "always",
+				"component": "always"
 			},
 			"svg": "always",
 			"math": "always"
-		 }],
+		}],
 		"vue/max-attributes-per-line": ["warn", {
 			"singleline": 4,
 			"multiline": {
-			  "max": 1,
-			  "allowFirstLine": false
+				"max": 1,
+				"allowFirstLine": false
 			}
-		 }],
+		}],
 		"vue/multiline-html-element-content-newline": "warn",
 		"vue/mustache-interpolation-spacing": ["warn", "always"],
 		"vue/name-property-casing": ["error", "PascalCase"],
 		"vue/no-multi-spaces": ["warn", {
 			"ignoreProperties": true
-		 }],
+		}],
 		"vue/no-spaces-around-equal-signs-in-attribute": "warn",
 		"vue/no-template-shadow": "error",
 		"vue/prop-name-casing": ["error", "camelCase"],
@@ -106,8 +108,7 @@
 		"vue/singleline-html-element-content-newline": "warn",
 		"vue/v-bind-style": ["warn", "shorthand"],
 		"vue/v-on-style": ["warn", "shorthand"],
-
-		"vue/attributes-order": ["warn",	{
+		"vue/attributes-order": ["warn", {
 			"order": [
 				"DEFINITION",
 				["LIST_RENDERING", "CONDITIONALS", "RENDER_MODIFIERS"],
@@ -147,11 +148,12 @@
 			]
 		}],
 		"vue/this-in-template": ["warn", "never"],
-
 		"vue/array-bracket-spacing": ["warn", "never"],
 		"vue/arrow-spacing": "warn",
 		"vue/block-spacing": ["warn", "always"],
-		"vue/brace-style": ["warn", "stroustrup", { "allowSingleLine": true }],
+		"vue/brace-style": ["warn", "stroustrup", {
+			"allowSingleLine": true
+		}],
 		"vue/comma-dangle": ["error", "never"],
 		"vue/component-definition-name-casing": ["error", "PascalCase"],
 		"vue/component-name-in-template-casing": ["error", "PascalCase", {
@@ -159,14 +161,25 @@
 			"ignores": []
 		}],
 		"vue/component-tags-order": ["warn", {
-			"order": ["template", "script", "style"]
+			"order": [
+				"template",
+				"script",
+				"style"
+			]
 		}],
 		"vue/dot-location": ["error", "property"],
 		"vue/eqeqeq": ["error", "always"],
-		"vue/key-spacing": ["warn", { "beforeColon": false, "afterColon": true }],
+		"vue/key-spacing": ["warn", {
+			"beforeColon": false,
+			"afterColon": true
+		}],
 		"vue/keyword-spacing": "warn",
 		"vue/match-component-file-name": ["error", {
-			"extensions": ["js", "ts", "vue"],
+			"extensions": [
+				"js",
+				"ts",
+				"vue"
+			],
 			"shouldMatchCase": false
 		}],
 		"vue/max-len": ["warn", {
@@ -176,7 +189,7 @@
 			"ignorePattern": "",
 			"ignoreComments": true,
 			"ignoreTrailingComments": true,
-			"ignoreUrls": true, 
+			"ignoreUrls": true,
 			"ignoreStrings": true,
 			"ignoreTemplateLiterals": true,
 			"ignoreRegExpLiterals": false,
@@ -195,11 +208,11 @@
 			"skipTemplates": false,
 			"skipHTMLAttributeValues": false,
 			"skipHTMLTextContents": true
-	  }],
-	  "vue/no-reserved-component-names": "off",
-	  "vue/no-restricted-syntax": "off",
-	  "vue/no-static-inline-styles": "off",
-	  "vue/no-unsupported-features": ["error", {
+		}],
+		"vue/no-reserved-component-names": "off",
+		"vue/no-restricted-syntax": "off",
+		"vue/no-static-inline-styles": "off",
+		"vue/no-unsupported-features": ["error", {
 			"version": "^2.5.0",
 			"ignores": []
 		}],
@@ -211,11 +224,29 @@
 		"vue/script-indent": ["warn", "tab", {
 			"baseIndent": 0,
 			"switchCase": 1,
-			"ignores": ["JSXElement", "JSXElement > *", "JSXAttribute", "JSXIdentifier", "JSXNamespacedName", "JSXMemberExpression", "JSXSpreadAttribute", "JSXExpressionContainer", "JSXOpeningElement", "JSXClosingElement", "JSXText", "JSXEmptyExpression", "JSXSpreadChild", "JSXFragment"]
+			"ignores": [
+				"JSXElement",
+				"JSXElement > *",
+				"JSXAttribute",
+				"JSXIdentifier",
+				"JSXNamespacedName",
+				"JSXMemberExpression",
+				"JSXSpreadAttribute",
+				"JSXExpressionContainer",
+				"JSXOpeningElement",
+				"JSXClosingElement",
+				"JSXText",
+				"JSXEmptyExpression",
+				"JSXSpreadChild",
+				"JSXFragment"
+			]
 		}],
 		"vue/sort-keys": "off",
 		"vue/space-infix-ops": "error",
-		"vue/space-unary-ops": ["error", {"words": true, "nonwords": false}],
+		"vue/space-unary-ops": ["error", {
+			"words": true,
+			"nonwords": false
+		}],
 		"vue/static-class-names-order": "off",
 		"vue/v-on-function-call": ["error", "never"],
 		"vue/v-slot-style": "off",
