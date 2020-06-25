@@ -29,13 +29,13 @@ let securityConfig = require('./configs/security.config');
 let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
 let libsConfig = require('./configs/libs.config');
+let vueConfig = require('./configs/vue.config');
 let mergeConfigs = require('./merge-configs');
 
 module.exports = function (settings = {}) {
 	return function (neutrino) {
 		let { engines = {} } = neutrino.options.packageJson;
-		let lintExtensions = settings.test || /\.(html?|jsx?|md)$/;
-		let neutrinoExtensions = neutrino.options.extensions;
+		let lintExtensions = settings.test || /\.(html?|jsx?|md|vue)$/;
 		let outputPath = path.relative(neutrino.options.root, neutrino.options.output);
 		let outputPattern = `/${outputPath.replace('\\', '/')}/**`;
 
@@ -69,6 +69,7 @@ module.exports = function (settings = {}) {
 			securityConfig,
 			nodeConfig,
 			libsConfig,
+			vueConfig,
 			envsConfig(neutrino.config),
 			engines.node ? {
 				rules: {
@@ -95,13 +96,6 @@ module.exports = function (settings = {}) {
 			baseConfig = mergeConfigs(baseConfig, babelConfig(baseConfig));
 		}
 
-		function isNotInExtensions (extension) {
-			return neutrinoExtensions.indexOf(extension) < 0;
-		}
-
-		neutrino.options.extensions = neutrinoExtensions
-			.concat(['html', 'htm', 'md']
-			.filter(isNotInExtensions));
 		neutrino.use(eslint({
 			test: lintExtensions,
 			eslint: {

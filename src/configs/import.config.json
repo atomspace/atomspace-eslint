@@ -3,17 +3,20 @@
 	"settings": {
 		"import/resolver": {
 			"node": {
-				"extensions": [".js", ".jsx", ".tsx", ".json"]
+				"extensions": [".js", ".ts", ".jsx", ".tsx", ".vue", ".json"]
 			}
 		},
 		"import/extensions": [
 			".js",
-			".jsx"
+			".ts", 
+			".jsx",
+			".tsx",
+			".vue"
 		],
 		"import/core-modules": ["electron"],
 		"import/ignore": [
 			"node_modules",
-			"\\.(coffee|scss|css|less|hbs|svg|json)$"
+			"\\.(coffee|scss|sass|compas|css|less|hbs|svg|json)$"
 		]
 	},
 	"rules": {
@@ -70,8 +73,10 @@
 			"ignorePackages",
 			{
 				"js": "never",
+				"ts": "never",
 				"jsx": "never",
-				"tsx": "never"
+				"tsx": "never",
+				"vue": "never"
 			}
 		],
 		"import/order": ["warn", {

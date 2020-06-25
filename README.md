@@ -211,7 +211,7 @@ Usually ESLint is a part of Webpack build configuration and any violation will p
 ```json
 {
    "scripts": {
-      "eslint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe",
+      "eslint": "eslint ./ --ext .js,.jsx,.vue,.html,.md --format codeframe",
       "pretest": "npm run eslint -- --max-warnings 0",
       "lint": "npm run eslint -- --fix"
    }
@@ -257,10 +257,11 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
       "editor.insertSpaces": true
    },
    "eslint.options": {
-      "extensions": [".js", ".jsx", ".html", ".md"],
+      "extensions": [".js", ".jsx", ".html", ".md", ".vue"],
       "resolvePluginsRelativeTo": "./node_modules/.pnpm"
    },
-   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown"]
+   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown", "vue"],
+   "vetur.validation.template": false
 }
 ```
 

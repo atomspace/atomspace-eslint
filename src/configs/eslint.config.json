@@ -126,6 +126,7 @@
 		"vars-on-top": "error",
 		"max-len": ["warn", {
 			"code": 120,
+			"tabWidth": 0,
 			"ignoreComments": true,
 			"ignoreTrailingComments": true,
 			"ignoreUrls": true, 

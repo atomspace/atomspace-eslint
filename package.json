@@ -4,7 +4,7 @@
 	"description": "Neutrino preset for adding ESLint config, following the Atom Space code style",
 	"main": "src/index.js",
 	"scripts": {
-		"eslint": "eslint ./src --ext .js,.jsx,.html,.md",
+		"eslint": "eslint ./ --ext .js,.jsx,.vue,.html,.md",
 		"pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
 		"lint": "npm run eslint -- --fix"
 	},
@@ -26,7 +26,7 @@
 	"homepage": "https://github.com/atomspaceodua/atomspace-eslint#readme",
 	"dependencies": {
 		"@getify/eslint-plugin-proper-arrows": "8.0.1",
-		"@neutrinojs/eslint": "9.1.0",
+		"@neutrinojs/eslint": "9.2.0",
 		"deepmerge": "4.2.2",
 		"eslint-plugin-builtin-compat": "0.0.2",
 		"eslint-plugin-const-case": "1.2.2",
@@ -53,11 +53,13 @@
 		"eslint-plugin-react-hooks": "3.0.0",
 		"eslint-plugin-requirejs": "4.0.0",
 		"eslint-plugin-xss": "0.1.10",
-		"eslint-restricted-globals": "0.2.0"
+		"eslint-restricted-globals": "0.2.0",
+		"eslint-plugin-vue": "6.2.2",
+		"vue-eslint-parser": "^7.0.0"
 	},
 	"devDependencies": {
 		"eslint": "^6.8.0",
-		"neutrino": "~9.1.0"
+		"neutrino": "~9.2.0"
 	},
 	"peerDependencies": {
 		"eslint": "^6.8.0",
