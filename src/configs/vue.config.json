@@ -171,7 +171,8 @@
 		"vue/eqeqeq": ["error", "always"],
 		"vue/key-spacing": ["warn", {
 			"beforeColon": false,
-			"afterColon": true
+			"afterColon": true,
+			"mode": "strict"
 		}],
 		"vue/keyword-spacing": "warn",
 		"vue/match-component-file-name": ["error", {

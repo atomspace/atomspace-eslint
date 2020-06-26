@@ -158,7 +158,11 @@
 		"for-direction": "error",
 		"func-call-spacing": ["warn", "never"],
 		"func-style": ["error", "declaration"],
-		"key-spacing": ["warn", { "beforeColon": false, "afterColon": true }],
+		"key-spacing": ["warn", {
+			"beforeColon": false,
+			"afterColon": true,
+			"mode": "strict"
+		}],
 		"keyword-spacing": "warn",
 		"operator-assignment": "error",
 		"operator-linebreak": ["warn", "before", { "overrides": { "?": "after", ":": "after" } }],

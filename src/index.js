@@ -96,6 +96,10 @@ module.exports = function (settings = {}) {
 			baseConfig = mergeConfigs(baseConfig, babelConfig(baseConfig));
 		}
 
+		if (baseConfig.parser) {
+			baseConfig.parser = require.resolve(baseConfig.parser);
+		}
+
 		neutrino.use(eslint({
 			test: lintExtensions,
 			eslint: {
