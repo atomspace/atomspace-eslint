@@ -35,7 +35,7 @@ let mergeConfigs = require('./merge-configs');
 module.exports = function (settings = {}) {
 	return function (neutrino) {
 		let { engines = {} } = neutrino.options.packageJson;
-		let lintExtensions = settings.test || /\.(html?|jsx?|md|vue)$/;
+		let lintExtensions = settings.test || /\.(html?|jsx?|md|markdown|vue)$/;
 		let outputPath = path.relative(neutrino.options.root, neutrino.options.output);
 		let outputPattern = `/${outputPath.replace('\\', '/')}/**`;
 

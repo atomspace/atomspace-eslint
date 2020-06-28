@@ -13,6 +13,13 @@
 				"indent": "off",
 				"filenames/match-regex": "off"
 			}
+		},
+		{
+			"files": ["**/*.{jsx,tsx}"],
+			"rules": {
+				"vue/require-name-property": "off",
+				"vue/max-len": "off"
+			}
 		}
 	],
 	"rules": {
