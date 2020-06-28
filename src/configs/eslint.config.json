@@ -38,7 +38,7 @@
 		"no-use-before-define": "error",
 		"no-throw-literal": "error",
 		"no-proto": "error",
-		"no-redeclare": "error",
+		"no-redeclare": ["error", { "builtinGlobals": true }],
 		"no-nested-ternary": "error",
 		"no-multiple-empty-lines": ["warn", {"max": 2, "maxBOF": 0, "maxEOF": 0}],
 		"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
@@ -60,7 +60,10 @@
 		"no-new-func": "error",
     	"no-new-require": "error",
 		"no-new-wrappers": "warn",
-		"no-shadow": "error",
+		"no-shadow": ["error", { 
+			"builtinGlobals": false, 
+			"hoist": "functions"
+		}],
 		"no-shadow-restricted-names": "error",
 		"no-unneeded-ternary": "error",
 		"no-caller": "error",
@@ -242,6 +245,7 @@
 		}],
 		"no-return-assign": ["error", "always"],
 		"no-return-await": "error",
-		"no-async-promise-executor": "error"
+		"no-async-promise-executor": "error",
+		"block-scoped-var": "error"
 	}
 }
