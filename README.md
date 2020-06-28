@@ -232,7 +232,7 @@ Running `lint` command will auto-fix and report left violations
 
 ## VSCode tips
 
-To enable ESLint in **Visual Studio Code** you need to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+To enable ESLint in **Visual Studio Code** you should have the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) installed.
 
 These are suggested workspace settings related to `@atomspace/eslint` rules:
 

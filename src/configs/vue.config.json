@@ -1,5 +1,8 @@
 {
-	"plugins": ["vue"],
+	"plugins": [
+		"vue",
+		"vue-scoped-css"
+	],
 	"extends": ["plugin:vue/recommended"],
 	"env": { "browser": false },
 	"parser": "vue-eslint-parser",
@@ -260,6 +263,12 @@
 		"vue/v-on-function-call": ["error", "never"],
 		"vue/v-slot-style": "off",
 		"vue/valid-v-bind-sync": "off",
-		"vue/valid-v-slot": "error"
+		"vue/valid-v-slot": "error",
+
+		"vue-scoped-css/no-parsing-error": "off",
+		"vue-scoped-css/no-unused-keyframes": "warn",
+		"vue-scoped-css/no-unused-selector": "warn",
+		"vue-scoped-css/require-scoped": "error",
+		"vue-scoped-css/require-selector-used-inside": "off"
 	}
 }
