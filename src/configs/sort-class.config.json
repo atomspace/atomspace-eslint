@@ -1,0 +1,26 @@
+{
+	"plugins": ["sort-class-members"],
+	"overrides": [
+		{
+			"files": ["**/*.{jsx,tsx}"],
+			"rules": {
+				"sort-class-members/sort-class-members": "off"
+			}
+		}
+	],
+	"rules": {
+		"sort-class-members/sort-class-members": ["warn", {
+			"order": [
+				"[static-properties]",
+				"[static-methods]",
+				"[properties]",
+				"constructor",
+				"[accessor-pairs]",
+				"[arrow-function-properties]",
+				"[everything-else]"
+			],
+			"accessorPairPositioning": "getThenSet",
+			"stopAfterFirstProblem": true
+		}]
+	}
+}

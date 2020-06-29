@@ -30,6 +30,7 @@ let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
 let libsConfig = require('./configs/libs.config');
 let vueConfig = require('./configs/vue.config');
+let sortClassConfig = require('./configs/sort-class.config');
 let mergeConfigs = require('./merge-configs');
 
 module.exports = function (settings = {}) {
@@ -70,6 +71,7 @@ module.exports = function (settings = {}) {
 			nodeConfig,
 			libsConfig,
 			vueConfig,
+			sortClassConfig,
 			envsConfig(neutrino.config),
 			engines.node ? {
 				rules: {

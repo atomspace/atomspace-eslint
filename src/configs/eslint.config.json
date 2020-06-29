@@ -246,6 +246,7 @@
 		"no-return-assign": ["error", "always"],
 		"no-return-await": "error",
 		"no-async-promise-executor": "error",
-		"block-scoped-var": "error"
+		"block-scoped-var": "error",
+		"prefer-destructuring": "off"
 	}
 }

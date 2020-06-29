@@ -3,7 +3,7 @@
 	"extends": ["plugin:jest/recommended"],
 	"overrides": [
 		{
-			"files": [ "**/*.test.js", "**/*.spec.js" ],
+			"files": ["**/*.test.js", "**/*.spec.js"],
 			"rules": {
 				"max-lines-per-function": "off",
 				"max-lines": "off"
