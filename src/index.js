@@ -27,6 +27,7 @@ let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
 let libsConfig = require('./configs/libs.config');
 let vueConfig = require('./configs/vue.config');
+let vueA11yConfig = require('./configs/vue-a11y.config');
 let sortClassConfig = require('./configs/sort-class.config');
 let sonarConfig = require('./configs/sonar.config');
 let unicornConfig = require('./configs/unicorn.config');
@@ -66,6 +67,7 @@ module.exports = function (settings = {}) {
 			nodeConfig,
 			libsConfig,
 			vueConfig,
+			vueA11yConfig,
 			sortClassConfig,
 			sonarConfig,
 			unicornConfig,
