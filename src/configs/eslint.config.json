@@ -61,6 +61,8 @@
 		"no-new-require": "error",
 		"no-new-wrappers": "off",
 		"no-new-symbol": "off",
+		"no-new-object": "error",
+		"no-array-constructor": "error",
 		"no-shadow": ["error", { 
 			"builtinGlobals": false, 
 			"hoist": "functions"
