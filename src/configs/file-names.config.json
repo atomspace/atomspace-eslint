@@ -1,8 +1,8 @@
 {
 	"plugins": ["filenames"],
 	"rules": {
-		"filenames/match-regex": ["error", "^[a-z\\-\\.]+$", true],
-		"filenames/match-exported": ["error", ["kebab", "pascal"], "\\.[a-z\\.\\-]+$", false],
+		"filenames/match-regex": "off",
+		"filenames/match-exported": ["error", ["kebab", "pascal"], "\\.[a-z0-9\\.\\-]+$", false],
 		"filenames/no-index": "off"
 	}
 }

@@ -8,13 +8,11 @@ let promiseConfig = require('./configs/promise.config');
 let jsDocConfig = require('./configs/jsdoc.config');
 let amdConfig = require('./configs/amd.config');
 let commentConfig = require('./configs/eslint-comment.config');
-let regExpConfig = require('./configs/regexp.config');
 let esnextConfig = require('./configs/esnext.config');
 let es5Config = require('./configs/es5.config');
 let babelConfig = require('./configs/babel.config');
 let jestConfig = require('./configs/jest.config');
 let fileNamesConfig = require('./configs/file-names.config');
-let constConfig = require('./configs/const.config');
 let htmlConfig = require('./configs/html.config');
 let markdownConfig = require('./configs/markdown.config');
 let reactConfig = require('./configs/react.config');
@@ -24,7 +22,6 @@ let extendNativeConfig = require('./configs/extend-native.config');
 let arrowsConfig = require('./configs/arrows.config');
 let eslintPluginConfig = require('./configs/eslint-plugin.config');
 let compatConfig = require('./configs/compat.config');
-let throwConfig = require('./configs/throw.config');
 let securityConfig = require('./configs/security.config');
 let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
@@ -32,6 +29,7 @@ let libsConfig = require('./configs/libs.config');
 let vueConfig = require('./configs/vue.config');
 let sortClassConfig = require('./configs/sort-class.config');
 let sonarConfig = require('./configs/sonar.config');
+let unicornConfig = require('./configs/unicorn.config');
 let mergeConfigs = require('./merge-configs');
 
 module.exports = function (settings = {}) {
@@ -48,14 +46,11 @@ module.exports = function (settings = {}) {
 
 		let baseConfig = [
 			coreConfig,
-			settings.esnext ? esnextConfig : es5Config,
-			settings.esnext ? constConfig : {},
 			importConfig,
 			promiseConfig,
 			jsDocConfig,
 			amdConfig,
 			commentConfig,
-			regExpConfig,
 			jestConfig,
 			fileNamesConfig,
 			htmlConfig,
@@ -67,13 +62,13 @@ module.exports = function (settings = {}) {
 			arrowsConfig,
 			eslintPluginConfig,
 			settings.browsers.length ? compatConfig : {},
-			throwConfig,
 			securityConfig,
 			nodeConfig,
 			libsConfig,
 			vueConfig,
 			sortClassConfig,
 			sonarConfig,
+			unicornConfig,
 			envsConfig(neutrino.config),
 			engines.node ? {
 				rules: {
@@ -87,6 +82,7 @@ module.exports = function (settings = {}) {
 					'node/no-unsupported-features/es-syntax': ['error', { version: settings.node, ignores: ['modules'] }]
 				}
 			} : {},
+			settings.esnext ? esnextConfig : es5Config,
 			{
 				settings: {
 					browsers: settings.browsers

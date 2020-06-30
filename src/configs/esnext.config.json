@@ -1,4 +1,5 @@
 {
+	"plugins": ["const-case"],
 	"env": { "es6": true	},
 	"parserOptions": {
 		"ecmaVersion": 2018,
@@ -18,6 +19,11 @@
 		"prefer-numeric-literals": "error",
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
-		"default-param-last": "error"
+		"default-param-last": "error",
+		"const-case/uppercase": "error",
+		"unicorn/prefer-optional-catch-binding": "error",
+		"unicorn/prefer-includes": "error",
+		"unicorn/prefer-set-has": "error",
+		"unicorn/prefer-starts-ends-with": "error"
 	}
 }

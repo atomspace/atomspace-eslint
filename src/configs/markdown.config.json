@@ -23,7 +23,8 @@
 				"import/no-unresolved": "off",
 				"import/no-extraneous-dependencies": "off",
 				"import/no-anonymous-default-export": "off",
-				"node/no-unpublished-import": "off"
+				"node/no-unpublished-import": "off",
+				"unicorn/filename-case": "off"
 			}
 		},
 		{

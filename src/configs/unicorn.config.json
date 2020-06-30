@@ -1,0 +1,91 @@
+{
+	"plugins": ["unicorn"],
+	"rules": {
+		"unicorn/better-regex": "warn",
+		"unicorn/catch-error-name": "off",
+		"unicorn/consistent-function-scoping": "error",
+		"unicorn/custom-error-definition": "off",
+		"unicorn/error-message": "error",
+		"unicorn/escape-case": "error",
+		"unicorn/expiring-todo-comments": ["error", {
+			"ignoreDatesOnPullRequests": true,
+			"terms": [
+				"todo",
+				"fixme",
+				"xxx"
+			],
+			"allowWarningComments": true
+		}],
+		"unicorn/explicit-length-check": "off",
+		"unicorn/filename-case": ["error", {
+			"cases": {
+				"kebabCase": true,
+				"pascalCase": true
+			},
+			"ignore": [
+				"^[A-Z0-9_\\.]+\\.(md|markdown|mdx)$"
+			]
+		}],
+		"unicorn/import-index": "off",
+		"unicorn/new-for-builtins": "error",
+		"unicorn/no-abusive-eslint-disable": "off",
+		"unicorn/no-array-instanceof": "off",
+		"unicorn/no-console-spaces": "warn",
+		"unicorn/no-fn-reference-in-iterator": "off",
+		"unicorn/no-for-loop": "off",
+		"unicorn/no-hex-escape": "off",
+		"unicorn/no-keyword-prefix": "off",
+		"unicorn/no-nested-ternary": "off",
+		"unicorn/no-new-buffer": "off",
+		"unicorn/no-null": "off",
+		"unicorn/no-process-exit": "off",
+		"unicorn/no-reduce": "off",
+		"unicorn/no-unreadable-array-destructuring": "error",
+		"unicorn/no-unsafe-regex": "warn",
+		"unicorn/no-unused-properties": "warn",
+		"unicorn/no-useless-undefined": "warn",
+		"unicorn/no-zero-fractions": "warn",
+		"unicorn/number-literal-case": "error",
+		"unicorn/prefer-add-event-listener": "off",
+		"unicorn/prefer-dataset": "off",
+		"unicorn/prefer-event-key": "off",
+		"unicorn/prefer-flat-map": "error",
+		"unicorn/prefer-includes": "off",
+		"unicorn/prefer-modern-dom-apis": "off",
+		"unicorn/prefer-negative-index": "error",
+		"unicorn/prefer-node-append": "off",
+		"unicorn/prefer-node-remove": "off",
+		"unicorn/prefer-number-properties": "off",
+		"unicorn/prefer-optional-catch-binding": "off",
+		"unicorn/prefer-query-selector": "error",
+		"unicorn/prefer-reflect-apply": "off",
+		"unicorn/prefer-replace-all": "off",
+		"unicorn/prefer-set-has": "off",
+		"unicorn/prefer-spread": "off",
+		"unicorn/prefer-starts-ends-with": "off",
+		"unicorn/prefer-string-slice": "off",
+		"unicorn/prefer-text-content": "off",
+		"unicorn/prefer-trim-start-end": "off",
+		"unicorn/prefer-type-error": "error",
+		"unicorn/prevent-abbreviations": ["warn",	{
+			"extendDefaultReplacements": false,
+			"replacements": {
+				"e": {
+					"event": true
+				}
+			},
+			"checkVariables": true,
+			"checkProperties": false,
+			"checkFilenames": false
+		}],
+		"unicorn/string-content": ["warn", {
+			"patterns": {
+				"\\.\\.\\.": "…",
+				"->": "→",
+				"<-": "←",
+				"'": "’"
+			}
+		}],
+		"unicorn/throw-new-error": "error"
+	}
+}

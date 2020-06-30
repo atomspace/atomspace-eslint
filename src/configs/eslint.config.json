@@ -58,8 +58,9 @@
 		"no-delete-var": "error",
 		"no-new": "off",
 		"no-new-func": "error",
-    	"no-new-require": "error",
-		"no-new-wrappers": "warn",
+		"no-new-require": "error",
+		"no-new-wrappers": "off",
+		"no-new-symbol": "off",
 		"no-shadow": ["error", { 
 			"builtinGlobals": false, 
 			"hoist": "functions"
@@ -213,7 +214,9 @@
 		"no-path-concat": "error",
 		"no-buffer-constructor": "error",
 		"handle-callback-err": ["error", "^(err|error|^.+Error)$"],
-		"array-callback-return": "error",
+		"array-callback-return": ["error", {
+			"allowImplicit": true
+		}],
 		"radix": ["error", "always"],
 		"no-implicit-globals": "off",
 		"no-restricted-properties": ["error", {
