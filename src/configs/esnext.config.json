@@ -20,6 +20,18 @@
 		"prefer-rest-params": "error",
 		"prefer-spread": "error",
 		"default-param-last": "error",
+		"prefer-destructuring": ["warn", {
+			"VariableDeclarator": {
+				"array": false,
+				"object": true
+			 },
+			 "AssignmentExpression": {
+				"array": false,
+				"object": false
+			 }
+		}, {
+			"enforceForRenamedProperties": false
+		}],
 		"const-case/uppercase": "error",
 		"unicorn/prefer-optional-catch-binding": "error",
 		"unicorn/prefer-includes": "error",
