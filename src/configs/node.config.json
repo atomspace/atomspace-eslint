@@ -43,6 +43,18 @@
 		"node/prefer-global/url-search-params": ["error", "always"],
 		"node/prefer-global/url": ["error", "always"],
 		"node/prefer-promises/dns": "off",
-		"node/prefer-promises/fs": "off"
+		"node/prefer-promises/fs": "off",
+
+		"node/callback-return": "off",
+		"node/global-require": "off",
+		"node/handle-callback-err": ["error", "^(err|error|^.+Error)$"],
+		"node/no-mixed-requires": "off",
+		"node/no-new-require": "error",
+		"node/no-path-concat": "error",
+		"node/no-process-env": "off",
+		"node/no-process-exit": "warn",
+		"node/no-restricted-require": "off",
+		"node/no-restricted-import": "off",
+		"node/no-sync": "off"
 	}
 }

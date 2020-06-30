@@ -58,7 +58,6 @@
 		"no-delete-var": "error",
 		"no-new": "off",
 		"no-new-func": "error",
-		"no-new-require": "error",
 		"no-new-wrappers": "off",
 		"no-new-symbol": "off",
 		"no-new-object": "error",
@@ -97,7 +96,9 @@
 		"arrow-parens": ["warn", "as-needed"],
 		"arrow-spacing": "warn",
 		"arrow-body-style": ["warn", "as-needed"],
-		"computed-property-spacing": "error",
+		"computed-property-spacing":  ["warn", "never", { 	
+			"enforceForClassMembers": true 
+		}],
 		"dot-location": ["error", "property"],
 		"dot-notation": ["error", { "allowKeywords": false }],
 		"lines-around-comment": ["warn", {
@@ -200,7 +201,6 @@
 		"switch-colon-spacing": "warn",
 		"object-curly-newline": ["warn", { "consistent": true, "multiline": true, "minProperties": 5 }],
 		"object-property-newline": "off",
-		"no-process-exit": "warn",
 		"no-mixed-operators": ["warn", { "allowSamePrecedence": true }],
 		"valid-typeof": ["error", { "requireStringLiterals": true }],
 		"no-global-assign": ["error", {"exceptions": []}],
@@ -213,9 +213,7 @@
 		"no-empty": ["error", { "allowEmptyCatch": true }],
 		"no-debugger": "warn",
 		"padded-blocks": ["warn", "never"],
-		"no-path-concat": "error",
 		"no-buffer-constructor": "error",
-		"handle-callback-err": ["error", "^(err|error|^.+Error)$"],
 		"array-callback-return": ["error", {
 			"allowImplicit": true
 		}],
@@ -225,14 +223,21 @@
 			"property": "__defineGetter__",
 			"message": "Please use Object.defineProperty instead."
 		}],
-		"use-isnan": ["error", {"enforceForSwitchCase": true, "enforceForIndexOf": true}],
+		"use-isnan": ["error", {
+			"enforceForSwitchCase": true, 
+			"enforceForIndexOf": true
+		}],
 		"array-element-newline": ["warn", "consistent"],
 		"no-useless-catch": "error",
 		"no-div-regex": "warn",
 		"function-call-argument-newline": ["warn", "consistent"],
 		"no-import-assign": "error",
 		"prefer-regex-literals": "error",
-		"accessor-pairs": ["error", {"setWithoutGet": true, "getWithoutSet": false, "enforceForClassMembers" : true}],
+		"accessor-pairs": ["error", {
+			"setWithoutGet": true, 
+			"getWithoutSet": false, 
+			"enforceForClassMembers" : true
+		}],
 		"grouped-accessor-pairs": ["warn", "anyOrder"],
 		"no-setter-return": "error",
 		"no-dupe-else-if": "error",
