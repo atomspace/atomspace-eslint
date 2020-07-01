@@ -11,7 +11,7 @@
 	},
 	"overrides": [
 		{
-			"files": ["**/*.test.js", "**/*.spec.js"],
+			"files": ["**/*.test.*", "**/*.spec.*", "**/*_test.*", "**/*_spec.*", "**/*Test.*", "**/*Spec.*"],
 			"rules": {
 				"max-lines-per-function": "off",
 				"max-lines": "off",
