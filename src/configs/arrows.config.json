@@ -4,7 +4,7 @@
 		"@getify/proper-arrows/params": "off",
 		"@getify/proper-arrows/name": "off",
 		"@getify/proper-arrows/where": ["error", { 
-			"global": true,
+			"global": false,
 			"property": false,
 			"export": true,
 			"trivial": false

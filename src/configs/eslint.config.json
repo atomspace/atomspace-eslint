@@ -257,6 +257,15 @@
 		"no-return-await": "error",
 		"no-async-promise-executor": "error",
 		"block-scoped-var": "error",
-		"prefer-destructuring": "off"
+		"prefer-destructuring": "off",
+		"default-case-last": "error",
+		"no-useless-backreference": "error",
+		"no-extra-boolean-cast": ["error", {
+			"enforceForLogicalOperands": true
+		}],
+		"newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
+		"no-loss-of-precision": "error",
+		"no-promise-executor-return": "error",
+		"no-unreachable-loop": "error"
 	}
 }
