@@ -1,5 +1,8 @@
 {
-	"plugins": ["jest"],
+	"plugins": [
+		"jest", 
+		"jest-formatting"
+	],
 	"extends": ["plugin:jest/recommended"],
 	"settings": {
 		"jest": {
@@ -55,6 +58,15 @@
 		}],
 		"jest/prefer-expect-assertions": "off",
 		"jest/prefer-strict-equal": "off",
-		"jest/no-conditional-expect": "error"
+		"jest/no-conditional-expect": "error",
+
+		"jest-formatting/padding-around-after-all-blocks": "warn",
+		"jest-formatting/padding-around-after-each-blocks": "warn",
+		"jest-formatting/padding-around-before-all-blocks": "warn",
+		"jest-formatting/padding-around-before-each-blocks": "warn",
+		"jest-formatting/padding-around-describe-blocks": "warn",
+		"jest-formatting/padding-around-test-blocks": "warn",
+		"jest-formatting/padding-around-expect-groups": "warn",
+		"jest-formatting/padding-around-all": "off"
 	}
 }
