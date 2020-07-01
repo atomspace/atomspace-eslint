@@ -45,10 +45,18 @@
 		"react/default-props-match-prop-types": "error",
 		"react/destructuring-assignment": "off",
 		"react/display-name": "off",
-		"react/forbid-component-props": ["error", { "forbid": [] }],
+		"react/forbid-component-props": ["error", { 
+			"forbid": [
+				{"propName": "class", "message": "Use 'className' instead"}
+			] 
+		}],
 		"react/forbid-dom-props": ["error", { "forbid": ["align", "background", "bgcolor"] }],
 		"react/forbid-elements": "off",
-		"react/forbid-prop-types": "off",
+		"react/forbid-prop-types": ["error", {
+			"forbid": ["class"],
+			"checkContextTypes": false,
+			"checkChildContextTypes": false
+		}],
 		"react/forbid-foreign-prop-types": "off",
 		"react/no-access-state-in-setstate": "off",
 		"react/no-array-index-key": "warn",
