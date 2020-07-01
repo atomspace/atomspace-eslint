@@ -24,6 +24,6 @@
 			["code", "output", "options", "parserOptions", "errors"]
 		],
 		"eslint-plugin/test-case-shorthand-strings": ["warn", "consistent-as-needed"],
-		"eslint-plugin/prefer-object-rule": "error"
+		"eslint-plugin/prefer-object-rule": "off"
 	}
 }
