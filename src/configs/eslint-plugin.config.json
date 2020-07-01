@@ -23,6 +23,7 @@
 		"eslint-plugin/test-case-property-ordering": ["warn",
 			["code", "output", "options", "parserOptions", "errors"]
 		],
-		"eslint-plugin/test-case-shorthand-strings": ["warn", "consistent-as-needed"]
+		"eslint-plugin/test-case-shorthand-strings": ["warn", "consistent-as-needed"],
+		"eslint-plugin/prefer-object-rule": "error"
 	}
 }

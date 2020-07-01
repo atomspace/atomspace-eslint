@@ -36,6 +36,7 @@
 		"jsdoc/empty-tags": "error",
 		"jsdoc/no-types": "off",
 		"jsdoc/require-file-overview": "off",
-		"jsdoc/require-jsdoc": "off"
+		"jsdoc/require-jsdoc": "off",
+		"jsdoc/require-throws": "error"
 	}
 }

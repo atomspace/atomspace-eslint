@@ -16,6 +16,6 @@
 			"sequence": true, 
 			"trivial": true 
 		}],
-		"@getify/proper-arrows/this": "off"
+		"@getify/proper-arrows/this": ["error", "never-global"]
 	}
 }
