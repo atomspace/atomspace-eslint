@@ -62,7 +62,7 @@ module.exports = {
    "scripts": {
       "build": "webpack --mode production",
       "start": "webpack --mode development",
-      "lint": "eslint ./ --ext .js,.jsx,.html,.md --format codeframe --fix"
+      "lint": "eslint ./ --format codeframe --fix"
    }
 }
 ```
@@ -211,8 +211,8 @@ Usually ESLint is a part of Webpack build configuration and any violation will p
 ```json
 {
    "scripts": {
-      "eslint": "eslint ./ --ext .js,.jsx,.vue,.html,.md --format codeframe",
-      "pretest": "npm run eslint -- --max-warnings 0",
+      "eslint": "eslint ./",
+      "pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
       "lint": "npm run eslint -- --fix"
    }
 }

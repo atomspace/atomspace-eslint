@@ -4,7 +4,7 @@
 	"description": "Neutrino preset for adding ESLint config, following the Atom Space code style",
 	"main": "src/index.js",
 	"scripts": {
-		"eslint": "eslint ./ --ext .js,.jsx,.vue,.html,.md",
+		"eslint": "eslint ./",
 		"pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
 		"lint": "npm run eslint -- --fix"
 	},
@@ -37,7 +37,7 @@
 		"eslint-plugin-html": "~6.0.2",
 		"eslint-plugin-import": "~2.22.0",
 		"eslint-plugin-jest": "~23.17.1",
-		"eslint-plugin-jsdoc": "~28.6.0",
+		"eslint-plugin-jsdoc": "~28.6.1",
 		"eslint-plugin-jsx-a11y": "~6.3.1",
 		"eslint-plugin-lodash": "~7.1.0",
 		"eslint-plugin-lodash-fp": "~2.2.0-a1",
@@ -58,15 +58,15 @@
 		"eslint-plugin-sort-class-members": "~1.7.0",
 		"eslint-plugin-sonarjs": "~0.5.0",
 		"eslint-plugin-unicorn": "~20.1.0",
-		"eslint-plugin-vuejs-accessibility": "~0.2.0",
-		"eslint-plugin-jest-formatting": "2.0.0"
+		"eslint-plugin-vuejs-accessibility": "~0.3.0",
+		"eslint-plugin-jest-formatting": "~2.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^7.3.1",
+		"eslint": "^7.4.0",
 		"neutrino": "~9.2.0"
 	},
 	"peerDependencies": {
-		"eslint": "^7.3.1",
+		"eslint": "^7.4.0",
 		"neutrino": "^9.0.0"
 	},
 	"engines": {
