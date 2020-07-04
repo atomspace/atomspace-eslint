@@ -1,6 +1,6 @@
 {
 	"name": "@atomspace/eslint",
-	"version": "4.4.2",
+	"version": "5.0.0",
 	"description": "Neutrino preset for adding ESLint config, following the Atom Space code style",
 	"main": "src/index.js",
 	"scripts": {
