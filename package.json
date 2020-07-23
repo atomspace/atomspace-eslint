@@ -59,7 +59,8 @@
 		"eslint-plugin-sonarjs": "~0.5.0",
 		"eslint-plugin-unicorn": "~20.1.0",
 		"eslint-plugin-vuejs-accessibility": "~0.3.0",
-		"eslint-plugin-jest-formatting": "~2.0.0"
+		"eslint-plugin-jest-formatting": "~2.0.0",
+		"eslint-import-resolver-webpack": "~0.12.2"
 	},
 	"devDependencies": {
 		"eslint": "^7.4.0",

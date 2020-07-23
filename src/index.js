@@ -4,6 +4,7 @@ let eslint = require('@neutrinojs/eslint');
 
 let coreConfig = require('./configs/eslint.config');
 let importConfig = require('./configs/import.config');
+let importResolverConfig = require('./configs/import-resolver.config');
 let promiseConfig = require('./configs/promise.config');
 let jsDocConfig = require('./configs/jsdoc.config');
 let amdConfig = require('./configs/amd.config');
@@ -48,6 +49,7 @@ module.exports = function (settings = {}) {
 		let baseConfig = [
 			coreConfig,
 			importConfig,
+			importResolverConfig(neutrino.config),
 			promiseConfig,
 			jsDocConfig,
 			amdConfig,
