@@ -83,13 +83,13 @@
 			"groups": ["builtin", "external", ["internal", "parent", "sibling", "index"], "unknown"],
 			"pathGroups": [
 				{
-					"pattern": "**/*.+(svg|png|jpeg|jpg|gif|webp)",
+					"pattern": "**/*.+(svg|png|jpeg|jpg|webp|gif|ico)",
 					"patternOptions": {"dot": true, "nocomment": true},
 					"group": "unknown",
 					"position": "before"
 				},
 				{
-					"pattern": "{.,..}**/*.+(svg|png|jpeg|jpg|gif|webp)",
+					"pattern": "{.,..,../..,../../..,../../../..,../../../../..,../../../../../..,../../../../../../..,../../../../../../../..,../../../../../../../../..}/**/*.+(svg|png|jpeg|jpg|webp|gif|ico)",
 					"patternOptions": {"dot": true, "nocomment": true},
 					"group": "unknown",
 					"position": "before"
@@ -101,7 +101,7 @@
 					"position": "after"
 				},
 				{
-					"pattern": "{.,..}/**/*.+(css|sass|less|scss|pcss|styl)",
+					"pattern": "{.,..,../..,../../..,../../../..,../../../../..,../../../../../..,../../../../../../..,../../../../../../../..,../../../../../../../../..}/**/*.+(css|sass|less|scss|pcss|styl)",
 					"patternOptions": {"dot": true, "nocomment": true},
 					"group": "unknown",
 					"position": "after"
