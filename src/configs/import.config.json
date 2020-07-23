@@ -83,12 +83,31 @@
 			"groups": ["builtin", "external", ["internal", "parent", "sibling", "index"], "unknown"],
 			"pathGroups": [
 				{
+					"pattern": "**/*.+(svg|png|jpeg|jpg|gif|webp)",
+					"patternOptions": {"dot": true, "nocomment": true},
+					"group": "unknown",
+					"position": "before"
+				},
+				{
+					"pattern": "{.,..}**/*.+(svg|png|jpeg|jpg|gif|webp)",
+					"patternOptions": {"dot": true, "nocomment": true},
+					"group": "unknown",
+					"position": "before"
+				},
+				{
 					"pattern": "**/*.+(css|sass|less|scss|pcss|styl)",
+					"patternOptions": {"dot": true, "nocomment": true},
+					"group": "unknown",
+					"position": "after"
+				},
+				{
+					"pattern": "{.,..}/**/*.+(css|sass|less|scss|pcss|styl)",
+					"patternOptions": {"dot": true, "nocomment": true},
 					"group": "unknown",
 					"position": "after"
 				}
 			],
-			"pathGroupsExcludedImportTypes": ["builtin", "external"],
+			"pathGroupsExcludedImportTypes": ["builtin"],
 			"newlines-between": "always"
 		}],
 		"import/newline-after-import": "warn",
