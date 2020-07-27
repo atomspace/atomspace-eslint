@@ -225,7 +225,7 @@
 		"vue/no-restricted-syntax": "off",
 		"vue/no-static-inline-styles": "off",
 		"vue/no-unsupported-features": ["error", {
-			"version": "^2.5.0",
+			"version": "^2.6.0",
 			"ignores": []
 		}],
 
