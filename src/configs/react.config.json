@@ -37,6 +37,16 @@
 					]
 				}]
 			}
+		},
+		{
+			"files": ["**/*.vue"],
+			"rules": {
+				"react/prop-types": "off",
+				"react/jsx-uses-react": "off",
+				"react/forbid-component-props": ["error", { 
+					"forbid": [] 
+				}]
+			}
 		}
 	],
 	"rules": {
@@ -143,7 +153,7 @@
 		"react/jsx-closing-tag-location": "warn",
 		"react/jsx-curly-spacing": ["error", { "when": "never" }],
 		"react/jsx-equals-spacing": ["error", "never"],
-		"react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx", ".md", ".mdx"] }],
+		"react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx", ".md", ".mdx", ".vue"] }],
 		"react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
 		"react/jsx-handler-names": "off",
 		"react/jsx-indent": ["warn", "tab", {

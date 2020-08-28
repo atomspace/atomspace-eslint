@@ -6,7 +6,7 @@
 			"processor": "markdown/markdown"
 		},
 		{
-			"files": ["**/*.{md,markdown}/*.{js,javascript,jsx,node,vue}"],
+			"files": ["**/*.{md,markdown}/*.{js,ts,javascript,typescript,jsx,tsx,node,vue}"],
 			"parserOptions": {
 				"sourceType": "module"
 			},
@@ -20,16 +20,12 @@
 				"no-console": "off",
 				"filenames/match-regex": "off",
 				"filenames/match-exported": "off",
+				"import/extensions": "off",
 				"import/no-unresolved": "off",
 				"import/no-extraneous-dependencies": "off",
 				"import/no-anonymous-default-export": "off",
 				"node/no-unpublished-import": "off",
-				"unicorn/filename-case": "off"
-			}
-		},
-		{
-			"files": ["**/*.{md,markdown}/*.jsx"],
-			"rules": {
+				"unicorn/filename-case": "off",
 				"react/jsx-indent": ["warn", 3, {
 					"checkAttributes": false,
 					"indentLogicalExpressions": true

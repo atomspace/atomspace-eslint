@@ -1,5 +1,14 @@
 {
 	"plugins": ["@getify/proper-arrows"],
+	"overrides": [
+		{
+			"files": ["**/*.vue"],
+			"rules": {
+				"@getify/proper-arrows/where": "off",
+				"@getify/proper-arrows/params": "off"
+			}
+		}
+	],
 	"rules": {
 		"@getify/proper-arrows/params": "off",
 		"@getify/proper-arrows/name": "off",
