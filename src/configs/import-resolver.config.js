@@ -4,21 +4,22 @@ module.exports = function importResolver (neutrinoConfig) {
 	config.settings['import/resolver'] = {
 		webpack: {
 			config () {
+				let { resolve } = neutrinoConfig;
+
 				return {
 					resolve: {
-						extensions: neutrinoConfig.resolve.extensions.values(),
-						alias: neutrinoConfig.resolve.alias.entries(),
-						modules: neutrinoConfig.resolve.modules.values(),
-						aliasFields: neutrinoConfig.resolve.aliasFields.values(),
-
-						// descriptionFields: neutrino.config.resolve.descriptionFields.values(),
-						mainFields: neutrinoConfig.resolve.mainFields.values(),
-						mainFiles: neutrinoConfig.resolve.mainFiles.values(),
-						cachePredicate: neutrinoConfig.resolve.get('cachePredicate'),
-						cacheWithContext: neutrinoConfig.resolve.get('cacheWithContext'),
-						enforceExtension: neutrinoConfig.resolve.get('enforceExtension'),
-						unsafeCache: neutrinoConfig.resolve.get('unsafeCache'),
-						symlinks: neutrinoConfig.resolve.get('symlinks')
+						extensions: resolve.extensions.values(),
+						alias: resolve.alias.entries(),
+						modules: resolve.modules.values(),
+						aliasFields: resolve.aliasFields.values(),
+						descriptionFiles: resolve.descriptionFiles.values(),
+						mainFields: resolve.mainFields.values(),
+						mainFiles: resolve.mainFiles.values(),
+						cachePredicate: resolve.get('cachePredicate'),
+						cacheWithContext: resolve.get('cacheWithContext'),
+						enforceExtension: resolve.get('enforceExtension'),
+						unsafeCache: resolve.get('unsafeCache'),
+						symlinks: resolve.get('symlinks')
 					}
 				};
 			}
