@@ -9,25 +9,30 @@
 ## Features
 
 - Zero upfront configuration necessary to start linting your project
-- Modern Babel knowledge supporting ES modules, JSX (when used with React preset), Web and Node.js apps
+- React support
+- Vue support
+- Accessibility linting in React and Vue
 - Highly visible during development, fails compilation when building for production
 - Promises linting
-- Module systems linting (ES, CommonJS, AMD)
+- Module systems linting (ES, CommonJS, AMD) considering Webpack modules paths resolving
 - Regex shorthand to improve readability
 - ESLint comments linting
 - JSDoc syntax linting
 - ESLint plugins linting
+- Jest tests linting
 - Security rules
+- File names linting
 - Various libraries linting
+- Markdown code fragments linting
+- Checking for best practices
 - Easily extensible to customize your project as needed
 
 ## Requirements
 
-- Node.js v10
-- Npm v5.4.0+
+- Node.js v10+
 - Neutrino v9
 - Webpack 4
-- ESLint 6
+- ESLint 7.4+
 
 ## Installation
 
