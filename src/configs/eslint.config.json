@@ -266,6 +266,7 @@
 		"newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }],
 		"no-loss-of-precision": "error",
 		"no-promise-executor-return": "error",
-		"no-unreachable-loop": "error"
+		"no-unreachable-loop": "error",
+		"no-sparse-arrays": "error"
 	}
 }

@@ -35,6 +35,12 @@
 			}
 		},
 		{
+			"files": ["**/*.{md,markdown}/*.{jsx,tsx}"],
+			"rules": {
+				"react/no-multi-comp": "off"
+			}
+	  	},
+		{
 			"files": ["**/*.{md,markdown}/*.vue"],
 			"rules": {
 				"vue/html-indent": ["warn", 3, {
@@ -47,7 +53,9 @@
 					"baseIndent": 0,
 					"switchCase": 1					
 				}],
-				"vue/match-component-file-name": "off"
+				"vue/match-component-file-name": "off",
+				"vue/no-unregistered-components": "off",
+				"vue/one-component-per-file": "off"
 			}
 	  }
 	]

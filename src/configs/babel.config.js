@@ -14,7 +14,7 @@ module.exports = function (config) {
 			'no-unused-expressions': 'off',
 			'babel/no-unused-expressions': config.rules['no-unused-expressions'] || 'off',
 			'camelcase': 'off',
-			'babel/camelcase ': config.rules.camelcase || 'off'
+			'babel/camelcase': config.rules.camelcase || 'off'
 		}
 	};
 };

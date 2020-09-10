@@ -28,23 +28,30 @@ let envsConfig = require('./configs/envs.config');
 let nodeConfig = require('./configs/node.config');
 let libsConfig = require('./configs/libs.config');
 let vueConfig = require('./configs/vue.config');
+let vue3Config = require('./configs/vue3.config');
+let vueInheritConfig = require('./configs/vue.inherit.config');
 let vueA11yConfig = require('./configs/vue-a11y.config');
 let sortClassConfig = require('./configs/sort-class.config');
 let sonarConfig = require('./configs/sonar.config');
 let unicornConfig = require('./configs/unicorn.config');
 let mergeConfigs = require('./merge-configs');
 
-module.exports = function (settings = {}) {
+module.exports = function (customSettings = {}) {
 	return function (neutrino) {
+		const VUE_3_VERSION = 3;
 		let { engines = {} } = neutrino.options.packageJson;
-		let lintExtensions = settings.test || /\.(html?|jsx?|md|markdown|vue)$/;
 		let outputPath = path.relative(neutrino.options.root, neutrino.options.output);
 		let outputPattern = `/${outputPath.replace('\\', '/')}/**`;
+		let vueSemVer = neutrino.getDependencyVersion('vue') || {};
+		let vueIs3thVersion = vueSemVer.major === VUE_3_VERSION;
 
-		settings.esnext = settings.esnext === undefined ? true : settings.esnext; // `true` by default
-		settings.eslint = settings.eslint || {};
-		settings.browsers = settings.browsers || [];
-		settings.node = settings.node || undefined;
+		let settings = {
+			test: customSettings.test || /\.(html?|jsx?|md|markdown|vue)$/,
+			esnext: customSettings.esnext === undefined ? true : customSettings.esnext, // `true` by default
+			eslint: customSettings.eslint || {},
+			browsers: customSettings.browsers || [],
+			node: customSettings.node || undefined
+		};
 
 		let baseConfig = [
 			coreConfig,
@@ -69,6 +76,7 @@ module.exports = function (settings = {}) {
 			nodeConfig,
 			libsConfig,
 			vueConfig,
+			vueIs3thVersion ? vue3Config : {},
 			vueA11yConfig,
 			sortClassConfig,
 			sonarConfig,
@@ -96,6 +104,8 @@ module.exports = function (settings = {}) {
 			settings.eslint
 		].reduce(mergeConfigs);
 
+		baseConfig = mergeConfigs(baseConfig, vueInheritConfig(baseConfig));
+
 		if (settings.esnext) {
 			baseConfig = mergeConfigs(baseConfig, babelConfig(baseConfig));
 		}
@@ -105,7 +115,7 @@ module.exports = function (settings = {}) {
 		}
 
 		neutrino.use(eslint({
-			test: lintExtensions,
+			test: settings.test,
 			eslint: {
 				baseConfig,
 				resolvePluginsRelativeTo: path.resolve(__dirname, '../node_modules/.pnpm')
