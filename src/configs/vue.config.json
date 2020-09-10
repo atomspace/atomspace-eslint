@@ -254,7 +254,7 @@
 			]
 		}],
 		"vue/sort-keys": "off",
-		"vue/space-infix-ops": "error",
+		"vue/space-infix-ops": "warn",
 		"vue/space-unary-ops": ["error", {
 			"words": true,
 			"nonwords": false

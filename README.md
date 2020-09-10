@@ -11,6 +11,7 @@
 - Zero upfront configuration necessary to start linting your project
 - React support
 - Vue support
+- Node.js support
 - Accessibility linting in React and Vue
 - Highly visible during development, fails compilation when building for production
 - Promises linting

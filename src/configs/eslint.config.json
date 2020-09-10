@@ -157,7 +157,7 @@
 		"yield-star-spacing": ["warn", "after"],
 		"generator-star-spacing": ["warn", "after"],
 		"wrap-iife": ["error", "outside"],
-		"space-infix-ops": "error",
+		"space-infix-ops": ["warn", { "int32Hint": true }],
 		"default-case": "off",
 		"eol-last": ["warn", "never"],
 		"new-cap": ["error", { "newIsCap": true }],
