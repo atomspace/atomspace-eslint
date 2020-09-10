@@ -123,3 +123,5 @@ module.exports = function (customSettings = {}) {
 		}));
 	};
 };
+
+module.exports.merge = mergeConfigs;
