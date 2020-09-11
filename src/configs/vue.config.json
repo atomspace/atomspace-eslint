@@ -222,10 +222,7 @@
 		}],
 		"vue/no-restricted-syntax": "off",
 		"vue/no-static-inline-styles": "off",
-		"vue/no-unsupported-features": ["error", {
-			"version": "^2.6.0",
-			"ignores": []
-		}],
+		"vue/no-unsupported-features": "off",
 		"vue/padding-line-between-blocks": ["warn", "always"],
 		"vue/require-direct-export": "off",
 		"vue/require-name-property": "error",

@@ -1,7 +1,5 @@
 {
-	"plugins": [
-		"node"
-	],
+	"plugins": ["node"],
 	"globals": {
 		 "Buffer": "readonly",
 		 "GLOBAL": "readonly",

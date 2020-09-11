@@ -4,11 +4,6 @@
 		"jest-formatting"
 	],
 	"extends": ["plugin:jest/recommended"],
-	"settings": {
-		"jest": {
-			"version": 26
-		}
-	},
 	"overrides": [
 		{
 			"files": ["**/*.test.*", "**/*.spec.*", "**/*_test.*", "**/*_spec.*", "**/*Test.*", "**/*Spec.*"],
