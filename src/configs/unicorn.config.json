@@ -49,7 +49,7 @@
 		"unicorn/prefer-add-event-listener": "off",
 		"unicorn/prefer-dataset": "off",
 		"unicorn/prefer-event-key": "off",
-		"unicorn/prefer-flat-map": "error",
+		"unicorn/prefer-flat-map": "off",
 		"unicorn/prefer-includes": "off",
 		"unicorn/prefer-modern-dom-apis": "off",
 		"unicorn/prefer-negative-index": "error",
@@ -86,6 +86,8 @@
 				"'": "’"
 			}
 		}],
-		"unicorn/throw-new-error": "error"
+		"unicorn/throw-new-error": "error",
+		"unicorn/no-object-as-default-parameter": "off",
+		"unicorn/prefer-array-find": "error"
 	}
 }
