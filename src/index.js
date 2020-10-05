@@ -91,7 +91,7 @@ module.exports = function (customSettings = {}) {
 			settings.esnext ? babelConfig(baseConfig) : {},
 			resolveParser(baseConfig)
 		].reduce(mergeConfigs);
-		
+
 		aliasPlugins(baseConfig);
 
 		neutrino.use(eslint({
