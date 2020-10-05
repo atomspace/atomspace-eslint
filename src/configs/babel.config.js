@@ -20,9 +20,10 @@ module.exports = function (config) {
 		};
 	}
 
+	let plugins = ['babel'];
 	let rules = inheritanceRules
 		.map(toBabelRule)
 		.reduce(merge);
 
-	return { rules	};
+	return { plugins, rules	};
 };

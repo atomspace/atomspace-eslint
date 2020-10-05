@@ -34,6 +34,8 @@ let sonarConfig = require('./configs/sonar.config');
 let unicornConfig = require('./configs/unicorn.config');
 let versionsConfig = require('./configs/versions.config');
 let mergeConfigs = require('./merge-configs');
+let resolveParser = require('./resolve-parser');
+let aliasPlugins = require('./alias-plugins');
 
 module.exports = function (customSettings = {}) {
 	return function (neutrino) {
@@ -87,14 +89,15 @@ module.exports = function (customSettings = {}) {
 			baseConfig,
 			vueInheritConfig(baseConfig),
 			settings.esnext ? babelConfig(baseConfig) : {},
-			baseConfig.parser ? { parser: require.resolve(baseConfig.parser) } : {}
+			resolveParser(baseConfig)
 		].reduce(mergeConfigs);
+		
+		aliasPlugins(baseConfig);
 
 		neutrino.use(eslint({
 			test: settings.test,
 			eslint: {
-				baseConfig,
-				resolvePluginsRelativeTo: path.resolve(__dirname, '../node_modules/.pnpm')
+				baseConfig
 			 }
 		}));
 	};
