@@ -36,6 +36,7 @@ let versionsConfig = require('./configs/versions.config');
 let mergeConfigs = require('./merge-configs');
 let resolveParser = require('./resolve-parser');
 let aliasPlugins = require('./alias-plugins');
+let aliasImportResolvers = require('./alias-import-resolvers');
 
 module.exports = function (customSettings = {}) {
 	return function (neutrino) {
@@ -93,6 +94,7 @@ module.exports = function (customSettings = {}) {
 		].reduce(mergeConfigs);
 
 		aliasPlugins(baseConfig);
+		aliasImportResolvers(baseConfig);
 
 		neutrino.use(eslint({
 			test: settings.test,

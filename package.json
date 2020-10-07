@@ -64,7 +64,8 @@
 		"eslint-plugin-unicorn": "~21.0.0",
 		"eslint-plugin-vuejs-accessibility": "~0.3.0",
 		"eslint-plugin-jest-formatting": "~2.0.0",
-		"eslint-import-resolver-webpack": "~0.12.2"
+		"eslint-import-resolver-webpack": "~0.12.2",
+		"eslint-import-resolver-node": "^0.3.4"
 	},
 	"devDependencies": {
 		"eslint": "^7.8.1",
