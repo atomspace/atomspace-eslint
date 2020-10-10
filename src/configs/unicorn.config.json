@@ -88,6 +88,18 @@
 		}],
 		"unicorn/throw-new-error": "error",
 		"unicorn/no-object-as-default-parameter": "off",
-		"unicorn/prefer-array-find": "error"
+		"unicorn/prefer-array-find": "error",
+		"unicorn/import-style": ["error", {
+			"styles": {
+				"lodash": {
+					"named": true
+				}
+			},
+			"extendDefaultStyles": false,
+			"checkImport": true,
+			"checkDynamicImport": false,
+			"checkExportFrom": false,
+			"checkRequire": true
+		}]
 	}
 }
