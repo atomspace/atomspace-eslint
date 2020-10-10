@@ -95,7 +95,10 @@
 		"react/prefer-stateless-function": "off",
 		"react/prop-types": "error",
 		"react/react-in-jsx-scope": "off",
-		"react/require-default-props": "error",
+		"react/require-default-props": ["error", { 
+			"forbidDefaultForRequired": true, 
+			"ignoreFunctionalComponents": false
+		}],
 		"react/require-optimization": "off",
 		"react/require-render-return": "error",
 		"react/self-closing-comp": "warn",
@@ -145,6 +148,9 @@
 		"react/static-property-placement": "off",
 		"react/style-prop-object": "off",
 		"react/void-dom-elements-no-children": "error",
+		"react/prefer-read-only-props": "error",
+		"react/function-component-definition": "off",
+		"react/no-adjacent-inline-elements": "off",
 
 		"react/jsx-boolean-value": "warn",
 		"react/jsx-child-element-spacing": "off",
@@ -201,6 +207,16 @@
 		"react/jsx-no-useless-fragment": "warn",
 
 		"react-hooks/rules-of-hooks": "error",
-		"react-hooks/exhaustive-deps": "warn"
+		"react-hooks/exhaustive-deps": "warn",
+		"react/jsx-no-script-url": ["error", [
+			{
+				"name": "Link",
+				"props": ["to"]
+			},
+			{
+				"name": "NavLink",
+				"props": ["to"]
+			}
+		]]
 	}
 }
