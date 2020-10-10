@@ -27,7 +27,7 @@
 		"jest/no-alias-methods": "warn",
 		"jest/valid-expect-in-promise": "error",
 		"jest/no-jasmine-globals": "error",
-		"jest/no-test-callback": "error",
+		"jest/no-done-callback": "error",
 		"jest/no-test-return-statement": "off",
 		"jest/prefer-spy-on": "warn",
 		"jest/prefer-to-be-null": "error",
@@ -54,6 +54,7 @@
 		"jest/prefer-expect-assertions": "off",
 		"jest/prefer-strict-equal": "off",
 		"jest/no-conditional-expect": "error",
+		"jest/no-interpolation-in-snapshots": "error",
 
 		"jest-formatting/padding-around-after-all-blocks": "warn",
 		"jest-formatting/padding-around-after-each-blocks": "warn",
