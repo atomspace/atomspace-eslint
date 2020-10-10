@@ -27,8 +27,12 @@ module.exports = function (config) {
 	];
 
 	function toVueRule (name) {
+		let vueName = `vue/${name}`;
+		let vueRule = config.rules[vueName];
+		let eslintRule = config.rules[name];
+
 		return {
-			[`vue/${name}`]: config.rules[name] || 'off'
+			[vueName]: vueRule || eslintRule || 'off'
 		};
 	}
 
