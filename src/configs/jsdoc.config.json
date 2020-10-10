@@ -37,6 +37,7 @@
 		"jsdoc/no-types": "off",
 		"jsdoc/require-file-overview": "off",
 		"jsdoc/require-jsdoc": "off",
-		"jsdoc/require-throws": "error"
+		"jsdoc/require-throws": "error",
+		"jsdoc/check-line-alignment": "off"
 	}
 }
