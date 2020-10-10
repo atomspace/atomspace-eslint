@@ -83,13 +83,13 @@
 			"groups": ["builtin", "external", ["internal", "parent", "sibling", "index"], "unknown"],
 			"pathGroups": [
 				{
-					"pattern": "**/*.+(svg|png|jpeg|jpg|webp|gif|ico)",
+					"pattern": "**/*.+(svg|png|jpeg|jpg|webp|gif|ico)*(?*)",
 					"patternOptions": {"dot": true, "nocomment": true},
 					"group": "unknown",
 					"position": "before"
 				},
 				{
-					"pattern": "{.,..,../..,../../..,../../../..,../../../../..,../../../../../..,../../../../../../..,../../../../../../../..,../../../../../../../../..}/**/*.+(svg|png|jpeg|jpg|webp|gif|ico)",
+					"pattern": "{.,..,../..,../../..,../../../..,../../../../..,../../../../../..,../../../../../../..,../../../../../../../..,../../../../../../../../..}/**/*.+(svg|png|jpeg|jpg|webp|gif|ico)*(?*)",
 					"patternOptions": {"dot": true, "nocomment": true},
 					"group": "unknown",
 					"position": "before"
