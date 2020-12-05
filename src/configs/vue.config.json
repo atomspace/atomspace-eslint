@@ -254,7 +254,9 @@
 		"vue/valid-v-bind-sync": "off",
 		"vue/valid-v-slot": "error",
 		"vue/no-template-target-blank": "warn",
-		"vue/no-unregistered-components": "warn",
+		"vue/no-unregistered-components": ["warn", {
+			"ignorePatterns": ["^router-link$"]
+		}],
 		"vue/return-in-emits-validator": "error",
 		"vue/html-comment-indent": ["warn", "tab"],
 		"vue/html-comment-content-newline": ["warn",
