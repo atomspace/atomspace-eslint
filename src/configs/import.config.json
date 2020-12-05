@@ -13,7 +13,7 @@
 			".tsx",
 			".vue"
 		],
-		"import/core-modules": ["electron"],
+		"import/core-modules": ["electron", "pnpapi"],
 		"import/ignore": [
 			"node_modules",
 			"\\.(coffee|scss|sass|compas|css|less|hbs|svg|json)$"

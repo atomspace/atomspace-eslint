@@ -10,7 +10,7 @@
 	},
 	"settings": {
 		"node": {
-			 "allowModules": ["electron"]
+			 "allowModules": ["electron", "pnpapi"]
 		}
   	},
 	"rules": {
