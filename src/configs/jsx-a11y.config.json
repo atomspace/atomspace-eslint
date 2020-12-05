@@ -29,11 +29,7 @@
 			"depth": 25
 		}],
 		"jsx-a11y/lang": "error",
-		"jsx-a11y/media-has-caption": ["warn", {
-			"audio": ["Audio"],
-			"video": ["Video"],
-			"track": ["Track"]
-		}],
+		"jsx-a11y/media-has-caption": "off",
 		"jsx-a11y/mouse-events-have-key-events": "error",
 		"jsx-a11y/no-access-key": "error",
 		"jsx-a11y/no-autofocus": ["warn", { "ignoreNonDOM": true }],

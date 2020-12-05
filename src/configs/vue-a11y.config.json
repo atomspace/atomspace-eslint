@@ -19,11 +19,7 @@
 		"vuejs-accessibility/tabindex-no-positive": "warn",
 		"vuejs-accessibility/no-distracting-elements": "error",
 		"vuejs-accessibility/heading-has-content": "error",
-		"vuejs-accessibility/media-has-caption": ["warn", {
-			"audio": ["Audio"],
-			"video": ["Video"],
-			"track": ["Track"]
-		}],
+		"vuejs-accessibility/media-has-caption": "off",
 		"vuejs-accessibility/iframe-has-title": "error",
 		"vuejs-accessibility/no-access-key": "error",
 		"vuejs-accessibility/form-has-label": "off",
