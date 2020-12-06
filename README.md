@@ -51,11 +51,11 @@ After adding the Atom Space preset to your Neutrino-built project, edit your pro
 #### .neutrinorc.js
 
 ```js
-let atomspaceEslint = require('@atomspace/eslint');
+let eslint = require('@atomspace/eslint');
 
 module.exports = {
    use: [
-      atomspaceEslint()
+      eslint()
 
       // put your rest of presets here
    ]
@@ -69,7 +69,7 @@ module.exports = {
    "scripts": {
       "build": "webpack --mode production",
       "start": "webpack --mode development",
-      "lint": "eslint ./ --format codeframe --fix"
+      "lint": "eslint ./ --fix"
    }
 }
 ```
@@ -132,11 +132,11 @@ If you wish to customize what is included, excluded, or any ESLint options, you 
 _Example: Include a plugin, browser and Node environments and turn off semicolons from being required as defined by the Atom Space rules._
 
 ```js
-let atomspaceEslint = require('@atomspace/eslint');
+let eslint = require('@atomspace/eslint');
 
 module.exports = {
    use: [
-      atomspaceEslint({
+      eslint({
          eslint: {
             plugins: ['fp'],
             env: {
@@ -159,7 +159,7 @@ This preset enables rules compatible with the latest EcmaScript version by defau
 ```js
 module.exports = {
    use: [
-      atomspaceEslint({ esnext: false })
+      eslint({ esnext: false })
    ]
 };
 ```
@@ -182,7 +182,7 @@ Configure supported browsers in `.neutrinorc.js` (see [browserslist](https://git
 ```js
 module.exports = {
    use: [
-      atomspaceEslint({ browsers: ['ie >= 8'] })
+      eslint({ browsers: ['ie >= 8'] })
    ]
 };
 ```
@@ -194,7 +194,7 @@ If you want to check a compatibility with a NodeJS version pass `node` option to
 ```js
 module.exports = {
    use: [
-      atomspaceEslint({ node: '>=8.0.0' })
+      eslint({ node: '>=8.0.0' })
    ]
 };
 ```
@@ -250,7 +250,6 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
    "editor.insertSpaces": false,
    "editor.detectIndentation": false,
    "jshint.enable": false,
-   "eslint.enable": true,
    "editor.formatOnSave": false,
    "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
