@@ -15,7 +15,8 @@
 			"env": { "browser": true },
 			"rules": {
 				"indent": "off",
-				"filenames/match-regex": "off"
+				"filenames/match-regex": "off",
+				"func-style": ["error", "declaration", { "allowArrowFunctions": true }]
 			}
 		},
 		{
@@ -255,7 +256,7 @@
 		"vue/valid-v-slot": "error",
 		"vue/no-template-target-blank": "warn",
 		"vue/no-unregistered-components": ["warn", {
-			"ignorePatterns": ["^router-link$"]
+			"ignorePatterns": ["^router-link$", "^router-view$"]
 		}],
 		"vue/return-in-emits-validator": "error",
 		"vue/html-comment-indent": ["warn", "tab"],
