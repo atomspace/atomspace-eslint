@@ -25,6 +25,12 @@
 				"vue/require-name-property": "off",
 				"vue/max-len": "off"
 			}
+		},
+		{
+			"files": [ "**/index.vue" ],
+			"rules": {
+				"vue/match-component-file-name": "off"
+			}
 		}
 	],
 	"rules": {
@@ -183,11 +189,7 @@
 			]
 		}],
 		"vue/match-component-file-name": ["error", {
-			"extensions": [
-				"js",
-				"ts",
-				"vue"
-			],
+			"extensions": ["vue"],
 			"shouldMatchCase": false
 		}],
 		"vue/max-len": ["warn", {
