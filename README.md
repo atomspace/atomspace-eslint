@@ -263,9 +263,9 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
       "editor.insertSpaces": true
    },
    "eslint.options": {
-      "extensions": [".js", ".jsx", ".html", ".md", ".vue"]
+      "extensions": [".js", ".jsx", ".html", ".md", ".vue", ".json", ".json5", ".json6"]
    },
-   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown", "vue"],
+   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown", "vue", "json", "jsonc", "json5", ".json6"],
    "vetur.validation.template": false
 }
 ```

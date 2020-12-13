@@ -1,0 +1,43 @@
+{
+	"plugins": ["jsonc"],
+	"overrides": [
+		{
+			"files": ["*.json", "*.json5", "*.json6"],
+			"parserOptions": {
+				"parser": "jsonc-eslint-parser"
+			},
+			"processor": "jsonc/auto-config",
+			"rules": {
+				"max-lines": "off",
+				"sonarjs/no-duplicate-string": "off",
+				"unicorn/filename-case": "off"
+			}
+		},
+		{
+			"files": ["*.json"],
+			"rules": {
+				"jsonc/no-comments": "error",
+				"jsonc/comma-dangle": ["error", "never"]
+			}
+	  }
+	],
+	"rules": {
+		"jsonc/key-name-casing": "off",
+		"jsonc/no-bigint-literals": "error",
+		"jsonc/no-comments": "off",
+		"jsonc/no-number-props": "error",
+		"jsonc/no-numeric-separators": "error",
+		"jsonc/no-regexp-literals": "error",
+		"jsonc/no-template-literals": "error",
+		"jsonc/no-undefined-value": "error",
+		"jsonc/valid-json-number": "error",
+
+		"jsonc/no-dupe-keys": "error",
+		"jsonc/no-multi-str": "error",
+		"jsonc/no-sparse-arrays": "error",
+		"jsonc/quote-props": ["error", "always"],
+		"jsonc/quotes": ["error", "double", { "avoidEscape": false }],
+		"jsonc/sort-keys": "off",
+		"jsonc/space-unary-ops": "error"
+	}
+}

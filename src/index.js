@@ -33,6 +33,8 @@ let sortClassConfig = require('./configs/sort-class.config');
 let sonarConfig = require('./configs/sonar.config');
 let unicornConfig = require('./configs/unicorn.config');
 let versionsConfig = require('./configs/versions.config');
+let jsonConfig = require('./configs/json.config');
+let jsonInheritConfig = require('./configs/json.inherit.config');
 let mergeConfigs = require('./merge-configs');
 let resolveParser = require('./resolve-parser');
 let aliasPlugins = require('./alias-plugins');
@@ -77,6 +79,7 @@ module.exports = function (customSettings = {}) {
 			sortClassConfig,
 			sonarConfig,
 			unicornConfig,
+			jsonConfig,
 			settings.esnext ? esnextConfig : es5Config,
 			envsConfig(neutrino.config),
 			versionsConfig(neutrino, settings),
@@ -89,6 +92,7 @@ module.exports = function (customSettings = {}) {
 		baseConfig = [
 			baseConfig,
 			vueInheritConfig(baseConfig),
+			jsonInheritConfig(baseConfig),
 			settings.esnext ? babelConfig(baseConfig) : {},
 			resolveParser(baseConfig)
 		].reduce(mergeConfigs);
