@@ -13,6 +13,7 @@
 - Vue support
 - Node.js support
 - Accessibility linting in React and Vue
+- JSON support
 - Yarn Berry support
 - Highly visible during development, fails compilation when building for production
 - Promises linting

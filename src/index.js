@@ -36,7 +36,7 @@ let versionsConfig = require('./configs/versions.config');
 let jsonConfig = require('./configs/json.config');
 let jsonInheritConfig = require('./configs/json.inherit.config');
 let mergeConfigs = require('./merge-configs');
-let resolveParser = require('./resolve-parser');
+let resolveParsers = require('./resolve-parsers');
 let aliasPlugins = require('./alias-plugins');
 let aliasImportResolvers = require('./alias-import-resolvers');
 
@@ -93,10 +93,10 @@ module.exports = function (customSettings = {}) {
 			baseConfig,
 			vueInheritConfig(baseConfig),
 			jsonInheritConfig(baseConfig),
-			settings.esnext ? babelConfig(baseConfig) : {},
-			resolveParser(baseConfig)
+			settings.esnext ? babelConfig(baseConfig) : {}
 		].reduce(mergeConfigs);
 
+		resolveParsers(baseConfig);
 		aliasPlugins(baseConfig);
 		aliasImportResolvers(baseConfig);
 
