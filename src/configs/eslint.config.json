@@ -268,6 +268,7 @@
 		"no-promise-executor-return": "error",
 		"no-unreachable-loop": "error",
 		"no-sparse-arrays": "error",
-		"no-unsafe-optional-chaining": ["error", { "disallowArithmeticOperators": true }]
+		"no-unsafe-optional-chaining": ["error", { "disallowArithmeticOperators": true }],
+		"array-bracket-spacing": ["warn", "never"]
 	}
 }

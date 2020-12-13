@@ -4,6 +4,7 @@ function merge (to = {}, from = {}) {
 
 module.exports = function (config) {
 	let inheritanceRules = [
+		'array-bracket-spacing',
 		'comma-dangle',
 		'dot-location',
 		'eqeqeq',

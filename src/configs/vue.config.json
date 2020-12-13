@@ -170,7 +170,6 @@
 			]
 		}],
 		"vue/this-in-template": ["warn", "never"],
-		"vue/array-bracket-spacing": ["warn", "never"],
 		"vue/arrow-spacing": "warn",
 		"vue/block-spacing": ["warn", "always"],
 		"vue/brace-style": ["warn", "stroustrup", {
