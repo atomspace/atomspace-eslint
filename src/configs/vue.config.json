@@ -27,7 +27,7 @@
 			}
 		},
 		{
-			"files": [ "**/index.vue" ],
+			"files": ["**/index.vue"],
 			"rules": {
 				"vue/match-component-file-name": "off"
 			}

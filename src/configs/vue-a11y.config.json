@@ -10,7 +10,7 @@
 			"components": [],
 			"controlComponents": [],
 			"required": {
-					"some": [ "nesting", "id" ]
+				"some": ["nesting", "id"]
 			},
 			"allowChildren": true
 		}],

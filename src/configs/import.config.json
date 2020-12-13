@@ -8,7 +8,7 @@
 		},
 		"import/extensions": [
 			".js",
-			".ts", 
+			".ts",
 			".jsx",
 			".tsx",
 			".vue"
@@ -20,7 +20,7 @@
 		]
 	},
 	"rules": {
-		"import/no-unresolved": ["error", {"commonjs": true, "amd": true, "caseSensitive": true}],
+		"import/no-unresolved": ["error", { "commonjs": true, "amd": true, "caseSensitive": true }],
 		"import/named": "error",
 		"import/namespace": ["error", { "allowComputed": true }],
 		"import/default": "off",
@@ -35,7 +35,7 @@
 		"import/no-webpack-loader-syntax": "error",
 		"import/no-self-import": "error",
 		"import/no-restricted-paths": "off",
-		"import/no-duplicates": ["error", {"considerQueryString": true}],
+		"import/no-duplicates": ["error", { "considerQueryString": true }],
 		"import/no-deprecated": "warn",
 		"import/no-extraneous-dependencies": ["error", {
 			"devDependencies": false,
@@ -113,7 +113,7 @@
 	},
 	"overrides": [
 		{
-			"files": [ "**/index.*" ],
+			"files": ["**/index.*"],
 			"rules": {
 				"import/no-anonymous-default-export": "off"
 			}

@@ -1,6 +1,6 @@
 {
 	"plugins": [
-		"react", 
+		"react",
 		"react-hooks"
 	],
 	"extends": ["plugin:react/recommended"],
@@ -22,7 +22,7 @@
 	},
 	"overrides": [
 		{
-			"files": [ "**/*.jsx" ],
+			"files": ["**/*.jsx"],
 			"rules": {
 				"class-methods-use-this": ["warn", {
 					"exceptMethods": [
@@ -42,8 +42,8 @@
 			"rules": {
 				"react/prop-types": "off",
 				"react/jsx-uses-react": "off",
-				"react/forbid-component-props": ["error", { 
-					"forbid": [] 
+				"react/forbid-component-props": ["error", {
+					"forbid": []
 				}]
 			}
 		}
@@ -54,10 +54,10 @@
 		"react/default-props-match-prop-types": "error",
 		"react/destructuring-assignment": "off",
 		"react/display-name": "off",
-		"react/forbid-component-props": ["error", { 
+		"react/forbid-component-props": ["error", {
 			"forbid": [
-				{"propName": "class", "message": "Use 'className' instead"}
-			] 
+				{ "propName": "class", "message": "Use 'className' instead" }
+			]
 		}],
 		"react/forbid-dom-props": ["error", { "forbid": ["align", "background", "bgcolor"] }],
 		"react/forbid-elements": "off",
@@ -95,8 +95,8 @@
 		"react/prefer-stateless-function": "off",
 		"react/prop-types": "error",
 		"react/react-in-jsx-scope": "off",
-		"react/require-default-props": ["error", { 
-			"forbidDefaultForRequired": true, 
+		"react/require-default-props": ["error", {
+			"forbidDefaultForRequired": true,
 			"ignoreFunctionalComponents": false
 		}],
 		"react/require-optimization": "off",
@@ -168,14 +168,14 @@
 		"react/jsx-indent-props": ["warn", "tab"],
 		"react/jsx-key": "error",
 		"react/jsx-max-depth": ["warn", { "max": 10 }],
-		"react/jsx-max-props-per-line": ["warn", { "maximum": 1, "when": "multiline"} ],
-		"react/jsx-no-bind": ["error", {"allowArrowFunctions": true}],
+		"react/jsx-max-props-per-line": ["warn", { "maximum": 1, "when": "multiline" }],
+		"react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
 		"react/jsx-no-comment-textnodes": "error",
 		"react/jsx-no-duplicate-props": "error",
 		"react/jsx-no-literals": "off",
 		"react/jsx-no-target-blank": "warn",
 		"react/jsx-no-undef": ["error", { "allowGlobals": true }],
-		"react/jsx-one-expression-per-line": ["warn", {"allow": "single-child"}],
+		"react/jsx-one-expression-per-line": ["warn", { "allow": "single-child" }],
 		"react/jsx-curly-brace-presence": ["error", "never"],
 		"react/jsx-fragments": "off",
 		"react/jsx-pascal-case": "error",
@@ -201,7 +201,7 @@
 			"prop": "ignore"
 		}],
 		"react/jsx-curly-newline": ["warn", {
-			"multiline": "consistent", 
+			"multiline": "consistent",
 			"singleline": "forbid"
 		}],
 		"react/jsx-no-useless-fragment": "warn",

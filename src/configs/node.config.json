@@ -12,7 +12,7 @@
 		"node": {
 			 "allowModules": ["electron", "pnpapi"]
 		}
-  	},
+	},
 	"rules": {
 		"node/no-callback-literal": "off",
 		"node/no-exports-assign": "error",

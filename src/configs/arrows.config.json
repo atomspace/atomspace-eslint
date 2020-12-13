@@ -12,18 +12,18 @@
 	"rules": {
 		"@getify/proper-arrows/params": "off",
 		"@getify/proper-arrows/name": "off",
-		"@getify/proper-arrows/where": ["error", { 
+		"@getify/proper-arrows/where": ["error", {
 			"global": false,
 			"property": false,
 			"export": true,
 			"trivial": false
 		}],
-		"@getify/proper-arrows/return": ["error", { 
-			"object": false, 
+		"@getify/proper-arrows/return": ["error", {
+			"object": false,
 			"ternary": 1,
-			"chained": true, 
-			"sequence": true, 
-			"trivial": true 
+			"chained": true,
+			"sequence": true,
+			"trivial": true
 		}],
 		"@getify/proper-arrows/this": ["error", "never-global"]
 	}

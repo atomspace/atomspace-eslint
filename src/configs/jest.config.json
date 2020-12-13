@@ -1,6 +1,6 @@
 {
 	"plugins": [
-		"jest", 
+		"jest",
 		"jest-formatting"
 	],
 	"extends": ["plugin:jest/recommended"],

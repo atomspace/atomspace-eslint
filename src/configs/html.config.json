@@ -2,7 +2,7 @@
 	"plugins": ["html"],
 	"overrides": [
 		{
-			"files": [ "**/*.html", "**/*.htm", "**/*.php" ],
+			"files": ["**/*.html", "**/*.htm", "**/*.php"],
 			"parserOptions": {
 				"sourceType": "script",
 				"ecmaFeatures": {

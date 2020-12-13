@@ -4,7 +4,7 @@
 		"xss"
 	],
 	"rules": {
-		"no-secrets/no-secrets":["error", {
+		"no-secrets/no-secrets": ["error", {
 			"additionalDelimiters": ["_", "-"],
 			"ignoreModules": true,
 			"ignoreContent": ["^http(s)://", "^data://", "^ws(s)://"]
