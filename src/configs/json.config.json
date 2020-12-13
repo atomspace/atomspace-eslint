@@ -2,15 +2,14 @@
 	"plugins": ["jsonc"],
 	"overrides": [
 		{
-			"files": ["*.json", "*.json5", "*.json6"],
+			"files": ["*.json", "*.jsonc", "*.json5", "*.json6"],
 			"parserOptions": {
 				"parser": "jsonc-eslint-parser"
 			},
 			"processor": "jsonc/auto-config",
 			"rules": {
 				"max-lines": "off",
-				"sonarjs/no-duplicate-string": "off",
-				"unicorn/filename-case": "off"
+				"sonarjs/no-duplicate-string": "off"
 			}
 		},
 		{

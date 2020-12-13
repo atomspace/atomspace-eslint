@@ -6,15 +6,16 @@
 			"processor": "markdown/markdown"
 		},
 		{
-			"files": ["**/*.{md,markdown}/*.{js,ts,javascript,typescript,jsx,tsx,node,vue}"],
+			"files": ["**/*.{md,markdown}/*.{js,ts,javascript,typescript,jsx,tsx,node,vue,json,jsonc,json5,json6}"],
 			"parserOptions": {
 				"sourceType": "module"
 			},
 			"rules": {
 				"indent": ["warn", 3, {
-					"MemberExpression": "off", 
+					"MemberExpression": "off",
 					"SwitchCase": 1
 				}],
+				"jsonc/indent": ["warn", 3],
 				"no-undef": "off",
 				"no-unused-vars": "off",
 				"no-console": "off",
@@ -39,7 +40,7 @@
 			"rules": {
 				"react/no-multi-comp": "off"
 			}
-	  	},
+		},
 		{
 			"files": ["**/*.{md,markdown}/*.vue"],
 			"rules": {
@@ -51,7 +52,7 @@
 				 }],
 				"vue/script-indent": ["warn", 3, {
 					"baseIndent": 0,
-					"switchCase": 1					
+					"switchCase": 1
 				}],
 				"vue/match-component-file-name": "off",
 				"vue/no-unregistered-components": "off",
