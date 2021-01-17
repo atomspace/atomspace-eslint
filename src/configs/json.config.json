@@ -6,8 +6,10 @@
 			"parserOptions": {
 				"parser": "jsonc-eslint-parser"
 			},
-			"processor": "jsonc/auto-config",
 			"rules": {
+				"jsonc/auto": "error",
+				"strict": "off",
+         	"no-unused-expressions": "off",
 				"max-lines": "off",
 				"sonarjs/no-duplicate-string": "off"
 			}
@@ -30,6 +32,7 @@
 		"jsonc/no-template-literals": "error",
 		"jsonc/no-undefined-value": "error",
 		"jsonc/valid-json-number": "error",
+		"jsonc/vue-custom-block/no-parsing-error": "error",
 
 		"jsonc/no-dupe-keys": "error",
 		"jsonc/no-multi-str": "error",

@@ -1,15 +1,22 @@
 {
 	"plugins": [
-		"no-secrets",
 		"xss"
 	],
+	"overrides": [
+		{
+			"files": ["!*.json", "!*.jsonc", "!*.json5", "!*.json6"],
+			"plugins": ["no-secrets"],
+			"rules": {
+				"no-secrets/no-secrets": ["error", {
+					"tolerance": 5,
+					"additionalDelimiters": ["_", "-"],
+					"ignoreModules": true,
+					"ignoreContent": ["^http(s)://", "^data://", "^ws(s)://"]
+				}]
+			}
+	  }
+	],
 	"rules": {
-		"no-secrets/no-secrets": ["error", {
-			"tolerance": 5,
-			"additionalDelimiters": ["_", "-"],
-			"ignoreModules": true,
-			"ignoreContent": ["^http(s)://", "^data://", "^ws(s)://"]
-		}],
 		"xss/no-mixed-html": "off",
 		"xss/no-location-href-assign": ["error", {
 			"escapeFunc": "escape"
