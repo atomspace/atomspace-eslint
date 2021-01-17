@@ -16,7 +16,8 @@
 			"rules": {
 				"indent": "off",
 				"filenames/match-regex": "off",
-				"func-style": ["error", "declaration", { "allowArrowFunctions": true }]
+				"func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+				"max-lines": ["warn", { "max": 600, "skipComments": true, "skipBlankLines": true }]
 			}
 		},
 		{

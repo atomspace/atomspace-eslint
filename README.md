@@ -251,6 +251,7 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
    "editor.insertSpaces": false,
    "editor.detectIndentation": false,
    "jshint.enable": false,
+   "prettier.enable": false,
    "editor.formatOnSave": false,
    "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
@@ -266,7 +267,7 @@ These are suggested workspace settings related to `@atomspace/eslint` rules:
    "eslint.options": {
       "extensions": [".js", ".jsx", ".html", ".md", ".vue", ".json", ".jsonc", ".json5", ".json6"]
    },
-   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown", "vue", "json", "jsonc", "json5", ".json6"],
+   "eslint.validate": ["javascript", "javascriptreact", "html", "markdown", "vue", "json", "jsonc", "json5", "json6"],
    "vetur.validation.template": false
 }
 ```
