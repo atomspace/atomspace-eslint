@@ -2,6 +2,7 @@
 	"editor.insertSpaces": false,
    "editor.detectIndentation": false,
 	"spellright.language": ["en"],
+	"prettier.enable": false,
 	"editor.formatOnSave": false,
    "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true

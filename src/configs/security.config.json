@@ -5,6 +5,7 @@
 	],
 	"rules": {
 		"no-secrets/no-secrets": ["error", {
+			"tolerance": 5,
 			"additionalDelimiters": ["_", "-"],
 			"ignoreModules": true,
 			"ignoreContent": ["^http(s)://", "^data://", "^ws(s)://"]
