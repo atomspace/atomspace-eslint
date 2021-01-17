@@ -6,7 +6,8 @@
 	"scripts": {
 		"eslint": "eslint ./src",
 		"pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
-		"lint": "npm run eslint -- --fix"
+		"lint": "npm run eslint -- --fix",
+		"postversion": "git push --tags"
 	},
 	"repository": {
 		"type": "git",
