@@ -7,6 +7,7 @@
 		"eslint": "eslint ./src",
 		"pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
 		"lint": "npm run eslint -- --fix",
+		"postinstall": "patch-package",
 		"postversion": "git push --tags"
 	},
 	"repository": {
@@ -26,6 +27,7 @@
 	},
 	"homepage": "https://github.com/atomspaceodua/atomspace-eslint#readme",
 	"dependencies": {
+		"patch-package": "6.2.2",
 		"@getify/eslint-plugin-proper-arrows": "~10.0.0",
 		"@neutrinojs/eslint": "~9.4.0",
 		"deepmerge": "~4.2.2",

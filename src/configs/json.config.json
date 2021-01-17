@@ -7,13 +7,13 @@
 				"parser": "jsonc-eslint-parser"
 			},
 			"rules": {
-				"jsonc/auto": "error",
-				"strict": "off",
-         	"no-unused-expressions": "off",
-				"max-lines": "off",
-				"sonarjs/no-duplicate-string": "off"
-			}
-		},
+					"jsonc/auto": "error",
+					"strict": "off",
+					"no-unused-expressions": "off",
+					"max-lines": "off",
+					"sonarjs/no-duplicate-string": "off"
+				}
+			},
 		{
 			"files": ["*.json"],
 			"rules": {
