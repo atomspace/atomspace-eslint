@@ -1,0 +1,57 @@
+{
+	"plugins": ["@shopify"],
+	"overrides": [
+		{
+			"files": ["**/*.ts", "**/*.tsx"],
+			"rules": {
+				"@shopify/react-initialize-state": "error",
+				"@shopify/react-prefer-private-members": "error",
+				"@shopify/react-type-state": "error"
+			}
+		},
+		{
+			"files": ["**/*.test.js", "**/*.spec.js"],
+			"rules": {
+				"@shopify/jsx-no-hardcoded-content": "off",
+				"@shopify/restrict-full-import": "off",
+				"@shopify/prefer-module-scope-constants": "off",
+				"@shopify/no-ancestor-directory-import": "off",
+				"@shopify/images-no-direct-imports": "off",
+				"@shopify/no-namespace-imports": "off"
+			}
+		}
+	 ],
+	"rules": {
+		"@shopify/binary-assignment-parens": "off",
+		"@shopify/class-property-semi": "off",
+		"@shopify/images-no-direct-imports": "off",
+		"@shopify/jest/no-all-mocks-methods": "off",
+		"@shopify/jest/no-snapshots": "off",
+		"@shopify/jsx-no-complex-expressions": "off",
+		"@shopify/jsx-no-hardcoded-content": "off",
+		"@shopify/jsx-prefer-fragment-wrappers": "error",
+		"@shopify/no-namespace-imports": "off",
+		"@shopify/no-debugger": "off",
+		"@shopify/no-useless-computed-properties": "error",
+		"@shopify/no-fully-static-classes": "error",
+		"@shopify/no-ancestor-directory-import": "off",
+		"@shopify/polaris-prefer-sectioned-prop": "off",
+		"@shopify/polaris-no-bare-stack-item": "off",
+		"@shopify/prefer-class-properties": "off",
+		"@shopify/prefer-early-return": ["error", { "maximumStatements": 2 }],
+		"@shopify/prefer-module-scope-constants": "off",
+		"@shopify/prefer-twine": "off",
+		"@shopify/react-hooks-strict-return": "error",
+		"@shopify/react-initialize-state": "off",
+		"@shopify/react-no-multiple-render-methods": "off",
+		"@shopify/react-prefer-private-members": "off",
+		"@shopify/react-type-state": "off",
+		"@shopify/restrict-full-import": "off",
+		"@shopify/sinon-no-restricted-features": "off",
+		"@shopify/sinon-prefer-meaningful-assertions": "error",
+		"@shopify/strict-component-boundaries": "off",
+		"@shopify/typescript/prefer-pascal-case-enums": "off",
+		"@shopify/typescript/prefer-singular-enums": "error",
+		"@shopify/webpack/no-unnamed-dynamic-imports": "off"
+	}
+}
