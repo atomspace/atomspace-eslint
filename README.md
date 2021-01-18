@@ -203,8 +203,10 @@ module.exports = {
 Also you can enable linting of NodeJS features and deprecated API providing `engines` in your **package.json**. This will highlight usage of deprecated properties, methods and global variables.
 
 ```json
-"engines": {
-    "node": ">=8.3.0"
+{
+   "engines": {
+      "node": ">=8.3.0"
+   }
 }
 ```
 
