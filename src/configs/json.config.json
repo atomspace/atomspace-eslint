@@ -1,5 +1,6 @@
 {
 	"plugins": ["jsonc"],
+	"ignorePatterns": ["**/package-lock.json", "**/npm-shrinkwrap.json"],
 	"overrides": [
 		{
 			"files": ["*.json", "*.jsonc", "*.json5", "*.json6"],
