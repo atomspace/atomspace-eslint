@@ -2,6 +2,7 @@ let path = require('path');
 
 let eslint = require('@neutrinojs/eslint');
 
+require('./fixes');
 let coreConfig = require('./configs/eslint.config');
 let importConfig = require('./configs/import.config');
 let importResolverConfig = require('./configs/import-resolver.config');
