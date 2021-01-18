@@ -1,0 +1,39 @@
+{
+	"plugins": ["mocha"],
+	"env": { "mocha": true },
+	"extends": ["plugin:mocha/recommended"],
+	"overrides": [
+		{
+			"files": ["**/*.test.*", "**/*.spec.*", "**/*_test.*", "**/*_spec.*", "**/*Test.*", "**/*Spec.*"],
+			"rules": {
+				"max-lines-per-function": "off",
+				"max-lines": "off",
+				"sonarjs/no-duplicate-string": "off"
+			}
+		}
+	],
+	"rules": {
+		"mocha/handle-done-callback": "error",
+		"mocha/max-top-level-suites": ["warn", { "limit": 1 }],
+		"mocha/no-async-describe": "error",
+		"mocha/no-exclusive-tests": "warn",
+		"mocha/no-exports": "error",
+		"mocha/no-global-tests": "warn",
+		"mocha/no-hooks": "off",
+		"mocha/no-hooks-for-single-case": "off",
+		"mocha/no-identical-title": "error",
+		"mocha/no-mocha-arrows": "error",
+		"mocha/no-nested-tests": "error",
+		"mocha/no-pending-tests": "warn",
+		"mocha/no-return-and-callback": "error",
+		"mocha/no-return-from-async": "off",
+		"mocha/no-setup-in-describe": "error",
+		"mocha/no-sibling-hooks": "off",
+		"mocha/no-skipped-tests": "warn",
+		"mocha/no-synchronous-tests": "off",
+		"mocha/no-top-level-hooks": "warn",
+		"mocha/prefer-arrow-callback": "off",
+		"mocha/valid-suite-description": "off",
+		"mocha/valid-test-description": "off"
+	}
+}
