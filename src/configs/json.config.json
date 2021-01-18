@@ -19,7 +19,13 @@
 				"jsonc/no-comments": "error",
 				"jsonc/comma-dangle": ["error", "never"]
 			}
-	  }
+		},
+		{
+			"files": ["package.json"],
+			"rules": {
+				"eol-last": "off"
+			}
+		}
 	],
 	"rules": {
 		"jsonc/auto": "error",
