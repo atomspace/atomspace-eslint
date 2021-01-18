@@ -68,12 +68,12 @@
 		"eslint-plugin-jest-formatting": "~2.0.0",
 		"eslint-import-resolver-webpack": "~0.13.0",
 		"eslint-import-resolver-node": "^0.3.4",
-		"eslint-plugin-jsonc": "0.8.1",
+		"eslint-plugin-jsonc": "0.8.2",
 		"jsonc-eslint-parser": "0.6.2"
 	},
 	"devDependencies": {
 		"eslint": "^7.18.0",
-		"neutrino": "~9.4.0"
+		"neutrino": "~9.5.0"
 	},
 	"peerDependencies": {
 		"eslint": "^7.15.0",

@@ -7,13 +7,12 @@
 				"parser": "jsonc-eslint-parser"
 			},
 			"rules": {
-					"jsonc/auto": "error",
-					"strict": "off",
-					"no-unused-expressions": "off",
-					"max-lines": "off",
-					"sonarjs/no-duplicate-string": "off"
-				}
-			},
+				"strict": "off",
+				"no-unused-expressions": "off",
+				"max-lines": "off",
+				"sonarjs/no-duplicate-string": "off"
+			}
+		},
 		{
 			"files": ["*.json"],
 			"rules": {
@@ -23,6 +22,7 @@
 	  }
 	],
 	"rules": {
+		"jsonc/auto": "error",
 		"jsonc/key-name-casing": "off",
 		"jsonc/no-bigint-literals": "error",
 		"jsonc/no-comments": "off",
