@@ -1,5 +1,18 @@
 {
 	"plugins": ["unicorn"],
+	"overrides": [
+		{
+			"files": ["**/*.{js,ts}"],
+			"rules": {
+				"unicorn/string-content": ["warn", {
+					"patterns": {
+						"->": "→",
+						"<-": "←"
+					}
+				}]
+			}
+		}
+	],
 	"rules": {
 		"unicorn/better-regex": "warn",
 		"unicorn/catch-error-name": "off",
