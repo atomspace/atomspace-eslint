@@ -7,7 +7,8 @@
 		"eslint": "eslint ./",
 		"pretest": "npm run eslint -- --max-warnings 0 --format codeframe",
 		"lint": "npm run eslint -- --fix",
-		"postversion": "git push --tags"
+		"postversion": "git push --tags",
+		"postinstall": "eslint package.json --fix"
 	},
 	"repository": {
 		"type": "git",
