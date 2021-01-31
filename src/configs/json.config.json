@@ -29,7 +29,7 @@
 		}
 	],
 	"rules": {
-		"jsonc/auto": "error",
+		"jsonc/auto": "off",
 		"jsonc/key-name-casing": "off",
 		"jsonc/no-bigint-literals": "error",
 		"jsonc/no-comments": "off",
