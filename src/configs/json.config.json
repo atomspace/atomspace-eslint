@@ -24,7 +24,12 @@
 		{
 			"files": ["package.json"],
 			"rules": {
-				"eol-last": "off"
+				"eol-last": "off",
+				"jsonc/key-spacing": ["warn", {
+					"beforeColon": false,
+					"afterColon": true,
+					"mode": "strict"
+				}]
 			}
 		}
 	],
