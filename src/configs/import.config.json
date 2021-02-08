@@ -38,7 +38,7 @@
 		"import/no-duplicates": ["error", { "considerQueryString": true }],
 		"import/no-deprecated": "warn",
 		"import/no-extraneous-dependencies": ["error", {
-			"devDependencies": false,
+			"devDependencies": true,
 			"optionalDependencies": true,
 			"peerDependencies": true,
 			"bundledDependencies": true
@@ -116,6 +116,17 @@
 			"files": ["**/index.*"],
 			"rules": {
 				"import/no-anonymous-default-export": "off"
+			}
+		},
+		{
+			"files": ["src/**", "index.*"],
+			"rules": {
+				"import/no-extraneous-dependencies": ["error", {
+					"devDependencies": false,
+					"optionalDependencies": true,
+					"peerDependencies": true,
+					"bundledDependencies": true
+				}]
 			}
 		}
 	]
